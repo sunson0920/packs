@@ -3,26 +3,26 @@
   "name": "aaa",
   "ticker": "aaa",
   "template": "c22-godfather",
-  "domain": "humptydumptyonsol.site",
+  "domain": "nihaopunch.lol",
   "ca": "TBA",
   "chain": "solana",
   "theme_mode": "original",
   "theme_preset": "",
   "theme_primary": "#9945ff",
   "theme_secondary": "#14f195",
-  "domain_status": "not_connected",
+  "domain_status": "live",
   "dns_records": [
     {
       "type": "A",
       "name": "@",
       "value": "76.76.21.21",
-      "host": "humptydumptyonsol.site"
+      "host": "nihaopunch.lol"
     },
     {
       "type": "CNAME",
       "name": "www",
       "value": "cname.vercel-dns.com",
-      "host": "www.humptydumptyonsol.site"
+      "host": "www.nihaopunch.lol"
     }
   ],
   "tagline": "",
@@ -43,7 +43,7 @@
   "wallet": "",
   "vercel_a": "",
   "vercel_cname": "",
-  "logo": "assets/logo.webp",
+  "logo": "assets/logo.png",
   "banner": "assets/banner.webp",
   "images": [],
   "characters": [],
@@ -59,7 +59,7 @@
   },
   "site_slug": "aaa",
   "project_id": "pmwfbx3exsojob",
-  "exported_at": "2026-11-13T19:03:49.306Z",
+  "exported_at": "2026-11-13T19:40:17.871Z",
   "make_videos": false,
   "videos": []
 }
