@@ -4,7 +4,7 @@
   "ticker": "punchhao",
   "template": "c38-ocicat",
   "domain": "nihaopunch.lol",
-  "ca": "TBA",
+  "ca": "C5jaQ3sUjdKJLcyTS4tSnmj2PsiXkYWZXyA3gxm3pump",
   "chain": "solana",
   "theme_mode": "original",
   "theme_preset": "",
@@ -52,14 +52,14 @@
     "dex_name": "Pump.fun",
     "dex_logo": "assets/dex.png",
     "buy_url_source": "dex",
-    "buy_url": "https://pump.fun/",
-    "chart_page": "https://dexscreener.com/solana",
-    "chart_embed": "https://dexscreener.com/solana?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=1&chartType=usd&interval=15",
+    "buy_url": "https://pump.fun/coin/C5jaQ3sUjdKJLcyTS4tSnmj2PsiXkYWZXyA3gxm3pump",
+    "chart_page": "https://dexscreener.com/solana/C5jaQ3sUjdKJLcyTS4tSnmj2PsiXkYWZXyA3gxm3pump",
+    "chart_embed": "https://dexscreener.com/solana/C5jaQ3sUjdKJLcyTS4tSnmj2PsiXkYWZXyA3gxm3pump?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=1&chartType=usd&interval=15",
     "chain_name": "Solana"
   },
   "site_slug": "aaa",
   "project_id": "pmwfbx3exsojob",
-  "exported_at": "2026-11-13T19:46:06.356Z",
+  "exported_at": "2026-11-13T19:53:48.587Z",
   "make_videos": false,
   "videos": []
 }
