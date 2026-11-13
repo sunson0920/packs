@@ -2,7 +2,7 @@
   "format": "meme-site-studio/site@1",
   "name": "你好パンチ",
   "ticker": "punchhao",
-  "template": "c22-godfather",
+  "template": "c38-ocicat",
   "domain": "nihaopunch.lol",
   "ca": "TBA",
   "chain": "solana",
@@ -10,7 +10,7 @@
   "theme_preset": "",
   "theme_primary": "#9945ff",
   "theme_secondary": "#14f195",
-  "domain_status": "dns",
+  "domain_status": "live",
   "dns_records": [
     {
       "type": "A",
@@ -59,7 +59,7 @@
   },
   "site_slug": "aaa",
   "project_id": "pmwfbx3exsojob",
-  "exported_at": "2026-11-13T19:41:04.329Z",
+  "exported_at": "2026-11-13T19:46:06.356Z",
   "make_videos": false,
   "videos": []
 }
