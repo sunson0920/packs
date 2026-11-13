@@ -35,7 +35,7 @@
   "dexs_url": "",
   "supply": "",
   "tax": "",
-  "lp": "",
+  "lp": "canonical PumpSwap LP mint supply 0 on 2026-11-13; other markets not included",
   "dex": "pumpfun",
   "dex_auto": false,
   "dex_name": "Pump.fun",
@@ -44,8 +44,11 @@
   "vercel_a": "",
   "vercel_cname": "",
   "logo": "assets/logo.png",
-  "banner": "assets/banner.webp",
-  "images": [],
+  "banner": "assets/banner.png",
+  "images": [
+    "assets/memes/kungfu-courtyard.png",
+    "assets/memes/neon-arcade.png"
+  ],
   "characters": [],
   "backgrounds": [],
   "resolved": {
