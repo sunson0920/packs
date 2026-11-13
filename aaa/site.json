@@ -1,7 +1,7 @@
 {
   "format": "meme-site-studio/site@1",
-  "name": "aaa",
-  "ticker": "aaa",
+  "name": "你好パンチ",
+  "ticker": "punchhao",
   "template": "c22-godfather",
   "domain": "nihaopunch.lol",
   "ca": "TBA",
@@ -10,7 +10,7 @@
   "theme_preset": "",
   "theme_primary": "#9945ff",
   "theme_secondary": "#14f195",
-  "domain_status": "live",
+  "domain_status": "dns",
   "dns_records": [
     {
       "type": "A",
@@ -26,8 +26,8 @@
     }
   ],
   "tagline": "",
-  "about": "",
-  "x_url": "",
+  "about": "你好パンチ",
+  "x_url": "https://x.com/nihaopunch",
   "tg_url": "",
   "ref_x_url": "",
   "socials": [],
@@ -59,7 +59,7 @@
   },
   "site_slug": "aaa",
   "project_id": "pmwfbx3exsojob",
-  "exported_at": "2026-11-13T19:40:17.871Z",
+  "exported_at": "2026-11-13T19:41:04.329Z",
   "make_videos": false,
   "videos": []
 }
