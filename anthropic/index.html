@@ -4,120 +4,110 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <!--
-  Original observatory page for anthropic/ only.
-  Artwork slots, filled when the generated files arrive:
-    assets/art/hall.webp     3:1 architecture
-    assets/art/lantern.webp  16:9 landscape
-    assets/art/core.webp     square neural core
+  Logo-led community page. Two pictures are reserved and must be the supplied files:
+    assets/art/markets-hero.webp
+    assets/art/ipo-concept.webp
   Contract: 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985
 -->
-<title>ANT — the observatory</title>
-<meta name="description" content="An independent community page for the ANT token. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. Not the AI company.">
-<meta property="og:title" content="ANT — the observatory">
-<meta property="og:description" content="Independent community page. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985.">
-<meta property="og:image" content="assets/art/hall.webp">
+<title>ANT — a community mark</title>
+<meta name="description" content="Independent community page for the ANT token. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. The market pictures are a concept, not a listing.">
+<meta property="og:title" content="ANT — a community mark">
+<meta property="og:description" content="Independent community token page. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985.">
+<meta property="og:image" content="assets/logo.png">
 <meta property="og:url" content="https://anthropicant.si/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://anthropicant.si/">
 <link rel="icon" href="assets/logo.png">
-<meta name="theme-color" content="#070b18">
+<meta name="theme-color" content="#f6f1e7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,600;1,9..144,460&family=Outfit:wght@360;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,460;0,6..72,560;1,6..72,460&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js");</script>
 <style>
 :root{
-  --night:#070b18;
-  --indigo:#12183a;
-  --indigo-2:#1a2250;
-  --ivory:#fff9cf;
-  --ivory-dim:#e7d7b4;
-  --copper:#d69d5a;
-  --amber:#e6ac6d;
-  --line:rgba(244,239,228,.14);
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Outfit",system-ui,sans-serif;
+  --paper:#f6f1e7;
+  --paper-2:#efe7d8;
+  --ink:#1c1916;
+  --muted:#5c564e;
+  --terra:#9a4330;
+  --line:rgba(28,25,22,.14);
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"Source Sans 3",system-ui,sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-html,body{margin:0;overflow-x:clip;background:var(--night);color:var(--ivory)}
-body{font:360 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+html,body{margin:0;overflow-x:clip;background:var(--paper);color:var(--ink)}
+body{font:400 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-h1,h2,h3,p,figure{margin:0}
-p,.lede,figcaption{overflow-wrap:anywhere}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.skip{position:absolute;left:12px;top:-48px;z-index:20;background:var(--ivory);color:var(--night);padding:10px 14px;text-decoration:none}
+h1,h2,p,figure{margin:0}
+p,figcaption,dd{overflow-wrap:anywhere}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-48px;z-index:20;background:var(--ink);color:var(--paper);padding:10px 14px;text-decoration:none}
 .skip:focus{top:12px}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.addr{font-variant-numeric:tabular-nums;letter-spacing:0;overflow-wrap:anywhere;word-break:break-all}
-.progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--copper),var(--amber));z-index:30;transform-origin:left}
+.addr{letter-spacing:0;overflow-wrap:anywhere;word-break:break-all;font-variant-numeric:tabular-nums}
+.rule{height:1px;background:var(--line);border:0;margin:0}
 
-.topbar{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:28px clamp(20px,4vw,64px) 18px;border-bottom:1px solid var(--line)}
-.seal{display:flex;align-items:center;gap:14px;text-decoration:none}
-.seal img{width:42px;height:42px;border-radius:2px}
-.seal strong{display:block;font-family:var(--serif);font-weight:460;font-size:28px;letter-spacing:-.03em;line-height:1}
-.seal small{display:block;margin-top:4px;color:var(--ivory-dim);letter-spacing:.16em;text-transform:uppercase;font-size:11px}
-.index{display:flex;flex-wrap:wrap;gap:8px 22px}
-.index a{text-decoration:none;color:var(--ivory-dim);min-height:44px;display:inline-flex;align-items:center}
-.index a:hover,.index a[aria-current="true"]{color:var(--amber)}
+.bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--terra);z-index:30}
+.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px clamp(18px,4vw,56px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:44px;height:44px}
+.brand strong{font-family:var(--serif);font-weight:560;font-size:26px;letter-spacing:-.03em}
+.nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.nav a{text-decoration:none;color:var(--muted);min-height:44px;display:inline-flex;align-items:center}
+.nav a:hover,.nav a[aria-current="true"]{color:var(--terra)}
 
-.hall{position:relative;background:#101733}
-.hall-media{display:block;width:100%}
-.hall-media img{width:100%;height:auto;object-fit:contain;object-position:center}
-.hall-copy{position:absolute;z-index:2;left:clamp(20px,4vw,72px);top:50%;transform:translateY(-50%);width:min(34%,460px)}
-.kicker{color:var(--amber);letter-spacing:.18em;text-transform:uppercase;font-size:12px;margin-bottom:14px}
-.hall h1{font-family:var(--serif);font-weight:460;font-size:clamp(40px,4.2vw,72px);line-height:.92;letter-spacing:-.035em}
-.hall h1 em{font-style:italic;font-weight:460;color:var(--amber)}
-.hall .lede{margin-top:14px;max-width:32ch;color:#f3e6c4;font-size:clamp(16px,1.4vw,19px)}
-.hall-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;text-decoration:none;border:1px solid var(--copper);color:var(--night);background:var(--amber)}
-.btn.quiet{background:transparent;color:var(--ivory);border-color:var(--line)}
+.hero{position:relative;background:#f3eee6}
+.hero-art{margin:0}
+.hero-art img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#f3eee6}
+.hero-copy{position:absolute;z-index:2;left:clamp(18px,3.5vw,56px);top:50%;transform:translateY(-50%);width:min(32%,420px)}
+.mark{width:72px;height:72px;background:#f3eee6}
+.kicker{color:var(--terra);letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600;margin:18px 0 10px}
+h1{font-family:var(--serif);font-weight:460;font-size:clamp(44px,5vw,78px);line-height:.94;letter-spacing:-.03em}
+h1 em{font-style:italic;color:var(--terra)}
+.lede{margin-top:14px;max-width:38ch;color:var(--muted);font-size:19px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;text-decoration:none;background:var(--ink);color:var(--paper)}
+.btn.quiet{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn img{width:18px;height:18px;border-radius:50%;background:#fff}
-.plate{position:relative;min-width:0}
-.plate figcaption{margin-top:12px;color:var(--ivory-dim);font-size:13px;letter-spacing:.04em}
-.frame{position:relative;background:#101733}
-.frame img{width:100%;height:auto;object-fit:contain}
-.chapter{font-family:var(--serif);font-weight:460;font-size:clamp(36px,4vw,64px);line-height:.95;letter-spacing:-.03em}
-.chapter em{font-style:italic;color:var(--amber)}
+.hero-art{min-width:0}
+.hero-art img,.study img{width:100%;height:auto;object-fit:contain;background:var(--paper-2)}
+.hero-art figcaption,.study figcaption{margin-top:10px;color:var(--muted);font-size:13px}
 
-.nave{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(72px,10vw,130px) clamp(20px,4vw,64px);background:#0c1228}
-.nave .frame img{width:100%;height:auto}
-.nave p,.core p{margin-top:16px;color:var(--ivory-dim);max-width:36ch}
+.band,.study,.ledger{padding:clamp(56px,8vw,100px) clamp(18px,4vw,56px)}
+.band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);background:var(--paper-2)}
+.band h2{font-family:var(--serif);font-weight:460;font-size:28px;letter-spacing:-.02em;margin-bottom:8px}
+.band p{color:var(--muted)}
 
-.core{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(72px,10vw,130px) clamp(20px,4vw,64px)}
-.core .frame{width:min(100%,640px)}
-.core .frame img{width:100%;height:auto}
-.ledger{padding:clamp(72px,10vw,120px) clamp(20px,4vw,64px)}
+.study{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:clamp(24px,4vw,64px);align-items:center;border-top:1px solid var(--line)}
+.study img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#f3eee6}
+.study h2{font-family:var(--serif);font-weight:460;font-size:clamp(36px,4vw,60px);line-height:.96;letter-spacing:-.03em}
+.note{margin-top:14px;color:var(--muted);max-width:46ch}
+.aside{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
 
 .ledger{border-top:1px solid var(--line)}
-.ledger h2{font-family:var(--serif);font-weight:460;font-size:clamp(40px,5vw,72px);letter-spacing:-.03em;line-height:.95}
-.rows{margin-top:28px;border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:160px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:start}
-.row dt{color:var(--amber);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.ledger h2{font-family:var(--serif);font-weight:460;font-size:clamp(36px,4vw,58px);letter-spacing:-.03em}
+.rows{margin-top:22px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.row dt{color:var(--terra);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
 .row dd{margin:0;min-width:0}
-.copy{min-height:44px;margin-top:10px;padding:0 14px;border:1px solid var(--amber);color:var(--ivory)}
-.copy:hover{background:var(--amber);color:var(--night)}
+.copy{min-height:44px;margin-top:10px;padding:0 14px;border:1px solid var(--ink)}
+.copy:hover{background:var(--ink);color:var(--paper)}
+.foot{padding:24px clamp(18px,4vw,56px) 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.foot p{max-width:76ch}
 
-.colophon{padding:28px clamp(20px,4vw,64px) 48px;color:var(--ivory-dim);font-size:14px;border-top:1px solid var(--line)}
-.colophon p{max-width:78ch}
-
-#toast{position:fixed;left:16px;right:16px;bottom:16px;margin-inline:auto;max-width:640px;background:var(--ivory);color:var(--night);padding:12px 14px;transform:translateY(140%);transition:transform .35s var(--ease);z-index:40;overflow-wrap:anywhere}
+#toast{position:fixed;left:16px;right:16px;bottom:16px;margin:0 auto;max-width:680px;background:var(--ink);color:var(--paper);padding:12px 14px;transform:translateY(160%);transition:transform .35s var(--ease);z-index:40;overflow-wrap:anywhere}
 #toast.show{transform:none}
-
-.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:no-preference){
-  .hall-media{animation:arrive 1.2s var(--ease) both}
-  @keyframes arrive{from{opacity:0}to{opacity:1}}
-}
 @media (max-width:860px){
-  .nave,.core,.row{grid-template-columns:1fr}
-  .topbar{align-items:flex-start;flex-direction:column}
-  .hall-copy{position:relative;left:auto;top:auto;transform:none;width:auto;padding:28px 20px 40px}
-  .core .frame{width:min(100%,520px);margin-inline:auto}
+  .study,.band,.row{grid-template-columns:1fr}
+  .top{align-items:flex-start;flex-direction:column}
+  .hero-copy{position:relative;left:auto;top:auto;transform:none;width:auto;padding:28px 18px 8px}
+  .mark{width:64px;height:64px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -127,100 +117,91 @@ p,.lede,figcaption{overflow-wrap:anywhere}
 </style>
 </head>
 <body>
-<a class="skip" href="#hall">Skip to content</a>
-<div class="progress" id="progress" aria-hidden="true"></div>
-<header class="topbar">
-  <a class="seal" href="#hall"><img src="assets/logo.png" width="400" height="400" alt=""><span><strong>ANT</strong><small>Observatory</small></span></a>
-  <nav class="index" aria-label="Chambers">
-    <a href="#nave">Nave</a>
-    <a href="#core">Core</a>
-    <a href="#ledger">Ledger</a>
+<a class="skip" href="#hero">Skip to content</a>
+<div class="bar" id="bar" aria-hidden="true"></div>
+<header class="top">
+  <a class="brand" href="#hero"><img src="assets/logo.png" width="400" height="400" alt=""><strong>ANT</strong></a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#idea">Idea</a>
+    <a href="#concept">Concept</a>
+    <a href="#ledger">Token</a>
   </nav>
 </header>
 <main>
-  <section class="hall" id="hall">
-    <picture class="hall-media">
-      <source media="(max-width: 860px)" srcset="assets/art/hall-tall.webp" type="image/webp">
-      <img src="assets/art/hall.webp" width="1280" height="427" alt="A computational cathedral of indigo basalt and smoked glass, its nave lit ivory and traced in copper. The left of the frame is open night sky.">
-    </picture>
-    <div class="hall-copy">
-      <p class="kicker">The observatory</p>
-      <h1>A hall of <em>basalt</em> and warm glass.</h1>
-      <p class="lede">An independent room for the ANT token. The vault stays lit. The contract is one line in the ledger.</p>
-      <div class="hall-actions">
+  <section class="hero" id="hero">
+    <figure class="hero-art">
+      <img src="assets/art/markets-hero.webp" width="1280" height="720" alt="Cream wall and copper glass, with the community lettermark standing clear on the right. The left of the picture is open for type.">
+    </figure>
+    <div class="hero-copy">
+      <img class="mark" src="assets/logo.png" width="400" height="400" alt="The community lettermark.">
+      <p class="kicker">Community token</p>
+      <h1>The mark, beside a <em>market</em> idea.</h1>
+      <p class="lede">ANT is an independent community token. The picture is a study, not a notice that a company has listed.</p>
+      <div class="actions">
         <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" alt="">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
-        <a class="btn quiet" href="#ledger">Read the ledger</a>
+        <a class="btn quiet" href="#ledger">Contract</a>
       </div>
     </div>
   </section>
 
-  <section class="nave" id="nave">
-    <figure class="plate reveal">
-      <div class="frame">
-        <img src="assets/art/lantern.webp" width="1280" height="720" alt="A rain-wet basalt terrace above a terraced computational valley, with ivory light pools and a copper-lit door.">
-      </div>
-      <figcaption>The lantern field.</figcaption>
-    </figure>
-    <div class="reveal">
-      <p class="kicker">First chamber</p>
-      <h2 class="chapter">Light kept at <em>architectural</em> distance.</h2>
-      <p>The picture is the subject. The words stay beside it. Nothing here is a filing, a listing, or a promise about price.</p>
-    </div>
+  <section class="band" id="idea">
+    <article class="reveal"><h2>Language</h2><p>Models, papers, and tools are the ordinary subject of an AI company. This page does not describe those products as its own.</p></article>
+    <article class="reveal"><h2>Markets</h2><p>A public listing is a picture here: type, paper, and a floor. No price, date, or filing is stated.</p></article>
+    <article class="reveal"><h2>The token</h2><p>The contract is separate from that picture. It is one Ethereum address, copied exactly.</p></article>
   </section>
 
-  <section class="core" id="core">
-    <figure class="plate reveal">
-      <div class="frame">
-        <img src="assets/art/core.webp" width="1024" height="1024" alt="A square sculpture: an ivory crystal heart in copper filigree, held by basalt rings set with lapis.">
-      </div>
-      <figcaption>The core, kept square.</figcaption>
+  <section class="study" id="concept">
+    <figure class="reveal">
+      <img src="assets/art/ipo-concept.webp" width="1280" height="720" alt="The community lettermark on a stone plinth in a cream and copper room. Letters on the plinth mark the picture as a concept of a public offering.">
+      <figcaption>A study of a listing. Not evidence that one has happened.</figcaption>
     </figure>
     <div class="reveal">
-      <p class="kicker">Inner chamber</p>
-      <h2 class="chapter">A sculpture, <em>not</em> a seal of office.</h2>
-      <p>The mark on this site is a community token called ANT. It does not speak for Anthropic, the laboratory, or for Claude.</p>
+      <p class="kicker">Concept, not a listing</p>
+      <h2>An idea of going public, kept apart from the token.</h2>
+      <p class="note">Nothing in this section is a prospectus, a valuation, a timetable, or a share. The community token does not become equity because a picture suggests a market.</p>
+      <p class="aside">ANT on this page is not Anthropic PBC and not Claude. Holding the token is not ownership of a company.</p>
     </div>
   </section>
 
   <section class="ledger" id="ledger">
-    <p class="kicker">The ledger</p>
-    <h2>One address. Nothing invented beside it.</h2>
+    <p class="kicker">Token record</p>
+    <h2>The address, without invented figures.</h2>
     <dl class="rows">
-      <div class="row"><dt>Name</dt><dd>Anthropic, used here as a community nickname</dd></div>
+      <div class="row"><dt>Name</dt><dd>Anthropic, as a community nickname</dd></div>
       <div class="row"><dt>Ticker</dt><dd>$ANT</dd></div>
       <div class="row"><dt>Chain</dt><dd>Ethereum</dd></div>
       <div class="row"><dt>Contract</dt><dd>
         <span class="addr" id="ca">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span>
         <button class="copy" type="button" data-copy="0x0b84cd2a58159057fe71a1a9438a72c5c97ab985">Copy address</button>
       </dd></div>
-      <div class="row"><dt>Uniswap</dt><dd><a href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token as output currency<span class="sr"> (opens in a new tab)</span></a></dd></div>
+      <div class="row"><dt>Uniswap</dt><dd><a href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Output currency is this address<span class="sr"> (opens in a new tab)</span></a></dd></div>
       <div class="row"><dt>Dexscreener</dt><dd><a href="https://dexscreener.com/ethereum/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token page<span class="sr"> (opens in a new tab)</span></a></dd></div>
       <div class="row"><dt>Etherscan</dt><dd><a href="https://etherscan.io/token/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token page<span class="sr"> (opens in a new tab)</span></a></dd></div>
       <div class="row"><dt>X</dt><dd><a href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">https://x.com/anthropiconeth<span class="sr"> (opens in a new tab)</span></a></dd></div>
     </dl>
-    <p class="lede" style="margin-top:18px;color:var(--ivory-dim)">Supply, tax, and liquidity are not stated. Copy writes the address exactly. This is not an offer and not a share of any company.</p>
+    <p class="note">Supply, tax, and liquidity are not stated.</p>
   </section>
 </main>
-<footer class="colophon">
-  <p>© <span id="year"></span> ANT community page. Independent of Anthropic PBC and Claude. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. Cryptocurrency can go to zero.</p>
+<footer class="foot">
+  <p>© <span id="year"></span> ANT community page. Independent of Anthropic PBC and Claude. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. The pictures are a concept, not a listing and not a claim of company ownership. Cryptocurrency can go to zero.</p>
 </footer>
 <div id="toast" role="status" aria-live="polite"></div>
 <script>
 (function(){
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var year = document.getElementById("year");
-  if (year) year.textContent = String(new Date().getFullYear());
-  var bar = document.getElementById("progress");
+  var y = document.getElementById("year");
+  if (y) y.textContent = String(new Date().getFullYear());
+  var bar = document.getElementById("bar");
   function onScroll(){
     var max = document.documentElement.scrollHeight - innerHeight;
-    if (bar) bar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + "%";
-    var current = "";
-    ["nave","core","ledger"].forEach(function(id){
+    if (bar) bar.style.width = (max>0 ? scrollY/max*100 : 0) + "%";
+    var cur = "";
+    ["idea","concept","ledger"].forEach(function(id){
       var el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top < innerHeight * 0.45) current = id;
+      if (el && el.getBoundingClientRect().top < innerHeight*0.45) cur = id;
     });
-    document.querySelectorAll(".index a").forEach(function(a){
-      a.setAttribute("aria-current", a.getAttribute("href") === "#" + current ? "true" : "false");
+    document.querySelectorAll(".nav a").forEach(function(a){
+      a.setAttribute("aria-current", a.getAttribute("href")==="#"+cur ? "true" : "false");
     });
   }
   onScroll();
@@ -229,24 +210,24 @@ p,.lede,figcaption{overflow-wrap:anywhere}
   if (reduce || !("IntersectionObserver" in window)) nodes.forEach(function(n){n.classList.add("in");});
   else {
     var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
-    }, {threshold:0.18});
-    nodes.forEach(function(n){ io.observe(n); });
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+    },{threshold:.16});
+    nodes.forEach(function(n){io.observe(n);});
   }
-  var toast = document.getElementById("toast"), timer = 0;
-  function say(m){ toast.textContent = m; toast.classList.add("show"); clearTimeout(timer); timer = setTimeout(function(){ toast.classList.remove("show"); }, 2600); }
+  var toast = document.getElementById("toast"), timer=0;
+  function say(m){ toast.textContent=m; toast.classList.add("show"); clearTimeout(timer); timer=setTimeout(function(){toast.classList.remove("show");},2600); }
   document.querySelectorAll("[data-copy]").forEach(function(btn){
     btn.addEventListener("click", function(){
-      var text = btn.getAttribute("data-copy") || "";
-      function done(){ say("Copied " + text); }
+      var text = btn.getAttribute("data-copy")||"";
+      function done(){ say("Copied "+text); }
       function fallback(){
-        var area = document.createElement("textarea");
-        area.value = text; area.setAttribute("readonly","");
-        area.style.position = "fixed"; area.style.left = "0"; area.style.top = "0";
+        var area=document.createElement("textarea");
+        area.value=text; area.setAttribute("readonly","");
+        area.style.position="fixed"; area.style.left="0"; area.style.top="0";
         document.body.appendChild(area); area.focus(); area.select();
-        var ok = false; try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        var ok=false; try{ ok=document.execCommand("copy"); }catch(e){ ok=false; }
         area.remove();
-        if (ok) done(); else say("Address: " + text);
+        if(ok) done(); else say("Address: "+text);
       }
       if (navigator.clipboard && isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
       else fallback();
