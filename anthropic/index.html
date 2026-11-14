@@ -60,8 +60,11 @@ p,figcaption,dd{overflow-wrap:anywhere}
 .nav a{text-decoration:none;color:var(--muted);min-height:44px;display:inline-flex;align-items:center}
 .nav a:hover,.nav a[aria-current="true"]{color:var(--terra)}
 
-.hero{display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);gap:clamp(20px,3vw,48px);align-items:center;padding:clamp(28px,5vw,64px) clamp(18px,4vw,56px) clamp(36px,6vw,80px)}
-.mark{width:min(280px,70%);height:auto;background:#f3eee6}
+.hero{position:relative;background:#f3eee6}
+.hero-art{margin:0}
+.hero-art img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#f3eee6}
+.hero-copy{position:absolute;z-index:2;left:clamp(18px,3.5vw,56px);top:50%;transform:translateY(-50%);width:min(32%,420px)}
+.mark{width:72px;height:72px;background:#f3eee6}
 .kicker{color:var(--terra);letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600;margin:18px 0 10px}
 h1{font-family:var(--serif);font-weight:460;font-size:clamp(44px,5vw,78px);line-height:.94;letter-spacing:-.03em}
 h1 em{font-style:italic;color:var(--terra)}
@@ -79,7 +82,8 @@ h1 em{font-style:italic;color:var(--terra)}
 .band h2{font-family:var(--serif);font-weight:460;font-size:28px;letter-spacing:-.02em;margin-bottom:8px}
 .band p{color:var(--muted)}
 
-.study{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:clamp(24px,4vw,64px);align-items:center;border-top:1px solid var(--line)}
+.study{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:clamp(24px,4vw,64px);align-items:center;border-top:1px solid var(--line)}
+.study img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#f3eee6}
 .study h2{font-family:var(--serif);font-weight:460;font-size:clamp(36px,4vw,60px);line-height:.96;letter-spacing:-.03em}
 .note{margin-top:14px;color:var(--muted);max-width:46ch}
 .aside{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
@@ -100,9 +104,10 @@ h1 em{font-style:italic;color:var(--terra)}
 .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}
 @media (max-width:860px){
-  .hero,.study,.band,.row{grid-template-columns:1fr}
+  .study,.band,.row{grid-template-columns:1fr}
   .top{align-items:flex-start;flex-direction:column}
-  .mark{width:min(200px,56%)}
+  .hero-copy{position:relative;left:auto;top:auto;transform:none;width:auto;padding:28px 18px 8px}
+  .mark{width:64px;height:64px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -124,20 +129,19 @@ h1 em{font-style:italic;color:var(--terra)}
 </header>
 <main>
   <section class="hero" id="hero">
-    <div>
-      <img class="mark" src="assets/logo.png" width="400" height="400" alt="Black lettermark on a warm ground, the mark used by this community page.">
+    <figure class="hero-art">
+      <img src="assets/art/markets-hero.webp" width="1280" height="720" alt="Cream wall and copper glass, with the community lettermark standing clear on the right. The left of the picture is open for type.">
+    </figure>
+    <div class="hero-copy">
+      <img class="mark" src="assets/logo.png" width="400" height="400" alt="The community lettermark.">
       <p class="kicker">Community token</p>
-      <h1>The mark, set beside a <em>market</em> idea.</h1>
-      <p class="lede">ANT is an independent community token. The wide picture is a visual study of an AI company and a public listing. It is not that company, and it is not a notice that a listing has occurred.</p>
+      <h1>The mark, beside a <em>market</em> idea.</h1>
+      <p class="lede">ANT is an independent community token. The picture is a study, not a notice that a company has listed.</p>
       <div class="actions">
         <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" alt="">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
         <a class="btn quiet" href="#ledger">Contract</a>
       </div>
     </div>
-    <figure class="hero-art reveal">
-      <img src="assets/art/markets-hero.webp" width="1600" height="900" alt="Wide picture led by the community mark: an abstract study of an AI company and capital markets.">
-      <figcaption>Concept picture. Not an announcement.</figcaption>
-    </figure>
   </section>
 
   <section class="band" id="idea">
@@ -148,7 +152,7 @@ h1 em{font-style:italic;color:var(--terra)}
 
   <section class="study" id="concept">
     <figure class="reveal">
-      <img src="assets/art/ipo-concept.webp" width="1600" height="1000" alt="Secondary concept picture of a public offering, kept apart from the token contract.">
+      <img src="assets/art/ipo-concept.webp" width="1280" height="720" alt="The community lettermark on a stone plinth in a cream and copper room. Letters on the plinth mark the picture as a concept of a public offering.">
       <figcaption>A study of a listing. Not evidence that one has happened.</figcaption>
     </figure>
     <div class="reveal">
