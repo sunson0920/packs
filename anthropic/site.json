@@ -10,7 +10,7 @@
   "theme_preset": "mint-pastel",
   "theme_primary": "#6ee7b7",
   "theme_secondary": "#a7f3d0",
-  "domain_status": "not_connected",
+  "domain_status": "live",
   "dns_records": [
     {
       "type": "A",
@@ -59,7 +59,7 @@
   },
   "site_slug": "anthropic",
   "project_id": "pmwfnsf9j9avp3",
-  "exported_at": "2026-11-14T00:50:56.988Z",
+  "exported_at": "2026-11-14T01:03:12.608Z",
   "make_videos": false,
   "videos": []
 }
