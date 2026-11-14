@@ -2,479 +2,309 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <!--
-  Hand-edited editorial page for anthropic/ only.
-  Preserved record: name Anthropic, ticker ANT, chain Ethereum, contract TBA.
+  Hand-edited page for anthropic/ only.
+  Record: name Anthropic, ticker ANT, chain Ethereum, contract TBA.
   Links: https://app.uniswap.org/ · https://dexscreener.com/ethereum · https://x.com/anthropiconeth
-  Independent community page. Artwork is not a listing, filing, or valuation.
+  Independent community page. Not a company filing.
 -->
 <title>ANT ($ANT) — independent community token</title>
-<meta name="description" content="ANT is an independent community meme token on Ethereum. The contract address on this page is TBA. Not affiliated with Anthropic, the AI company. Not a listing and not an offer.">
+<meta name="description" content="ANT is an independent community meme token on Ethereum. The contract on this page is TBA. Not affiliated with Anthropic, the AI company.">
 <meta property="og:title" content="ANT ($ANT)">
-<meta property="og:description" content="An independent community token on Ethereum. Contract TBA. Not the AI company.">
+<meta property="og:description" content="An independent community token on Ethereum. Contract TBA.">
 <meta property="og:image" content="assets/logo.png">
 <meta property="og:url" content="https://anthropicant.si/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://anthropicant.si/">
 <link rel="icon" href="assets/logo.png">
-<meta name="theme-color" content="#f3eee4">
+<meta name="theme-color" content="#141413">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,520;0,9..144,640;1,9..144,520&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js");</script>
 <style>
   :root {
-    --paper: #f3eee4;
-    --paper-deep: #e7e0d2;
-    --sheet: #faf7f1;
-    --ink: #221e1a;
+    --ivory: #f0eee6;
+    --ivory-2: #e6e2d6;
+    --sheet: #f7f5ef;
+    --ink: #141413;
+    --ink-2: #2a2826;
     --soft: #5c564c;
-    --line: rgba(34, 30, 26, 0.14);
-    --terra: #9a3f2a;
-    --shadow: 0 22px 48px rgba(48, 34, 20, 0.12);
-    --serif: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
-    --sans: "Source Sans 3", "Segoe UI", sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-    --header: 76px;
+    --terra: #d97757;
+    --terra-deep: #9a3f2a;
+    --line: rgba(20, 20, 19, 0.14);
+    --line-light: rgba(240, 238, 230, 0.16);
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "Inter Tight", "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
     --ease: cubic-bezier(.16, 1, .3, 1);
+    --pad: clamp(16px, 4vw, 40px);
   }
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header) + 12px); }
-  html, body { margin: 0; overflow-x: clip; background: var(--paper); color: var(--ink); }
-  body {
-    font: 400 18px/1.6 var(--sans);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  html, body { margin: 0; overflow-x: clip; background: var(--ivory); color: var(--ink); }
+  body { font: 400 18px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
   img { max-width: 100%; display: block; }
   a { color: inherit; }
-  button, summary { font: inherit; color: inherit; }
+  button { font: inherit; color: inherit; }
   h1, h2, h3, p, figure { margin: 0; }
-  h1, h2, h3 { font-family: var(--serif); font-weight: 520; letter-spacing: -0.03em; line-height: 1.02; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.03em; line-height: 0.96; }
   p { max-width: 62ch; }
-  :focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; }
-  .skip {
-    position: absolute; left: 12px; top: -48px; z-index: 50;
-    background: var(--ink); color: var(--paper); padding: 10px 14px; text-decoration: none;
-  }
+  :focus-visible { outline: 2px solid var(--terra-deep); outline-offset: 3px; }
+  .skip { position: absolute; left: 12px; top: -48px; z-index: 80; background: var(--ink); color: var(--ivory); padding: 10px 14px; text-decoration: none; }
   .skip:focus { top: 12px; }
-  .sr-only {
-    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
-  }
-  .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
-  .kicker {
-    font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--terra); margin: 0 0 16px;
-  }
-  .lede { color: var(--soft); font-size: 19px; line-height: 1.55; margin-top: 18px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .wrap { width: min(1120px, calc(100% - 2 * var(--pad))); margin-inline: auto; }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .label { display: inline-flex; align-items: center; gap: 8px; color: var(--terra-deep); }
+  .label .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terra); box-shadow: 0 0 0 4px rgba(217, 119, 87, 0.18); }
+  .dark .label { color: var(--terra); }
+  h2 { font-size: clamp(40px, 6vw, 84px); }
+  h2 em, .hero-tag em { font-style: italic; color: var(--terra-deep); }
+  .dark h2 em { color: var(--terra); }
 
-  .site-header {
-    position: sticky; top: 0; z-index: 30; min-height: var(--header);
-    display: flex; align-items: center; gap: 18px;
-    padding: 12px 24px; background: color-mix(in srgb, var(--paper) 86%, transparent);
-    backdrop-filter: blur(12px); border-bottom: 1px solid transparent;
+  .nav-shell { position: sticky; top: 0; z-index: 40; padding: 12px 0 10px; background: rgba(240, 238, 230, 0.94); backdrop-filter: blur(12px); }
+  .nav {
+    width: min(1120px, calc(100% - 24px));
+    margin: 0 auto; display: flex; align-items: center; gap: 16px;
+    padding: 8px 8px 8px 12px; border-radius: 999px;
+    background: rgba(20, 20, 19, 0.88); color: var(--ivory);
+    border: 1px solid rgba(240, 238, 230, 0.12); backdrop-filter: blur(14px);
   }
-  .site-header.is-stuck { border-bottom-color: var(--line); }
   .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 0; }
-  .brand img { width: 36px; height: 36px; object-fit: cover; border-radius: 2px; }
-  .brand-name { font-family: var(--serif); font-size: 22px; letter-spacing: -0.03em; line-height: 1; }
-  .brand-name small { display: block; margin-top: 3px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--soft); }
-  .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; margin-left: auto; }
-  .nav-links a {
-    text-decoration: none; font-size: 15px; color: var(--soft); min-height: 44px;
-    display: inline-flex; align-items: center; border-bottom: 1px solid transparent;
-  }
-  .nav-links a:hover, .nav-links a[aria-current="true"] { color: var(--ink); border-bottom-color: var(--terra); }
-  .header-x {
-    text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; gap: 8px;
-    padding: 0 14px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper);
-  }
-  .header-x:hover { background: var(--terra); border-color: var(--terra); }
+  .brand img { width: 36px; height: 36px; border-radius: 50%; background: var(--terra); object-fit: cover; }
+  .brand span { font-family: var(--serif); font-size: 24px; line-height: 1; }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-left: auto; }
+  .nav-links a { text-decoration: none; font-size: 14px; opacity: 0.72; min-height: 40px; display: inline-flex; align-items: center; position: relative; }
+  .nav-links a:hover, .nav-links a[aria-current="true"] { opacity: 1; }
+  .nav-links a[aria-current="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 8px; height: 1px; background: var(--terra); }
+  .nav-x { text-decoration: none; min-height: 40px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 999px; background: var(--ivory); color: var(--ink); }
 
-  .hero { position: relative; padding: 36px 0 72px; isolation: isolate; }
-  .hero-grid {
-    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: clamp(28px, 4vw, 64px); align-items: center;
+  .hero { position: relative; min-height: 100svh; color: var(--ivory); background: radial-gradient(90% 70% at 72% 36%, #3a241c 0%, var(--ink) 58%); overflow: hidden; display: flex; align-items: flex-end; }
+  .net { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  .hero-grain { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.14; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mix-blend-mode: overlay; }
+  .hero-inner { position: relative; z-index: 2; width: min(1120px, calc(100% - 2 * var(--pad))); margin: 0 auto; padding: 120px 0 48px; }
+  .hero-top { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .hero-top .label { color: var(--terra); }
+  .word { display: flex; max-width: 100%; margin: 18px 0 20px; font-family: var(--serif); font-size: clamp(72px, 18vw, 220px); line-height: 0.82; letter-spacing: -0.04em; }
+  .hw { display: inline-block; overflow: hidden; padding-bottom: 0.08em; }
+  .hw span { display: block; }
+  .hero-bottom { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 28px; align-items: end; border-top: 1px solid var(--line-light); padding-top: 22px; }
+  .hero-tag { font-size: clamp(18px, 2vw, 24px); line-height: 1.35; max-width: 34ch; color: rgba(240, 238, 230, 0.88); }
+  .hero-tag em { color: var(--ivory); font-size: 1.15em; }
+  .hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-width: 0; }
+  .ca {
+    display: flex; align-items: center; gap: 10px; width: min(100%, 460px); min-height: 48px;
+    padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line-light); background: rgba(20, 20, 19, 0.35);
+    cursor: pointer; text-align: left;
   }
-  .hero h1 { font-size: clamp(46px, 6.2vw, 88px); font-weight: 640; max-width: 12ch; }
-  .hero h1 em { font-style: italic; font-weight: 520; color: var(--terra); }
-  .intro { display: block; }
-  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .ca b { font-family: var(--mono); font-weight: 500; letter-spacing: 0.08em; font-size: 13px; overflow-wrap: anywhere; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    min-height: 48px; padding: 12px 18px; text-decoration: none; border: 1px solid var(--ink);
-    background: var(--ink); color: var(--paper); cursor: pointer;
+    min-height: 48px; padding: 10px 16px; border-radius: 999px; text-decoration: none; border: 1px solid transparent;
+    background: var(--terra); color: var(--ink); font-weight: 600;
   }
-  .btn.ghost { background: transparent; color: var(--ink); }
-  .btn:hover { transform: translateY(-2px); }
+  .btn.ghost { background: transparent; color: var(--ivory); border-color: var(--line-light); }
   .btn img { width: 18px; height: 18px; border-radius: 50%; background: #fff; }
-  .facts {
-    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin-top: 32px; border-top: 1px solid var(--line);
-  }
-  .facts div { padding: 14px 12px 0 0; min-width: 0; }
-  .facts dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--soft); }
-  .facts dd { margin: 6px 0 0; font-family: var(--serif); font-size: 22px; }
+  .light .btn { background: var(--ink); color: var(--ivory); }
+  .light .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+  .fine { font-size: 13px; line-height: 1.45; color: rgba(240, 238, 230, 0.72); max-width: 46ch; }
+  .mark-float { position: absolute; right: 8%; top: 18%; z-index: 2; width: min(180px, 22vw); aspect-ratio: 1; border-radius: 50%; background: var(--terra); display: grid; place-items: center; box-shadow: 0 30px 50px -24px rgba(217, 119, 87, 0.7); }
+  .mark-float img { width: 68%; height: auto; }
 
-  .dust { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-  .hero-grid, .hero .wrap { position: relative; z-index: 1; }
+  .tape { overflow: hidden; border-block: 1px solid var(--line); background: var(--ivory-2); }
+  .tape-track { display: flex; gap: 2.5rem; width: max-content; padding: 14px 0; font-family: var(--serif); font-size: clamp(22px, 3vw, 34px); animation: tape 36s linear infinite; }
+  .tape-track span { white-space: nowrap; }
+  @keyframes tape { to { transform: translateX(-50%); } }
 
-  .diorama {
-    --px: 0; --py: 0;
-    position: relative; height: 560px; perspective: 1600px; perspective-origin: 50% 40%;
-    transform-style: preserve-3d;
-  }
-  .sheet, .mark-wrap { position: absolute; transform-style: preserve-3d; }
-  .sheet {
-    width: 62%; height: 42%; overflow: hidden; background: var(--sheet);
-    border: 1px solid var(--line); box-shadow: var(--shadow);
-  }
-  .sheet img { width: 100%; height: 100%; object-fit: cover; }
-  .sheet figcaption {
-    position: absolute; left: 10px; bottom: 8px; font-family: var(--mono); font-size: 10px;
-    letter-spacing: 0.12em; text-transform: uppercase; color: var(--paper);
-    background: rgba(34, 30, 26, 0.55); padding: 3px 6px;
-  }
-  .sheet-a { left: 8%; top: 8%; width: 54%; height: 38%; transform: rotateX(calc(16deg + var(--py) * -5deg)) rotateY(calc(-20deg + var(--px) * 7deg)) rotateZ(-6deg) translate3d(calc(var(--px) * -10px), calc(var(--py) * -8px), 12px); }
-  .sheet-b { right: 7%; top: 18%; width: 48%; height: 34%; transform: rotateX(calc(12deg + var(--py) * -4deg)) rotateY(calc(16deg + var(--px) * 6deg)) rotateZ(4deg) translate3d(calc(var(--px) * 10px), calc(var(--py) * -6px), 48px); }
-  .sheet-c { left: 16%; bottom: 8%; width: 50%; height: 30%; transform: rotateX(calc(18deg + var(--py) * -3deg)) rotateY(calc(-8deg + var(--px) * 5deg)) translate3d(calc(var(--px) * -6px), calc(var(--py) * 8px), 24px); }
-  .mark-wrap { width: min(220px, 42%); aspect-ratio: 1; left: 29%; top: 27%; transition: transform 0.45s var(--ease); }
-  .mark-card {
-    height: 100%; display: grid; place-items: center; padding: 18px; background: var(--sheet);
-    border: 1px solid rgba(34, 30, 26, 0.16);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 30px 50px rgba(48, 34, 20, 0.18);
-    transform: translateZ(120px) rotateX(calc(8deg + var(--py) * -4deg)) rotateY(calc(-14deg + var(--px) * 8deg));
-  }
-  .mark-card img { width: 78%; height: auto; }
-  .mark-card span {
-    position: absolute; left: 12px; bottom: 10px; font-family: var(--mono); font-size: 10px;
-    letter-spacing: 0.14em; text-transform: uppercase; color: var(--soft);
-  }
-  .ribbon {
-    position: absolute; width: 14px; height: 46%; right: 18%; top: 0;
-    background: linear-gradient(180deg, var(--terra), #c46a4e);
-    transform: rotateX(calc(18deg + var(--py) * -4deg)) rotateY(calc(8deg + var(--px) * 4deg)) translateZ(70px);
-    box-shadow: 4px 12px 18px rgba(154, 63, 42, 0.25);
-  }
+  section { padding: clamp(72px, 10vw, 120px) 0; }
+  .manifesto-grid { display: grid; grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.6fr); gap: clamp(24px, 4vw, 72px); align-items: start; }
+  .emblem { width: min(200px, 70%); aspect-ratio: 1; border-radius: 50%; background: var(--terra); display: grid; place-items: center; margin: 18px 0; }
+  .emblem img { width: 68%; height: auto; }
+  .manifesto-text { font-family: var(--serif); font-size: clamp(30px, 4.2vw, 64px); line-height: 1.05; letter-spacing: -0.02em; max-width: 18ch; }
+  .manifesto-text em { font-style: italic; color: var(--terra-deep); }
 
-  .band { border-block: 1px solid var(--line); padding: 22px 0; }
-  .band p {
-    max-width: none; font-family: var(--serif); font-size: clamp(22px, 3vw, 34px);
-    font-style: italic; font-weight: 520; line-height: 1.25; letter-spacing: -0.02em;
-  }
+  .track { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 36px; position: relative; }
+  .track::before { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 1px; background: var(--line); }
+  .step { position: relative; padding: 28px 16px 0 0; min-width: 0; }
+  .step::before { content: ""; position: absolute; left: 0; top: 0; width: 13px; height: 13px; border-radius: 50%; background: var(--ivory); border: 1px solid var(--terra-deep); }
+  .step h3 { font-size: clamp(26px, 2vw, 36px); margin: 8px 0 8px; }
+  .step p { font-size: 15px; color: var(--soft); }
 
-  section { padding: 96px 0; }
-  .section-head { max-width: 720px; margin-bottom: 40px; }
-  .section-head h2 { font-size: clamp(36px, 5vw, 64px); }
-  .split { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 48px; align-items: start; }
-  .essay p + p { margin-top: 16px; }
-  .rule-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-  .rule-list li { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-  .rule-list b { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; color: var(--terra); font-weight: 500; }
+  .ledger { border-top: 1px solid var(--line); margin-top: 28px; }
+  .row { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: center; }
+  .row dt { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); }
+  .row dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+  .ca-line { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .copy { min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--ink); background: transparent; cursor: pointer; }
+  .copy:hover { background: var(--ink); color: var(--ivory); }
+  .note { margin-top: 16px; color: var(--soft); font-size: 16px; }
 
-  .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-  .card {
-    background: var(--sheet); border: 1px solid var(--line); padding: 22px 18px 26px;
-    min-height: 220px; transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
-  }
-  .card strong { display: block; font-family: var(--serif); font-size: 28px; font-weight: 520; margin: 28px 0 10px; }
-  .card p { font-size: 16px; color: var(--soft); }
-  .card .idx { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--terra); }
+  .archive-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.7fr); gap: 16px; align-items: start; }
+  .frame, .plate { background: var(--sheet); border: 1px solid var(--line); padding: 12px; transition: transform 0.45s var(--ease); }
+  .frame img, .plate img { width: 100%; height: auto; }
+  .plate img { height: 110px; object-fit: cover; }
+  .frame figcaption, .plate figcaption { margin-top: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--soft); line-height: 1.45; }
+  .plates { display: grid; gap: 12px; }
 
-  .specimen { border: 1px solid var(--line); background: var(--sheet); }
-  .specimen-row {
-    display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 16px;
-    padding: 18px 22px; border-bottom: 1px solid var(--line); align-items: center;
-  }
-  .specimen-row:last-child { border-bottom: 0; }
-  .specimen-row dt { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); }
-  .specimen-row dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
-  .ca-line { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-  .copy {
-    min-height: 44px; padding: 8px 14px; border: 1px solid var(--ink); background: transparent; cursor: pointer;
-  }
-  .copy:hover { background: var(--ink); color: var(--paper); }
-  .note { margin-top: 18px; color: var(--soft); font-size: 16px; }
+  .site-footer { padding: 28px 0 64px; border-top: 1px solid var(--line); }
+  .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+  .footer-nav a { min-height: 44px; display: inline-flex; align-items: center; color: var(--soft); }
+  .legal { margin-top: 18px; font-size: 14px; color: var(--soft); max-width: 78ch; }
 
-  .archive-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr); gap: 22px; align-items: start; }
-  .frame {
-    background: var(--sheet); border: 1px solid var(--line); padding: 14px 14px 18px;
-    box-shadow: var(--shadow); transition: transform 0.5s var(--ease);
-    transform: perspective(1200px) rotateX(4deg) rotateY(-7deg);
-  }
-  .frame img { width: 100%; height: auto; }
-  .frame figcaption, .plate figcaption { margin-top: 10px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--soft); line-height: 1.45; }
-  .plates { display: grid; gap: 14px; }
-  .plate { border: 1px solid var(--line); background: var(--sheet); padding: 10px; transition: transform 0.45s var(--ease); }
-  .plate img { width: 100%; height: 120px; object-fit: cover; }
-
-  .closing { padding-top: 20px; }
-  .closing h2 { font-size: clamp(40px, 6vw, 76px); max-width: 14ch; }
-
-  .site-footer { padding: 28px 0 56px; border-top: 1px solid var(--line); }
-  .footer-row { display: flex; justify-content: space-between; gap: 24px; align-items: center; flex-wrap: wrap; }
-  .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
-  .footer-nav a { color: var(--soft); min-height: 44px; display: inline-flex; align-items: center; }
-  .legal { margin-top: 22px; font-size: 14px; line-height: 1.55; color: var(--soft); max-width: 78ch; }
-
-  #toast {
-    position: fixed; left: 50%; bottom: 20px; transform: translate(-50%, 140%);
-    background: var(--ink); color: var(--paper); padding: 12px 16px; max-width: min(420px, calc(100% - 32px));
-    font-size: 14px; z-index: 40; transition: transform 0.35s var(--ease);
-  }
+  #toast { position: fixed; left: 50%; bottom: 18px; transform: translate(-50%, 140%); background: var(--ink); color: var(--ivory); padding: 12px 16px; border-radius: 999px; max-width: min(440px, calc(100% - 24px)); z-index: 50; transition: transform 0.35s var(--ease); font-size: 14px; }
   #toast.show { transform: translate(-50%, 0); }
 
-  .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); transition-delay: var(--d, 0ms); }
-  .js .reveal.in { opacity: 1; transform: none; }
-  .js .frame.reveal,
-  .js .frame.reveal.in { transform: perspective(1200px) rotateX(4deg) rotateY(-7deg); }
-  .js .intro { opacity: 0; animation: lift 0.9s var(--ease) forwards; animation-delay: var(--d, 0ms); }
-  .js .diorama { opacity: 0; animation: fadein 1s var(--ease) 0.15s forwards; }
-  @keyframes lift { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-  @media (min-width: 981px) {
-    .diorama { overflow: hidden; }
+  .js .rise { opacity: 0; transform: translateY(16px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); transition-delay: var(--d, 0ms); }
+  .js .rise.in { opacity: 1; transform: none; }
+  .js .hw span { transform: translateY(110%); animation: letter 0.9s var(--ease) forwards; animation-delay: var(--d, 0ms); }
+  @keyframes letter { to { transform: none; } }
+  @keyframes floaty { 50% { transform: translateY(-10px); } }
+  @media (prefers-reduced-motion: no-preference) {
+    .mark-float, .emblem { animation: floaty 6.5s ease-in-out infinite; }
   }
 
-  @media (max-width: 980px) {
-    .hero-grid, .split, .cards, .archive-grid { grid-template-columns: 1fr; }
-    .cards { grid-template-columns: 1fr 1fr; }
-    .diorama { height: auto; min-height: 0; perspective: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-items: start; }
-    .sheet-a, .sheet-b, .sheet-c, .mark-wrap, .ribbon {
-      position: relative; inset: auto; left: auto; right: auto; top: auto; bottom: auto;
-      width: 100%; height: auto; transform: none;
-    }
-    .mark-wrap { grid-column: 1 / -1; order: -1; width: min(220px, 62%); margin-inline: auto; aspect-ratio: 1; }
-    .mark-card { transform: none; }
-    .sheet { overflow: visible; background: transparent; border: 0; box-shadow: none; }
-    .sheet img { height: 78px; }
-    .sheet figcaption { position: static; color: var(--soft); background: none; padding: 6px 0 0; }
-    .ribbon { display: none; }
-    .js .frame.reveal,
-    .js .frame.reveal.in,
-    .frame,
-    .sheet,
-    .mark-card { transform: none; }
-  }
-  @media (max-width: 760px) {
-    .wrap { width: calc(100% - 32px); }
-    .site-header { padding-inline: 16px; align-items: center; flex-wrap: wrap; }
-    .nav-links { order: 3; width: 100%; margin-left: 0; justify-content: space-between; border-top: 1px solid var(--line); }
-    .nav-links a { min-height: 44px; }
-    .header-x { margin-left: auto; }
-    .facts, .specimen-row, .rule-list li { grid-template-columns: 1fr; }
-    .facts div { padding-top: 16px; }
-    .cards { grid-template-columns: 1fr; }
-    section { padding: 72px 0; }
-    .hero h1 { max-width: none; }
-    .sheet img { height: 64px; }
+  @media (max-width: 900px) {
+    .hero-bottom, .manifesto-grid, .track, .archive-grid, .row { grid-template-columns: 1fr; }
+    .track::before { display: none; }
+    .step { padding-top: 8px; border-top: 1px solid var(--line); }
+    .step::before { display: none; }
+    .mark-float { position: relative; right: auto; top: auto; width: 120px; margin: 0 0 12px; }
+    .hero { min-height: 0; display: block; }
+    .hero-inner { padding-top: 18px; }
+    .mark-float { position: relative; top: auto; right: auto; width: 92px; margin: 4px 0 0; }
+    .nav { border-radius: 22px; align-items: flex-start; flex-wrap: wrap; }
+    .nav-links { order: 3; width: 100%; margin-left: 0; justify-content: space-between; }
+    .word { font-size: clamp(64px, 22vw, 120px); }
+    .net { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-    .js .reveal, .js .intro, .js .diorama { opacity: 1; transform: none; animation: none; }
-    .btn:hover { transform: none; }
-    .dust { display: none; }
-  }
-  @media (max-width: 980px) {
-    .dust { display: none; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js .rise, .js .hw span { opacity: 1; transform: none; }
+    .tape-track { animation: none; }
+    .net { display: none; }
   }
 </style>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <a class="brand" href="#top">
-    <img src="assets/logo.png" width="400" height="400" alt="ANT community mark">
-    <span class="brand-name">ANT<small>Community token</small></span>
-  </a>
+<div class="nav-shell">
+<header class="nav">
+  <a class="brand" href="#top"><img src="assets/logo.png" width="400" height="400" alt="ANT community mark"><span>$ANT</span></a>
   <nav class="nav-links" aria-label="Sections">
-    <a href="#notes">Notes</a>
-    <a href="#culture">Culture</a>
-    <a href="#token">Token</a>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#pathway">Pathway</a>
+    <a href="#record">Record</a>
     <a href="#archive">Archive</a>
   </nav>
-  <a class="header-x" href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">X<span class="sr-only"> (opens in a new tab)</span></a>
+  <a class="nav-x" href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">X<span class="sr-only"> (opens in a new tab)</span></a>
 </header>
+</div>
 
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
-    <canvas class="dust" id="dust" aria-hidden="true"></canvas>
-    <div class="wrap hero-grid">
-      <div>
-        <p class="kicker intro" style="--d:0ms">Ethereum · independent community</p>
-        <h1 id="hero-title"><span class="intro" style="--d:80ms">A paper home</span> <span class="intro" style="--d:160ms">for <em>$ANT</em>.</span></h1>
-        <p class="lede intro" style="--d:240ms">The most memeable Anthropic on Ethereum — a community line, not a company. ANT is a meme token recorded here under the name Anthropic. It is not Anthropic, the AI lab, and this page is not a product announcement.</p>
-        <div class="cta-row intro" style="--d:320ms">
-          <a class="btn" href="https://app.uniswap.org/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/dex.png" width="64" height="64" alt="">
-            Open Uniswap V4<span class="sr-only"> (opens in a new tab)</span>
-          </a>
-          <a class="btn ghost" href="#token">Read the token record</a>
-        </div>
-        <dl class="facts intro" style="--d:400ms">
-          <div><dt>Ticker</dt><dd>$ANT</dd></div>
-          <div><dt>Chain</dt><dd>Ethereum</dd></div>
-          <div><dt>Contract</dt><dd>TBA</dd></div>
-        </dl>
+    <canvas class="net" id="net" aria-hidden="true"></canvas>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="mark-float" data-tilt><img src="assets/logo.png" width="400" height="400" alt=""></div>
+    <div class="hero-inner">
+      <div class="hero-top">
+        <span class="label mono"><i class="dot"></i>Node 00 / Field</span>
+        <span class="mono">Ethereum · Uniswap V4</span>
       </div>
-      <div class="diorama" id="diorama" data-parallax>
-        <figure class="sheet sheet-a">
-          <img src="assets/tpl/bg1.webp" width="1440" height="900" alt="">
-          <figcaption>Plate 01</figcaption>
-        </figure>
-        <figure class="sheet sheet-b">
-          <img src="assets/tpl/bg2.webp" width="1440" height="900" alt="">
-          <figcaption>Plate 02</figcaption>
-        </figure>
-        <figure class="sheet sheet-c">
-          <img src="assets/tpl/bg3.webp" width="1440" height="900" alt="">
-          <figcaption>Plate 03</figcaption>
-        </figure>
-        <div class="ribbon" aria-hidden="true"></div>
-        <div class="mark-wrap" data-tilt>
-          <div class="mark-card">
-            <img src="assets/logo.png" width="400" height="400" alt="ANT mark on a paper card">
-            <span>Community mark</span>
+      <h1 class="word" id="hero-title" aria-label="$ANT">
+        <span class="hw" style="--d:40ms"><span>$</span></span>
+        <span class="hw" style="--d:120ms"><span>A</span></span>
+        <span class="hw" style="--d:200ms"><span>N</span></span>
+        <span class="hw" style="--d:280ms"><span>T</span></span>
+      </h1>
+      <div class="hero-bottom">
+        <p class="hero-tag"><em>A community mark,</em> not a company mind. $ANT is the meme token recorded on this page. The contract is still TBA.</p>
+        <div class="hero-actions">
+          <button class="ca" type="button" data-copy="TBA" aria-label="Copy the contract placeholder TBA">
+            <span class="mono">CA</span><b>TBA</b>
+          </button>
+          <div class="btn-row">
+            <a class="btn" href="https://app.uniswap.org/" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" width="64" height="64" alt="">Open Uniswap V4<span class="sr-only"> (opens in a new tab)</span></a>
+            <a class="btn ghost" href="https://dexscreener.com/ethereum" target="_blank" rel="noopener noreferrer">Ethereum markets<span class="sr-only"> (opens in a new tab)</span></a>
           </div>
+          <p class="fine">Independent community page. Not affiliated with Anthropic PBC or Claude. The Uniswap link opens the app home. It does not load a pool.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="band">
-    <div class="wrap">
-      <p>Quiet type, a warm page, and only the links this site actually has.</p>
+  <div class="tape" aria-hidden="true">
+    <div class="tape-track">
+      <span>Community token</span><span>Contract TBA</span><span>Ethereum</span><span>Not the AI company</span><span>Artwork is not a filing</span>
+      <span>Community token</span><span>Contract TBA</span><span>Ethereum</span><span>Not the AI company</span><span>Artwork is not a filing</span>
     </div>
   </div>
 
-  <section id="notes">
-    <div class="wrap split">
-      <div class="section-head reveal">
-        <p class="kicker">01 — Notes</p>
-        <h2>What this page is for.</h2>
+  <section id="manifesto">
+    <div class="wrap manifesto-grid">
+      <div>
+        <span class="label mono"><i class="dot"></i>Node 01 / Synapse</span>
+        <div class="emblem" data-tilt><img src="assets/logo.png" width="400" height="400" alt=""></div>
+        <p class="mono" style="color:var(--soft)">Written for this page.<br>Signed by nobody’s lab.</p>
       </div>
-      <div class="essay">
-        <p class="reveal" style="--d:40ms">People use the name Anthropic here as a community nickname for $ANT. The resemblance stops at the name and a mark the site already shipped with. Nothing here is an official channel, a partnership, or a statement from the AI company.</p>
-        <p class="reveal" style="--d:80ms">The contract field is the one on record: TBA. Supply, tax, and liquidity were left blank in the site record, so this page does not invent them. There is no roadmap and no promised outcome.</p>
-        <ol class="rule-list reveal" style="--d:120ms">
-          <li><b>01</b><span>Read the address as TBA until a real one is published somewhere you trust and you check it yourself.</span></li>
-          <li><b>02</b><span>The Uniswap control opens the app home. It does not load a pool, because no contract is attached.</span></li>
-          <li><b>03</b><span>The Dexscreener control opens the Ethereum page, not a chart for a specific ANT market.</span></li>
-          <li><b>04</b><span>Pictures on this site are artwork. Numbers inside them are not measurements.</span></li>
-        </ol>
-      </div>
+      <p class="manifesto-text rise">No one on this page speaks for the lab. The name is a <em>community nickname.</em> Intelligence, here, is just people passing a meme along. The only hard fact is the record: ticker ANT, chain Ethereum, contract TBA.</p>
     </div>
   </section>
 
-  <section id="culture">
+  <section id="pathway">
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="kicker">02 — Culture</p>
-        <h2>A small brief for the timeline.</h2>
-        <p class="lede">Make something, pass it on, and keep the jokes separate from the facts.</p>
-      </div>
-      <div class="cards">
-        <article class="card reveal" style="--d:0ms" data-tilt>
-          <span class="idx">01</span>
-          <strong>Make</strong>
-          <p>Draw, caption, remix. The culture is the point of a meme token.</p>
-        </article>
-        <article class="card reveal" style="--d:70ms" data-tilt>
-          <span class="idx">02</span>
-          <strong>Credit</strong>
-          <p>Say it is a community page. Leave the AI company out of the byline.</p>
-        </article>
-        <article class="card reveal" style="--d:140ms" data-tilt>
-          <span class="idx">03</span>
-          <strong>Check</strong>
-          <p>If an address shows up later, compare it on a block explorer before you touch it.</p>
-        </article>
-        <article class="card reveal" style="--d:210ms" data-tilt>
-          <span class="idx">04</span>
-          <strong>Share</strong>
-          <p>The public post is on X. This site does not host a chat or a wallet.</p>
-        </article>
-      </div>
+      <span class="label mono"><i class="dot"></i>Node 02 / Pathway</span>
+      <h2 class="rise">Four signals, <em>none</em> of them a filing.</h2>
+      <ol class="track">
+        <li class="step rise" style="--d:0ms"><span class="mono">01</span><h3>Read TBA</h3><p>The contract field is a placeholder. Copying it copies the letters TBA, not an address.</p></li>
+        <li class="step rise" style="--d:60ms"><span class="mono">02</span><h3>Open the app</h3><p>Uniswap V4 opens at the app home. This site does not attach a token.</p></li>
+        <li class="step rise" style="--d:120ms"><span class="mono">03</span><h3>See the chain</h3><p>Dexscreener opens the Ethereum page, not a chart for a specific ANT market.</p></li>
+        <li class="step rise" style="--d:180ms"><span class="mono">04</span><h3>Follow X</h3><p>The community account on record is @anthropiconeth. This site has no chat and no wallet.</p></li>
+      </ol>
     </div>
   </section>
 
-  <section id="token">
+  <section id="record">
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="kicker">03 — Token</p>
-        <h2>The record, unpadded.</h2>
-        <p class="lede">These are the values stored for this site. They are not a quote, a pool, or a promise.</p>
-      </div>
-      <dl class="specimen reveal">
-        <div class="specimen-row"><dt>Name</dt><dd>Anthropic</dd></div>
-        <div class="specimen-row"><dt>Ticker</dt><dd>$ANT</dd></div>
-        <div class="specimen-row"><dt>Chain</dt><dd>Ethereum</dd></div>
-        <div class="specimen-row"><dt>Contract</dt><dd>
-          <div class="ca-line">
-            <span class="ca-text" id="ca">TBA</span>
-            <button class="copy" type="button" data-copy="TBA">Copy TBA</button>
-          </div>
-        </dd></div>
-        <div class="specimen-row"><dt>Uniswap</dt><dd><a href="https://app.uniswap.org/" target="_blank" rel="noopener noreferrer">https://app.uniswap.org/<span class="sr-only"> (opens in a new tab)</span></a></dd></div>
-        <div class="specimen-row"><dt>Dexscreener</dt><dd><a href="https://dexscreener.com/ethereum" target="_blank" rel="noopener noreferrer">https://dexscreener.com/ethereum<span class="sr-only"> (opens in a new tab)</span></a></dd></div>
-        <div class="specimen-row"><dt>X</dt><dd><a href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">https://x.com/anthropiconeth<span class="sr-only"> (opens in a new tab)</span></a></dd></div>
+      <span class="label mono"><i class="dot"></i>Node 03 / Record</span>
+      <h2 class="rise">Simple <em>wiring.</em></h2>
+      <p class="note rise">These rows are the site record. Supply, tax, and liquidity are blank, so they are not printed.</p>
+      <dl class="ledger rise">
+        <div class="row"><dt>Name</dt><dd>Anthropic</dd></div>
+        <div class="row"><dt>Ticker</dt><dd>$ANT</dd></div>
+        <div class="row"><dt>Chain</dt><dd>Ethereum</dd></div>
+        <div class="row"><dt>Contract</dt><dd><div class="ca-line"><span id="ca">TBA</span><button class="copy" type="button" data-copy="TBA">Copy TBA</button></div></dd></div>
+        <div class="row"><dt>Uniswap</dt><dd><a href="https://app.uniswap.org/" target="_blank" rel="noopener noreferrer">https://app.uniswap.org/<span class="sr-only"> (opens in a new tab)</span></a></dd></div>
+        <div class="row"><dt>Dexscreener</dt><dd><a href="https://dexscreener.com/ethereum" target="_blank" rel="noopener noreferrer">https://dexscreener.com/ethereum<span class="sr-only"> (opens in a new tab)</span></a></dd></div>
+        <div class="row"><dt>X</dt><dd><a href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">https://x.com/anthropiconeth<span class="sr-only"> (opens in a new tab)</span></a></dd></div>
       </dl>
-      <p class="note reveal">Supply, tax, and liquidity are blank in the site record. Copying TBA copies that placeholder only. Cryptocurrency can go to zero. This is not financial advice, not an offer, and not a solicitation.</p>
-      <div class="cta-row reveal">
-        <a class="btn" href="https://app.uniswap.org/" target="_blank" rel="noopener noreferrer">
-          <img src="assets/dex.png" width="64" height="64" alt="">
-          Open Uniswap V4<span class="sr-only"> (opens in a new tab)</span>
-        </a>
-        <a class="btn ghost" href="https://dexscreener.com/ethereum" target="_blank" rel="noopener noreferrer">Ethereum on Dexscreener<span class="sr-only"> (opens in a new tab)</span></a>
+      <p class="note">Cryptocurrency can go to zero. This is not financial advice, not an offer, and not a share of any company.</p>
+      <div class="btn-row" style="margin-top:18px">
+        <a class="btn" href="https://app.uniswap.org/" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" width="64" height="64" alt="">Open Uniswap V4<span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="btn ghost" href="#archive">See the artwork</a>
       </div>
     </div>
   </section>
 
   <section id="archive">
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="kicker">04 — Archive</p>
-        <h2>Artwork that shipped with the folder.</h2>
-        <p class="lede">Shown as pictures. Not as evidence of a market, a filing, or a valuation.</p>
-      </div>
-      <div class="archive-grid">
-        <figure class="frame reveal" data-tilt>
+      <span class="label mono"><i class="dot"></i>Node 04 / Archive</span>
+      <h2 class="rise">Pictures, <em>not</em> evidence.</h2>
+      <p class="note rise">The folder shipped with this artwork. Marks and numbers inside the pictures are drawn.</p>
+      <div class="archive-grid" style="margin-top:28px">
+        <figure class="frame rise" data-tilt>
           <img src="assets/banner.webp" width="1800" height="600" alt="Wide community illustration with city signage and financial graphics. The picture is not a listing or a filing.">
-          <figcaption>Banner artwork. Marks, percentages, and document labels inside the image are drawn. They are not facts about $ANT.</figcaption>
+          <figcaption>Banner. Not a listing, a filing, or a valuation.</figcaption>
         </figure>
         <div class="plates">
-          <figure class="plate reveal" style="--d:60ms" data-tilt>
-            <img src="assets/tpl/bg1.webp" width="1440" height="900" alt="Dark field with sparse points of light, plate one.">
-            <figcaption>Background plate 01, used in the hero stack.</figcaption>
-          </figure>
-          <figure class="plate reveal" style="--d:120ms" data-tilt>
-            <img src="assets/tpl/bg2.webp" width="1440" height="900" alt="Dark field with sparse points of light, plate two.">
-            <figcaption>Background plate 02.</figcaption>
-          </figure>
-          <figure class="plate reveal" style="--d:180ms" data-tilt>
-            <img src="assets/tpl/bg3.webp" width="1440" height="900" alt="Dark field with sparse points of light, plate three.">
-            <figcaption>Background plate 03.</figcaption>
-          </figure>
+          <figure class="plate rise" style="--d:40ms"><img src="assets/tpl/bg1.webp" width="1440" height="900" alt="Dark field with sparse points of light, plate one."><figcaption>Plate 01</figcaption></figure>
+          <figure class="plate rise" style="--d:80ms"><img src="assets/tpl/bg2.webp" width="1440" height="900" alt="Dark field with sparse points of light, plate two."><figcaption>Plate 02</figcaption></figure>
+          <figure class="plate rise" style="--d:120ms"><img src="assets/tpl/bg3.webp" width="1440" height="900" alt="Dark field with sparse points of light, plate three."><figcaption>Plate 03</figcaption></figure>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing">
-    <div class="wrap reveal">
-      <p class="kicker">Close</p>
-      <h2>Stay with the record.</h2>
-      <p class="lede">Follow the community on X. Open the exchanges only as the plain links above. Come back if the contract stops saying TBA.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">Open the X account<span class="sr-only"> (opens in a new tab)</span></a>
-        <a class="btn ghost" href="#top">Back to the top</a>
       </div>
     </div>
   </section>
@@ -483,44 +313,31 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-row">
-      <a class="brand" href="#top">
-        <img src="assets/logo.png" width="400" height="400" alt="">
-        <span class="brand-name">ANT<small>Not the AI company</small></span>
-      </a>
+      <a class="brand" href="#top" style="color:inherit"><img src="assets/logo.png" width="400" height="400" alt=""><span>$ANT</span></a>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="#notes">Notes</a>
-        <a href="#culture">Culture</a>
-        <a href="#token">Token</a>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#pathway">Pathway</a>
+        <a href="#record">Record</a>
         <a href="#archive">Archive</a>
-        <a href="https://app.uniswap.org/" target="_blank" rel="noopener noreferrer">Uniswap<span class="sr-only"> (opens in a new tab)</span></a>
-        <a href="https://dexscreener.com/ethereum" target="_blank" rel="noopener noreferrer">Dexscreener<span class="sr-only"> (opens in a new tab)</span></a>
         <a href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">X<span class="sr-only"> (opens in a new tab)</span></a>
       </nav>
     </div>
-    <p class="legal">© <span id="year"></span> ANT community page · $ANT · Ethereum. Independent meme-token site. Not affiliated with Anthropic, PBC, Claude, or any official product. No guaranteed returns. Contract on this page: TBA. Artwork is not evidence of a listing, a filing, or a valuation.</p>
+    <p class="legal">© <span id="year"></span> ANT community page · Ethereum. Independent meme token. Not affiliated with Anthropic PBC or Claude. Contract on this page: TBA. No guaranteed returns. Artwork is not evidence of a listing or a filing.</p>
   </div>
 </footer>
 <div id="toast" role="status" aria-live="polite"></div>
 <script>
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var wide = window.matchMedia("(min-width: 901px)");
   var coarse = window.matchMedia("(pointer: coarse)").matches;
-  var wide = window.matchMedia("(min-width: 981px)");
+  if (!reduce) document.documentElement.classList.add("motion");
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  var header = document.querySelector(".site-header");
-  function stick() {
-    if (header) header.classList.toggle("is-stuck", window.scrollY > 8);
-  }
-  stick();
-  window.addEventListener("scroll", stick, { passive: true });
-
-  var sections = ["notes", "culture", "token", "archive"].map(function (id) {
-    return document.getElementById(id);
-  }).filter(Boolean);
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  if ("IntersectionObserver" in window && sections.length) {
+  var sections = ["manifesto", "pathway", "record", "archive"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  if ("IntersectionObserver" in window) {
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -528,13 +345,13 @@
           a.setAttribute("aria-current", a.getAttribute("href") === "#" + entry.target.id ? "true" : "false");
         });
       });
-    }, { rootMargin: "-40% 0px -50% 0px", threshold: 0.01 });
+    }, { rootMargin: "-40% 0px -45% 0px", threshold: 0.01 });
     sections.forEach(function (s) { spy.observe(s); });
   }
 
-  var reveals = document.querySelectorAll(".reveal");
+  var rises = document.querySelectorAll(".rise");
   if (reduce || !("IntersectionObserver" in window)) {
-    reveals.forEach(function (el) { el.classList.add("in"); });
+    rises.forEach(function (el) { el.classList.add("in"); });
   } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -542,50 +359,31 @@
         entry.target.classList.add("in");
         io.unobserve(entry.target);
       });
-    }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
-    reveals.forEach(function (el) { io.observe(el); });
+    }, { threshold: 0.16 });
+    rises.forEach(function (el) { io.observe(el); });
   }
 
   if (!coarse && !reduce) {
-    var stage = document.getElementById("diorama");
-    function resetParallax() {
-      if (stage) {
-        stage.style.setProperty("--px", "0");
-        stage.style.setProperty("--py", "0");
-      }
-      document.querySelectorAll("[data-tilt]").forEach(function (el) { el.style.transform = ""; });
-    }
-    if (stage) {
-      stage.addEventListener("pointermove", function (e) {
-        if (!wide.matches) return;
-        var r = stage.getBoundingClientRect();
-        stage.style.setProperty("--px", ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
-        stage.style.setProperty("--py", ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
-      });
-      stage.addEventListener("pointerleave", resetParallax);
-    }
     document.querySelectorAll("[data-tilt]").forEach(function (el) {
       el.addEventListener("pointermove", function (e) {
         if (!wide.matches) return;
         var r = el.getBoundingClientRect();
         var px = (e.clientX - r.left) / r.width - 0.5;
         var py = (e.clientY - r.top) / r.height - 0.5;
-        var max = el.classList.contains("frame") ? 5 : 7;
-        el.style.transform = "perspective(900px) rotateX(" + (-py * max).toFixed(2) + "deg) rotateY(" + (px * max).toFixed(2) + "deg)";
+        el.style.transform = "perspective(700px) rotateX(" + (-py * 8).toFixed(2) + "deg) rotateY(" + (px * 8).toFixed(2) + "deg)";
       });
       el.addEventListener("pointerleave", function () { el.style.transform = ""; });
     });
-    wide.addEventListener("change", resetParallax);
   }
 
   var toast = document.getElementById("toast");
-  var toastTimer = 0;
+  var timer = 0;
   function say(message) {
     if (!toast) return;
     toast.textContent = message;
     toast.classList.add("show");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2800);
+    clearTimeout(timer);
+    timer = setTimeout(function () { toast.classList.remove("show"); }, 2600);
   }
   document.querySelectorAll("[data-copy]").forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -602,66 +400,74 @@
         var ok = false;
         try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
         area.remove();
-        if (ok) done();
-        else say("Copy is unavailable in this browser. The value is " + text + ".");
+        if (ok) done(); else say("The value on this page is " + text + ".");
       }
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(done, fallback);
-      } else fallback();
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
+      else fallback();
     });
   });
 
-  var canvas = document.getElementById("dust");
+  var canvas = document.getElementById("net");
   if (!canvas || reduce || !wide.matches) return;
   var ctx = canvas.getContext("2d", { alpha: true });
   if (!ctx) return;
-  var dots = [];
+  var nodes = [];
+  var mouse = { x: 0.62, y: 0.38 };
   var running = true;
-  var raf = 0;
   function seed() {
-    dots = [];
-    var count = 22;
+    nodes = [];
+    var count = 36;
     for (var i = 0; i < count; i++) {
-      dots.push({
-        x: Math.random(),
-        y: Math.random(),
-        z: 0.25 + Math.random() * 0.75,
-        r: 0.6 + Math.random() * 1.4,
-        terra: i % 4 === 0
+      nodes.push({
+        x: Math.random(), y: Math.random(),
+        vx: (Math.random() - 0.5) * 0.00035,
+        vy: (Math.random() - 0.5) * 0.00035,
+        r: 1.2 + Math.random() * 1.8
       });
     }
   }
   function size() {
     var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-    var w = canvas.clientWidth;
-    var h = canvas.clientHeight;
-    canvas.width = Math.max(1, Math.round(w * dpr));
-    canvas.height = Math.max(1, Math.round(h * dpr));
+    canvas.width = Math.max(1, Math.round(canvas.clientWidth * dpr));
+    canvas.height = Math.max(1, Math.round(canvas.clientHeight * dpr));
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
+  var hero = canvas.parentElement;
+  hero.addEventListener("pointermove", function (e) {
+    var r = hero.getBoundingClientRect();
+    mouse.x = (e.clientX - r.left) / r.width;
+    mouse.y = (e.clientY - r.top) / r.height;
+  });
   function frame() {
-    raf = window.requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
     if (!running || document.hidden) return;
-    var w = canvas.clientWidth;
-    var h = canvas.clientHeight;
+    var w = canvas.clientWidth, h = canvas.clientHeight;
     ctx.clearRect(0, 0, w, h);
-    var px = 0;
-    var py = 0;
-    var stage = document.getElementById("diorama");
-    if (stage) {
-      px = parseFloat(stage.style.getPropertyValue("--px")) || 0;
-      py = parseFloat(stage.style.getPropertyValue("--py")) || 0;
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > 1) n.vx *= -1;
+      if (n.y < 0 || n.y > 1) n.vy *= -1;
+      var dx = n.x - mouse.x, dy = n.y - mouse.y;
+      var dist = Math.hypot(dx, dy);
+      if (dist < 0.18) { n.x += dx * 0.004; n.y += dy * 0.004; }
     }
-    for (var i = 0; i < dots.length; i++) {
-      var d = dots[i];
-      d.y -= 0.00035 * d.z;
-      if (d.y < -0.02) d.y = 1.02;
-      var depth = 0.35 + d.z;
-      var x = (d.x + px * 0.03 * d.z) * w;
-      var y = (d.y + py * 0.02 * d.z) * h;
+    for (var a = 0; a < nodes.length; a++) {
+      for (var b = a + 1; b < nodes.length; b++) {
+        var d = Math.hypot(nodes[a].x - nodes[b].x, nodes[a].y - nodes[b].y);
+        if (d > 0.16) continue;
+        ctx.strokeStyle = "rgba(217,119,87," + ((0.16 - d) / 0.16 * 0.45).toFixed(3) + ")";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(nodes[a].x * w, nodes[a].y * h);
+        ctx.lineTo(nodes[b].x * w, nodes[b].y * h);
+        ctx.stroke();
+      }
+    }
+    for (var k = 0; k < nodes.length; k++) {
+      ctx.fillStyle = "rgba(240,238,230,0.85)";
       ctx.beginPath();
-      ctx.fillStyle = d.terra ? "rgba(154,63,42," + (0.18 * depth) + ")" : "rgba(34,30,26," + (0.16 * depth) + ")";
-      ctx.arc(x, y, d.r * depth, 0, Math.PI * 2);
+      ctx.arc(nodes[k].x * w, nodes[k].y * h, nodes[k].r, 0, Math.PI * 2);
       ctx.fill();
     }
   }
@@ -669,13 +475,8 @@
   size();
   if ("ResizeObserver" in window) new ResizeObserver(size).observe(canvas);
   if ("IntersectionObserver" in window) {
-    new IntersectionObserver(function (entries) {
-      running = entries[0].isIntersecting;
-    }).observe(canvas);
+    new IntersectionObserver(function (entries) { running = entries[0].isIntersecting; }).observe(canvas);
   }
-  document.addEventListener("visibilitychange", function () {
-    if (!document.hidden && running) { cancelAnimationFrame(raf); frame(); }
-  });
   frame();
 })();
 </script>
