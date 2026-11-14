@@ -44,7 +44,7 @@
   "vercel_a": "",
   "vercel_cname": "",
   "logo": "assets/logo.png",
-  "banner": "",
+  "banner": "assets/banner.webp",
   "images": [],
   "characters": [],
   "backgrounds": [],
@@ -59,7 +59,7 @@
   },
   "site_slug": "anthropic",
   "project_id": "pmwfnsf9j9avp3",
-  "exported_at": "2026-11-14T00:20:27.999Z",
+  "exported_at": "2026-11-14T00:34:22.767Z",
   "make_videos": false,
   "videos": []
 }
