@@ -6,11 +6,11 @@
   "domain": "anthropicant.si",
   "ca": "TBA",
   "chain": "ethereum",
-  "theme_mode": "original",
-  "theme_preset": "",
-  "theme_primary": "#9945ff",
-  "theme_secondary": "#14f195",
-  "domain_status": "not_connected",
+  "theme_mode": "preset",
+  "theme_preset": "mint-pastel",
+  "theme_primary": "#6ee7b7",
+  "theme_secondary": "#a7f3d0",
+  "domain_status": "live",
   "dns_records": [
     {
       "type": "A",
@@ -59,7 +59,7 @@
   },
   "site_slug": "anthropic",
   "project_id": "pmwfnsf9j9avp3",
-  "exported_at": "2026-11-14T00:34:22.767Z",
+  "exported_at": "2026-11-14T01:03:12.608Z",
   "make_videos": false,
   "videos": []
 }

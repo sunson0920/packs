@@ -20,7 +20,7 @@ Kept from `site.json`: name Anthropic, ticker ANT, chain Ethereum, contract `TBA
 
 ## Custom domain: anthropicant.si
 
-Status: Not connected
+Status: Live
 
 1. Push this folder to GitHub and create a Vercel project from it.
 2. In Vercel → Settings → Domains, add `anthropicant.si` (and `www.anthropicant.si`).
