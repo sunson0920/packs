@@ -3,17 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--
-  Logo-led community page. Two pictures are reserved and must be the supplied files:
-    assets/art/markets-hero.webp
-    assets/art/ipo-concept.webp
-  Contract: 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985
--->
 <title>ANT — a community mark</title>
-<meta name="description" content="Independent community page for the ANT token. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. The market pictures are a concept, not a listing.">
+<meta name="description" content="Independent community page for the ANT token. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. Market pictures are a concept, not a listing.">
 <meta property="og:title" content="ANT — a community mark">
 <meta property="og:description" content="Independent community token page. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985.">
-<meta property="og:image" content="assets/logo.png">
+<meta property="og:image" content="assets/art/city-banner.webp">
 <meta property="og:url" content="https://anthropicant.si/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://anthropicant.si/">
@@ -25,14 +19,9 @@
 <script>document.documentElement.classList.add("js");</script>
 <style>
 :root{
-  --paper:#f6f1e7;
-  --paper-2:#efe7d8;
-  --ink:#1c1916;
-  --muted:#5c564e;
-  --terra:#9a4330;
-  --line:rgba(28,25,22,.14);
-  --serif:"Newsreader",Georgia,serif;
-  --sans:"Source Sans 3",system-ui,sans-serif;
+  --paper:#f6f1e7;--paper-2:#efe6d6;--ink:#1c1916;--muted:#5c564e;
+  --terra:#9a4330;--copper:#c4894a;--cyan:#1f6fbf;--line:rgba(28,25,22,.14);
+  --serif:"Newsreader",Georgia,serif;--sans:"Source Sans 3",system-ui,sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box}
@@ -40,79 +29,96 @@ html{scroll-behavior:smooth}
 html,body{margin:0;overflow-x:clip;background:var(--paper);color:var(--ink)}
 body{font:400 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-a{color:inherit}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-h1,h2,p,figure{margin:0}
-p,figcaption,dd{overflow-wrap:anywhere}
-:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
-.skip{position:absolute;left:12px;top:-48px;z-index:20;background:var(--ink);color:var(--paper);padding:10px 14px;text-decoration:none}
+a{color:inherit}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,p,figure{margin:0}
+p,figcaption,dd,summary{overflow-wrap:anywhere}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-48px;z-index:30;background:var(--ink);color:var(--paper);padding:10px 14px;text-decoration:none}
 .skip:focus{top:12px}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.addr{letter-spacing:0;overflow-wrap:anywhere;word-break:break-all;font-variant-numeric:tabular-nums}
-.rule{height:1px;background:var(--line);border:0;margin:0}
-
-.bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--terra);z-index:30}
-.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px clamp(18px,4vw,56px);border-bottom:1px solid var(--line)}
+.addr{letter-spacing:0;overflow-wrap:anywhere;word-break:break-all}
+.bar{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--terra),var(--cyan));z-index:40}
+.top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px clamp(18px,4vw,56px);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(246,241,231,.92);backdrop-filter:blur(10px);z-index:20}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .brand img{width:44px;height:44px}
 .brand strong{font-family:var(--serif);font-weight:560;font-size:26px;letter-spacing:-.03em}
-.nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.nav{display:flex;flex-wrap:wrap;gap:6px 18px}
 .nav a{text-decoration:none;color:var(--muted);min-height:44px;display:inline-flex;align-items:center}
-.nav a:hover,.nav a[aria-current="true"]{color:var(--terra)}
-
+.nav a:hover,.nav a[aria-current="true"]{color:var(--cyan)}
 .hero{position:relative;background:#f3eee6}
-.hero-art{margin:0}
 .hero-art img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#f3eee6}
-.hero-copy{position:absolute;z-index:2;left:clamp(18px,3.5vw,56px);top:50%;transform:translateY(-50%);width:min(32%,420px)}
-.mark{width:72px;height:72px;background:#f3eee6}
-.kicker{color:var(--terra);letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600;margin:18px 0 10px}
-h1{font-family:var(--serif);font-weight:460;font-size:clamp(44px,5vw,78px);line-height:.94;letter-spacing:-.03em}
-h1 em{font-style:italic;color:var(--terra)}
-.lede{margin-top:14px;max-width:38ch;color:var(--muted);font-size:19px}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hero-copy{position:absolute;z-index:2;left:clamp(16px,3vw,48px);top:50%;transform:translateY(-50%);width:min(32%,400px)}
+.mark{width:64px;height:64px}
+.kicker{color:var(--terra);letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600;margin-bottom:10px}
+.kicker.blue{color:var(--cyan)}
+h1,h2{font-family:var(--serif);font-weight:460;letter-spacing:-.03em;line-height:.96}
+h1{font-size:clamp(40px,4vw,68px)}
+h1 em,h2 em{font-style:italic;color:var(--terra)}
+.lede{margin-top:12px;max-width:34ch;color:var(--muted);font-size:17px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;text-decoration:none;background:var(--ink);color:var(--paper)}
 .btn.quiet{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn img{width:18px;height:18px;border-radius:50%;background:#fff}
-.hero-art{min-width:0}
-.hero-art img,.study img{width:100%;height:auto;object-fit:contain;background:var(--paper-2)}
-.hero-art figcaption,.study figcaption{margin-top:10px;color:var(--muted);font-size:13px}
-
-.band,.study,.ledger{padding:clamp(56px,8vw,100px) clamp(18px,4vw,56px)}
-.band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);background:var(--paper-2)}
-.band h2{font-family:var(--serif);font-weight:460;font-size:28px;letter-spacing:-.02em;margin-bottom:8px}
-.band p{color:var(--muted)}
-
-.study{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:clamp(24px,4vw,64px);align-items:center;border-top:1px solid var(--line)}
-.study img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#f3eee6}
-.study h2{font-family:var(--serif);font-weight:460;font-size:clamp(36px,4vw,60px);line-height:.96;letter-spacing:-.03em}
-.note{margin-top:14px;color:var(--muted);max-width:46ch}
-.aside{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
-
-.ledger{border-top:1px solid var(--line)}
-.ledger h2{font-family:var(--serif);font-weight:460;font-size:clamp(36px,4vw,58px);letter-spacing:-.03em}
+.pad{padding:clamp(56px,8vw,104px) clamp(18px,4vw,64px)}
+.chapter{font-size:clamp(36px,4.4vw,64px)}
+.essay{max-width:68ch;color:var(--muted);font-size:19px;margin-top:16px}
+.essay+.essay{margin-top:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+.card{background:#fffdf8;border:1px solid var(--line);padding:22px 20px 26px;min-height:240px;box-shadow:0 18px 40px -28px rgba(31,111,191,.5);transition:transform .45s var(--ease)}
+.card:hover{transform:translateY(-6px)}
+.card span{color:var(--cyan);font-size:12px;letter-spacing:.14em;font-weight:600}
+.card h3{font-family:var(--serif);font-size:32px;font-weight:460;margin:18px 0 8px}
+.card p{color:var(--muted)}
+.card p+p{margin-top:10px}
+.monument{background:#14181f;color:#f6f1e7;display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(40px,6vw,80px) clamp(18px,4vw,64px)}
+.monument img{width:min(180px,40vw);height:auto;background:#f6f1e7}
+.monument h2{font-size:clamp(34px,4vw,60px)}
+.monument p{margin-top:12px;max-width:46ch;color:#d5d0c6}
+.plate{margin:0}
+.plate img{width:100%;height:auto;object-fit:contain;background:#0e1624}
+.plate figcaption{margin-top:12px;color:var(--muted);font-size:15px;max-width:78ch}
+.banner{background:#101820;color:var(--paper);padding:clamp(28px,4vw,48px) 0 clamp(48px,6vw,72px)}
+.banner .kicker{color:#7eb6ff}
+.banner h2{color:#f6f1e7}
+.banner figcaption{color:#e4dfd4}
+.banner .wrap{width:min(1440px,calc(100% - 36px));margin-inline:auto}
+.bleed{margin:0;background:#f3eee6}
+.bleed img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#f3eee6}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+.note{color:var(--muted);max-width:48ch}
+.note strong{display:block;font-family:var(--serif);font-weight:460;font-size:28px;color:var(--ink);margin-bottom:8px}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+.links{display:grid;gap:10px;margin-top:18px}
+.links a{display:flex;justify-content:space-between;gap:12px;min-height:48px;align-items:center;border-bottom:1px solid var(--line);text-decoration:none}
+.links a:hover{color:var(--cyan)}
 .rows{margin-top:22px;border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:140px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
 .row dt{color:var(--terra);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
 .row dd{margin:0;min-width:0}
 .copy{min-height:44px;margin-top:10px;padding:0 14px;border:1px solid var(--ink)}
 .copy:hover{background:var(--ink);color:var(--paper)}
-.foot{padding:24px clamp(18px,4vw,56px) 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-.foot p{max-width:76ch}
-
-#toast{position:fixed;left:16px;right:16px;bottom:16px;margin:0 auto;max-width:680px;background:var(--ink);color:var(--paper);padding:12px 14px;transform:translateY(160%);transition:transform .35s var(--ease);z-index:40;overflow-wrap:anywhere}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-family:var(--serif);font-size:24px;min-height:44px;display:flex;align-items:center}
+.faq p{margin-top:8px;color:var(--muted);max-width:70ch}
+.foot{padding:28px clamp(18px,4vw,56px) 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.foot p{max-width:80ch}
+#toast{position:fixed;left:16px;right:16px;bottom:16px;margin:0 auto;max-width:680px;background:var(--ink);color:var(--paper);padding:12px 14px;transform:translateY(160%);transition:transform .35s var(--ease);z-index:50;overflow-wrap:anywhere}
 #toast.show{transform:none}
-.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}
-@media (max-width:860px){
-  .study,.band,.row{grid-template-columns:1fr}
+@media (prefers-reduced-motion:no-preference){
+  .hero-art img{animation:rise 1s var(--ease) both}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+@media (max-width:900px){
+  .study,.split,.grid3,.row,.notes,.monument{grid-template-columns:1fr}
   .top{align-items:flex-start;flex-direction:column}
-  .hero-copy{position:relative;left:auto;top:auto;transform:none;width:auto;padding:28px 18px 8px}
-  .mark{width:64px;height:64px}
+  .hero-copy{position:relative;left:auto;top:auto;transform:none;width:auto;padding:24px 18px 8px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .js .reveal{opacity:1;transform:none}
+  .js .reveal,.card:hover{opacity:1;transform:none}
 }
 </style>
 </head>
@@ -122,83 +128,169 @@ h1 em{font-style:italic;color:var(--terra)}
 <header class="top">
   <a class="brand" href="#hero"><img src="assets/logo.png" width="400" height="400" alt=""><strong>ANT</strong></a>
   <nav class="nav" aria-label="Sections">
-    <a href="#idea">Idea</a>
+    <a href="#work">Work</a>
+    <a href="#city">Picture</a>
     <a href="#concept">Concept</a>
     <a href="#ledger">Token</a>
+    <a href="#questions">Questions</a>
   </nav>
 </header>
 <main>
   <section class="hero" id="hero">
     <figure class="hero-art">
-      <img src="assets/art/markets-hero.webp" width="1280" height="720" alt="Cream wall and copper glass, with the community lettermark standing clear on the right. The left of the picture is open for type.">
+      <img src="assets/art/markets-hero.webp" width="1280" height="720" alt="Cream interior and copper glass, with the community lettermark standing clear on the right.">
     </figure>
     <div class="hero-copy">
-      <img class="mark" src="assets/logo.png" width="400" height="400" alt="The community lettermark.">
+      <img class="mark" src="assets/logo.png" width="400" height="400" alt="Community lettermark.">
       <p class="kicker">Community token</p>
       <h1>The mark, beside a <em>market</em> idea.</h1>
-      <p class="lede">ANT is an independent community token. The picture is a study, not a notice that a company has listed.</p>
+      <p class="lede">ANT is an independent community token. The pictures are studies of an AI company and of public markets. They are not a listing notice.</p>
       <div class="actions">
-        <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" alt="">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
+        <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" width="64" height="64" alt="">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
         <a class="btn quiet" href="#ledger">Contract</a>
       </div>
     </div>
   </section>
 
-  <section class="band" id="idea">
-    <article class="reveal"><h2>Language</h2><p>Models, papers, and tools are the ordinary subject of an AI company. This page does not describe those products as its own.</p></article>
-    <article class="reveal"><h2>Markets</h2><p>A public listing is a picture here: type, paper, and a floor. No price, date, or filing is stated.</p></article>
-    <article class="reveal"><h2>The token</h2><p>The contract is separate from that picture. It is one Ethereum address, copied exactly.</p></article>
-  </section>
-
-  <section class="study" id="concept">
-    <figure class="reveal">
-      <img src="assets/art/ipo-concept.webp" width="1280" height="720" alt="The community lettermark on a stone plinth in a cream and copper room. Letters on the plinth mark the picture as a concept of a public offering.">
-      <figcaption>A study of a listing. Not evidence that one has happened.</figcaption>
-    </figure>
-    <div class="reveal">
-      <p class="kicker">Concept, not a listing</p>
-      <h2>An idea of going public, kept apart from the token.</h2>
-      <p class="note">Nothing in this section is a prospectus, a valuation, a timetable, or a share. The community token does not become equity because a picture suggests a market.</p>
-      <p class="aside">ANT on this page is not Anthropic PBC and not Claude. Holding the token is not ownership of a company.</p>
+  <section class="pad" id="work">
+    <p class="kicker blue">Reasoning, writing, code</p>
+    <h2 class="chapter">Work people hand to an assistant.</h2>
+    <p class="essay">Claude is the assistant published by the company that uses a lettermark like the one on this page. People use that kind of assistant to think through a passage, shape a draft, or look at a piece of code. The description here is general. This page has no chat window and no connection to the service.</p>
+    <p class="essay">A careful assistant keeps the person in charge. It can lay out steps, offer a shorter sentence, or point at a line that fails. The person still decides what to send, what to ship, and what to believe.</p>
+    <div class="grid3">
+      <article class="card reveal">
+        <span>01 — Reason</span>
+        <h3>A path through a question.</h3>
+        <p>Restate the claim, set the terms, and walk the steps in order. Useful when a paragraph is dense or two accounts disagree.</p>
+        <p>The value is the path, which a reader can check. A fluent answer is still something to verify.</p>
+      </article>
+      <article class="card reveal">
+        <span>02 — Write</span>
+        <h3>A draft with a chosen tone.</h3>
+        <p>Open a note, cut it down, or shift it from a lab voice to a plain one. The words that leave the room belong to the person who sends them.</p>
+        <p>Editing is the work. The assistant proposes; the writer keeps the sentence.</p>
+      </article>
+      <article class="card reveal">
+        <span>03 — Code</span>
+        <h3>A sketch beside the error.</h3>
+        <p>Name a function, read a stack trace, or try a smaller example. The sketch is a starting file, not a program running on this site.</p>
+        <p>Tests and review stay with the person who merges the change.</p>
+      </article>
     </div>
   </section>
 
-  <section class="ledger" id="ledger">
+  <section class="monument" id="mark">
+    <img src="assets/logo.png" width="400" height="400" alt="Community lettermark, enlarged.">
+    <div>
+      <p class="kicker" style="color:#7eb6ff">The mark on the page</p>
+      <h2>A community letter, set in charcoal and cream.</h2>
+      <p>The same mark opens the market study, stands on the plinth, and appears on the city picture. On this site it names the ANT token. The company’s own sites are linked further down, kept as their own doors.</p>
+    </div>
+  </section>
+
+  <section class="banner" id="city">
+    <div class="wrap">
+      <p class="kicker">A picture of markets and machines</p>
+      <h2 class="chapter" style="margin-bottom:18px">City light, <em style="color:#7eb6ff">not</em> a filing.</h2>
+      <figure class="plate reveal">
+        <img src="assets/art/city-banner.webp" width="1800" height="600" alt="Wide concept picture: a city sign with a lettermark, a market graphic, server racks, and papers. Figures and labels in the image are drawn.">
+        <figcaption>Concept art supplied for this page. Tickers, percentages, dollar figures, and filing labels inside the picture are illustrative. They are not verified news, and they are not measures of the ANT token.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="concept">
+    <figure class="bleed">
+      <img src="assets/art/ipo-concept.webp" width="1280" height="720" alt="The community lettermark on a stone plinth in a cream and copper room. Letters on the plinth present the picture as a concept of a public offering.">
+    </figure>
+    <div class="pad" style="padding-top:36px">
+      <p class="kicker">A study of a public offering</p>
+      <h2 class="chapter">Copper glass, a plinth, and an idea of a market.</h2>
+      <div class="notes">
+        <p class="note"><strong>What the room is for.</strong>The picture places the community mark in a hall that suggests a listing. It is concept art for this page: a way to look at the theme of a company meeting public markets.</p>
+        <p class="note"><strong>What the room leaves out.</strong>There is no date, price, or share count in the text of this site. ANT is a community token on Ethereum. It is separate from equity in Anthropic PBC and separate from access to Claude.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" id="community">
+    <div class="split">
+      <div>
+        <p class="kicker blue">The room next door</p>
+        <h2 class="chapter">A token page, and the company’s own doors.</h2>
+        <p class="lede">Follow the community account recorded here. If you want the company or the assistant, leave this page and use their sites.</p>
+      </div>
+      <div class="links">
+        <a href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">Community on X<span>@anthropiconeth</span></a>
+        <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer">The company’s site<span>anthropic.com</span></a>
+        <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">The assistant’s site<span>claude.ai</span></a>
+        <a href="https://etherscan.io/token/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token on Etherscan<span>address</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" id="ledger" style="border-top:1px solid var(--line)">
     <p class="kicker">Token record</p>
-    <h2>The address, without invented figures.</h2>
+    <h2 class="chapter">The address, without invented figures.</h2>
     <dl class="rows">
       <div class="row"><dt>Name</dt><dd>Anthropic, as a community nickname</dd></div>
       <div class="row"><dt>Ticker</dt><dd>$ANT</dd></div>
       <div class="row"><dt>Chain</dt><dd>Ethereum</dd></div>
-      <div class="row"><dt>Contract</dt><dd>
-        <span class="addr" id="ca">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span>
-        <button class="copy" type="button" data-copy="0x0b84cd2a58159057fe71a1a9438a72c5c97ab985">Copy address</button>
-      </dd></div>
+      <div class="row"><dt>Contract</dt><dd><span class="addr" id="ca">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span><button class="copy" type="button" data-copy="0x0b84cd2a58159057fe71a1a9438a72c5c97ab985">Copy address</button></dd></div>
       <div class="row"><dt>Uniswap</dt><dd><a href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Output currency is this address<span class="sr"> (opens in a new tab)</span></a></dd></div>
       <div class="row"><dt>Dexscreener</dt><dd><a href="https://dexscreener.com/ethereum/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token page<span class="sr"> (opens in a new tab)</span></a></dd></div>
       <div class="row"><dt>Etherscan</dt><dd><a href="https://etherscan.io/token/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token page<span class="sr"> (opens in a new tab)</span></a></dd></div>
       <div class="row"><dt>X</dt><dd><a href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">https://x.com/anthropiconeth<span class="sr"> (opens in a new tab)</span></a></dd></div>
     </dl>
-    <p class="note">Supply, tax, and liquidity are not stated.</p>
+    <p class="lede">Supply, tax, and liquidity are not stated. Copy writes the address exactly.</p>
+  </section>
+
+  <section class="pad faq" id="questions" style="border-top:1px solid var(--line)">
+    <p class="kicker">Questions</p>
+    <h2 class="chapter" style="margin-bottom:12px">Short answers.</h2>
+    <details>
+      <summary>Is this the company’s website?</summary>
+      <p>No. It is a community page for a token that uses a similar name and mark. The company publishes at anthropic.com.</p>
+    </details>
+    <details>
+      <summary>Does the token include Claude?</summary>
+      <p>No. There is no chat here and no login to an assistant. Claude is reached on the company’s own site.</p>
+    </details>
+    <details>
+      <summary>Do the pictures report a listing?</summary>
+      <p>No. Numbers and filing labels inside the city picture are drawn. This page does not repeat them as facts.</p>
+    </details>
+    <details>
+      <summary>Where is the contract?</summary>
+      <p>It is 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985 on Ethereum. The same string is on the copy button and in the Uniswap, Dexscreener, and Etherscan links.</p>
+    </details>
+    <details>
+      <summary>How do I check the token myself?</summary>
+      <p>Open the Etherscan link and compare the address with the string on this page. The Uniswap link sets that address as the output currency. The Dexscreener link is the chart page for the same address.</p>
+    </details>
+    <details>
+      <summary>Which pictures are on this page?</summary>
+      <p>Three: the cream market hall, the city banner with servers and a drawn filing, and the copper room with the mark on a plinth. Each is shown whole. Figures inside the city banner stay inside the picture.</p>
+    </details>
   </section>
 </main>
 <footer class="foot">
-  <p>© <span id="year"></span> ANT community page. Independent of Anthropic PBC and Claude. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. The pictures are a concept, not a listing and not a claim of company ownership. Cryptocurrency can go to zero.</p>
+  <p>© <span id="year"></span> ANT community page. Independent of Anthropic PBC and Claude. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. Pictures are a concept, not a listing and not ownership of a company. Cryptocurrency can go to zero.</p>
 </footer>
 <div id="toast" role="status" aria-live="polite"></div>
 <script>
 (function(){
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var y = document.getElementById("year");
-  if (y) y.textContent = String(new Date().getFullYear());
+  var year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
   var bar = document.getElementById("bar");
   function onScroll(){
     var max = document.documentElement.scrollHeight - innerHeight;
     if (bar) bar.style.width = (max>0 ? scrollY/max*100 : 0) + "%";
     var cur = "";
-    ["idea","concept","ledger"].forEach(function(id){
+    ["work","city","concept","ledger","questions"].forEach(function(id){
       var el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top < innerHeight*0.45) cur = id;
+      if (el && el.getBoundingClientRect().top < innerHeight * 0.4) cur = id;
     });
     document.querySelectorAll(".nav a").forEach(function(a){
       a.setAttribute("aria-current", a.getAttribute("href")==="#"+cur ? "true" : "false");
@@ -210,24 +302,24 @@ h1 em{font-style:italic;color:var(--terra)}
   if (reduce || !("IntersectionObserver" in window)) nodes.forEach(function(n){n.classList.add("in");});
   else {
     var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
-    },{threshold:.16});
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+    }, {threshold:.15});
     nodes.forEach(function(n){io.observe(n);});
   }
-  var toast = document.getElementById("toast"), timer=0;
-  function say(m){ toast.textContent=m; toast.classList.add("show"); clearTimeout(timer); timer=setTimeout(function(){toast.classList.remove("show");},2600); }
+  var toast = document.getElementById("toast"), timer = 0;
+  function say(m){ toast.textContent = m; toast.classList.add("show"); clearTimeout(timer); timer = setTimeout(function(){ toast.classList.remove("show"); }, 2600); }
   document.querySelectorAll("[data-copy]").forEach(function(btn){
     btn.addEventListener("click", function(){
-      var text = btn.getAttribute("data-copy")||"";
-      function done(){ say("Copied "+text); }
+      var text = btn.getAttribute("data-copy") || "";
+      function done(){ say("Copied " + text); }
       function fallback(){
-        var area=document.createElement("textarea");
-        area.value=text; area.setAttribute("readonly","");
-        area.style.position="fixed"; area.style.left="0"; area.style.top="0";
+        var area = document.createElement("textarea");
+        area.value = text; area.setAttribute("readonly","");
+        area.style.position = "fixed"; area.style.left = "0"; area.style.top = "0";
         document.body.appendChild(area); area.focus(); area.select();
-        var ok=false; try{ ok=document.execCommand("copy"); }catch(e){ ok=false; }
+        var ok = false; try { ok = document.execCommand("copy"); } catch(e){ ok = false; }
         area.remove();
-        if(ok) done(); else say("Address: "+text);
+        if (ok) done(); else say("Address: " + text);
       }
       if (navigator.clipboard && isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
       else fallback();
