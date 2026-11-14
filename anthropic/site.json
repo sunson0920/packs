@@ -4,7 +4,7 @@
   "ticker": "ANT",
   "template": "c52-bureau-nebula",
   "domain": "anthropicant.si",
-  "ca": "TBA",
+  "ca": "0x0b84cd2a58159057fe71a1a9438a72c5c97ab985",
   "chain": "ethereum",
   "theme_mode": "preset",
   "theme_preset": "mint-pastel",
@@ -52,14 +52,14 @@
     "dex_name": "Uniswap V4",
     "dex_logo": "assets/dex.png",
     "buy_url_source": "dex",
-    "buy_url": "https://app.uniswap.org/",
-    "chart_page": "https://dexscreener.com/ethereum",
-    "chart_embed": "https://dexscreener.com/ethereum?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=1&chartType=usd&interval=15",
+    "buy_url": "https://app.uniswap.org/swap?chain=mainnet&inputCurrency=NATIVE&outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985",
+    "chart_page": "https://dexscreener.com/ethereum/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985",
+    "chart_embed": "https://dexscreener.com/ethereum/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=1&chartType=usd&interval=15",
     "chain_name": "Ethereum"
   },
   "site_slug": "anthropic",
   "project_id": "pmwfnsf9j9avp3",
-  "exported_at": "2026-11-14T01:03:12.608Z",
+  "exported_at": "2026-11-14T01:44:36.198Z",
   "make_videos": false,
   "videos": []
 }
