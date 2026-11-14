@@ -30,10 +30,10 @@
   --night:#070b18;
   --indigo:#12183a;
   --indigo-2:#1a2250;
-  --ivory:#f4efe4;
-  --ivory-dim:#c8c0b0;
-  --copper:#c4843a;
-  --amber:#e6b15a;
+  --ivory:#fff9cf;
+  --ivory-dim:#e7d7b4;
+  --copper:#d69d5a;
+  --amber:#e6ac6d;
   --line:rgba(244,239,228,.14);
   --serif:"Fraunces",Georgia,serif;
   --sans:"Outfit",system-ui,sans-serif;
@@ -64,34 +64,33 @@ p,.lede,figcaption{overflow-wrap:anywhere}
 .index a{text-decoration:none;color:var(--ivory-dim);min-height:44px;display:inline-flex;align-items:center}
 .index a:hover,.index a[aria-current="true"]{color:var(--amber)}
 
-.hall{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:clamp(24px,4vw,72px);align-items:end;padding:clamp(36px,6vw,88px) clamp(20px,4vw,64px) clamp(48px,7vw,100px)}
-.kicker{color:var(--amber);letter-spacing:.18em;text-transform:uppercase;font-size:12px;margin-bottom:18px}
-.hall h1{font-family:var(--serif);font-weight:460;font-size:clamp(56px,7vw,118px);line-height:.9;letter-spacing:-.04em;max-width:9ch}
+.hall{position:relative;background:#101733}
+.hall-media{display:block;width:100%}
+.hall-media img{width:100%;height:auto;object-fit:contain;object-position:center}
+.hall-copy{position:absolute;z-index:2;left:clamp(20px,4vw,72px);top:50%;transform:translateY(-50%);width:min(34%,460px)}
+.kicker{color:var(--amber);letter-spacing:.18em;text-transform:uppercase;font-size:12px;margin-bottom:14px}
+.hall h1{font-family:var(--serif);font-weight:460;font-size:clamp(40px,4.2vw,72px);line-height:.92;letter-spacing:-.035em}
 .hall h1 em{font-style:italic;font-weight:460;color:var(--amber)}
-.hall .lede{margin-top:22px;max-width:36ch;color:var(--ivory-dim);font-size:19px}
-.hall-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hall .lede{margin-top:14px;max-width:32ch;color:#f3e6c4;font-size:clamp(16px,1.4vw,19px)}
+.hall-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;text-decoration:none;border:1px solid var(--copper);color:var(--night);background:var(--amber)}
 .btn.quiet{background:transparent;color:var(--ivory);border-color:var(--line)}
 .btn img{width:18px;height:18px;border-radius:50%;background:#fff}
 .plate{position:relative;min-width:0}
 .plate figcaption{margin-top:12px;color:var(--ivory-dim);font-size:13px;letter-spacing:.04em}
-.frame{position:relative;background:var(--indigo);border:1px solid var(--line);overflow:hidden}
-.frame img{width:100%;height:auto;object-fit:contain;background:var(--indigo)}
-.hall .frame{aspect-ratio:3/1}
-.hall .frame img{width:100%;height:100%;object-fit:contain}
-.rim{pointer-events:none;position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(230,177,90,.35),inset 0 0 80px rgba(196,132,58,.12)}
-
-.nave,.core,.ledger{padding:clamp(64px,9vw,120px) clamp(20px,4vw,64px)}
-.nave{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(240px,.6fr);gap:clamp(24px,4vw,64px);align-items:center;background:linear-gradient(180deg,var(--night),var(--indigo) 40%,var(--night))}
-.nave .frame{aspect-ratio:16/9}
-.nave .frame img{width:100%;height:100%;object-fit:contain}
+.frame{position:relative;background:#101733}
+.frame img{width:100%;height:auto;object-fit:contain}
 .chapter{font-family:var(--serif);font-weight:460;font-size:clamp(36px,4vw,64px);line-height:.95;letter-spacing:-.03em}
 .chapter em{font-style:italic;color:var(--amber)}
-.nave p,.core p{margin-top:16px;color:var(--ivory-dim);max-width:42ch}
 
-.core{display:grid;grid-template-columns:minmax(240px,.7fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:center}
-.core .frame{aspect-ratio:1;max-width:560px}
-.core .frame img{width:100%;height:100%;object-fit:contain}
+.nave{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(72px,10vw,130px) clamp(20px,4vw,64px);background:#0c1228}
+.nave .frame img{width:100%;height:auto}
+.nave p,.core p{margin-top:16px;color:var(--ivory-dim);max-width:36ch}
+
+.core{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(72px,10vw,130px) clamp(20px,4vw,64px)}
+.core .frame{width:min(100%,640px)}
+.core .frame img{width:100%;height:auto}
+.ledger{padding:clamp(72px,10vw,120px) clamp(20px,4vw,64px)}
 
 .ledger{border-top:1px solid var(--line)}
 .ledger h2{font-family:var(--serif);font-weight:460;font-size:clamp(40px,5vw,72px);letter-spacing:-.03em;line-height:.95}
@@ -111,13 +110,14 @@ p,.lede,figcaption{overflow-wrap:anywhere}
 .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:no-preference){
-  .hall .frame{animation:arrive 1.1s var(--ease) both}
-  @keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .hall-media{animation:arrive 1.2s var(--ease) both}
+  @keyframes arrive{from{opacity:0}to{opacity:1}}
 }
 @media (max-width:860px){
-  .hall,.nave,.core,.row{grid-template-columns:1fr}
+  .nave,.core,.row{grid-template-columns:1fr}
   .topbar{align-items:flex-start;flex-direction:column}
-  .hall h1{max-width:none}
+  .hall-copy{position:relative;left:auto;top:auto;transform:none;width:auto;padding:28px 20px 40px}
+  .core .frame{width:min(100%,520px);margin-inline:auto}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -139,29 +139,25 @@ p,.lede,figcaption{overflow-wrap:anywhere}
 </header>
 <main>
   <section class="hall" id="hall">
-    <div>
-      <p class="kicker">Midnight hall · Ethereum</p>
-      <h1>A quiet <em>instrument</em> for a community token.</h1>
-      <p class="lede">This page is an observatory, not a company. The only measurement it keeps is the contract recorded below.</p>
+    <picture class="hall-media">
+      <source media="(max-width: 860px)" srcset="assets/art/hall-tall.webp" type="image/webp">
+      <img src="assets/art/hall.webp" width="1280" height="427" alt="A computational cathedral of indigo basalt and smoked glass, its nave lit ivory and traced in copper. The left of the frame is open night sky.">
+    </picture>
+    <div class="hall-copy">
+      <p class="kicker">The observatory</p>
+      <h1>A hall of <em>basalt</em> and warm glass.</h1>
+      <p class="lede">An independent room for the ANT token. The vault stays lit. The contract is one line in the ledger.</p>
       <div class="hall-actions">
         <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" alt="">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
         <a class="btn quiet" href="#ledger">Read the ledger</a>
       </div>
     </div>
-    <figure class="plate reveal">
-      <div class="frame">
-        <img src="assets/art/hall.webp" width="2400" height="800" alt="Wide architectural interior of a midnight observatory, generated for this page.">
-        <span class="rim" aria-hidden="true"></span>
-      </div>
-      <figcaption>The hall. Architecture made for this page.</figcaption>
-    </figure>
   </section>
 
   <section class="nave" id="nave">
     <figure class="plate reveal">
       <div class="frame">
-        <img src="assets/art/lantern.webp" width="1920" height="1080" alt="Wide computational landscape seen from an elevated gallery, generated for this page.">
-        <span class="rim" aria-hidden="true"></span>
+        <img src="assets/art/lantern.webp" width="1280" height="720" alt="A rain-wet basalt terrace above a terraced computational valley, with ivory light pools and a copper-lit door.">
       </div>
       <figcaption>The lantern field.</figcaption>
     </figure>
@@ -175,8 +171,7 @@ p,.lede,figcaption{overflow-wrap:anywhere}
   <section class="core" id="core">
     <figure class="plate reveal">
       <div class="frame">
-        <img src="assets/art/core.webp" width="1200" height="1200" alt="Square sculptural form of a neural core in copper light, generated for this page.">
-        <span class="rim" aria-hidden="true"></span>
+        <img src="assets/art/core.webp" width="1024" height="1024" alt="A square sculpture: an ivory crystal heart in copper filigree, held by basalt rings set with lapis.">
       </div>
       <figcaption>The core, kept square.</figcaption>
     </figure>
