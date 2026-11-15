@@ -57,10 +57,15 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
 .btn.quiet{background:transparent;color:var(--cream);border:1px solid var(--line)}
 .btn img{width:18px;height:18px;border-radius:50%;background:#fff}
 .open{padding:18px clamp(16px,3vw,40px) 8px}
-.hero-art,.story-fig,.pair figure{margin:16px 0 0;background:#07090e;border:1px solid var(--line)}
+.who{display:grid;grid-template-columns:128px minmax(0,1fr);gap:18px;align-items:center}
+.mascot-intro{width:128px;height:128px;object-fit:cover;object-position:center;background:#f3eee4;border-radius:18px}
+.hero-art,.story-fig,.pair figure,.gallery figure{margin:16px 0 0;background:#07090e;border:1px solid var(--line)}
 .hero-art img,.story-fig img,.pair img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center center;background:#07090e}
 .cap{margin:0;padding:12px 16px 14px;background:#1c1612;color:#f4efe6;font-size:16px;font-weight:600}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.pair,.gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gallery img,.hero-art img,.story-fig img,.pair img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center center;background:#07090e}
+.gallery img.is-square{aspect-ratio:1}
 .pair .label{margin:0;padding:12px 14px 0;color:var(--cyan);letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600}
 .pad{padding:clamp(56px,8vw,100px) clamp(16px,4vw,64px)}
 .chapter{font-size:clamp(36px,4.6vw,68px)}
@@ -93,7 +98,8 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
   .hero-art img{height:min(58vh,560px);width:auto;max-width:100%;margin-inline:auto}
 }
 @media (max-width:900px){
-  .pair,.steps,.row{grid-template-columns:1fr}
+  .who,.pair,.gallery,.steps,.row{grid-template-columns:1fr}
+  .mascot-intro{width:112px;height:112px}
   .top{align-items:flex-start;flex-direction:column}
 }
 @media (prefers-reduced-motion:reduce){
@@ -110,6 +116,7 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
   <a class="brand" href="#story"><img src="assets/logo.png" width="400" height="400" alt=""><strong>ANT</strong></a>
   <nav class="nav" aria-label="Sections">
     <a href="#story">Story</a>
+    <a href="#gallery">Mascot</a>
     <a href="#claude">Claude</a>
     <a href="#ipo">IPO</a>
     <a href="#tape">Chart</a>
@@ -120,9 +127,14 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
 </header>
 <main>
   <section class="open" id="story">
-    <p class="kicker">Independent community token · Ethereum</p>
-    <h1>Anthropic. Claude. <em>IPO culture.</em></h1>
-    <p class="lede">ANT is a community token. The scenes are imagined. They are not an announcement, a share, or a login to Claude. The mark in the header is our logo.</p>
+    <div class="who">
+      <img class="mascot-intro" src="assets/art/mascot-reference.png" width="256" height="256" alt="A fuzzy amber ant with large black eyes, wearing a cream cap with a small lettermark.">
+      <div>
+        <p class="kicker">Independent community token · Ethereum</p>
+        <h1>Anthropic. Claude. <em>IPO culture.</em></h1>
+        <p class="lede">ANT is a community token, and this ant is its character. The cap is ours. The scenes are imagined. They are not an announcement, a share, or a login to Claude. The mark in the header is our logo.</p>
+      </div>
+    </div>
     <figure class="hero-art">
       <img src="assets/art/theme-anthropic.webp" width="1280" height="720" alt="Imagined night street. Billboards read Anthropic, IPO, and Claude. A lettermark stands in the foreground.">
       <figcaption class="cap">Community concept art — imagined scene, not an Anthropic announcement.</figcaption>
@@ -143,6 +155,30 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
       <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" width="64" height="64" alt="">Buy on Uniswap<span class="sr"> (opens in a new tab)</span></a>
       <a class="btn quiet" href="#tape">Live chart</a>
       <button class="btn quiet" type="button" data-copy="0x0b84cd2a58159057fe71a1a9438a72c5c97ab985">Copy contract</button>
+    </div>
+  </section>
+
+  <section class="pad" id="gallery">
+    <p class="kicker">The ant</p>
+    <h2 class="chapter">Cap on. Antennae up.</h2>
+    <p class="essay">Four scenes for the community character. A drawing on this page, not an official mascot and not a claim on a company or its stock.</p>
+    <figure class="story-fig">
+      <img src="assets/art/mascot-hero.webp" width="1280" height="720" alt="A fuzzy amber ant in a cream cap stands before imagined signs that read IPO and Anthropic.">
+      <figcaption class="cap">Community meme, fictional scene. The signs are part of the drawing, not a listing.</figcaption>
+    </figure>
+    <div class="gallery">
+      <figure>
+        <img src="assets/art/mascot-meme-1.webp" width="1280" height="720" alt="The same ant typing at a wooden desk beside a book labeled Claude.">
+        <figcaption class="cap">Warm lamp. Quiet keys. Claude itself still lives at claude.ai.</figcaption>
+      </figure>
+      <figure>
+        <img class="is-square" src="assets/art/mascot-meme-2.webp" width="1024" height="1024" alt="The ant in round glasses, seated on books with a pencil and a cup nearby.">
+        <figcaption class="cap">Glasses on. Coffee near. Still just a community drawing.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/art/mascot-meme-3.webp" width="1280" height="720" alt="The ant in a pale flight suit, holding a helmet, with a crowd and flags behind.">
+        <figcaption class="cap">Helmet in hand. A party in the picture, not a ticket to stock.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -256,7 +292,7 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
   var bar = document.getElementById("bar");
-  var ids = ["story","claude","ipo","anthropic","tape","buy","supply","record"];
+  var ids = ["story","gallery","claude","ipo","anthropic","tape","buy","supply","record"];
   function onScroll(){
     var max = document.documentElement.scrollHeight - innerHeight;
     if (bar) bar.style.width = (max > 0 ? scrollY / max * 100 : 0) + "%";
@@ -265,7 +301,7 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
       var el = document.getElementById(id);
       if (el && el.getBoundingClientRect().top < innerHeight * 0.35) cur = id;
     });
-    var map = {story:"story",claude:"claude",ipo:"ipo",anthropic:"story",tape:"tape",buy:"buy",supply:"supply",record:"record"};
+    var map = {story:"story",gallery:"gallery",claude:"claude",ipo:"ipo",anthropic:"story",tape:"tape",buy:"buy",supply:"supply",record:"record"};
     var href = "#" + (map[cur] || "");
     document.querySelectorAll(".nav a").forEach(function(a){
       a.setAttribute("aria-current", a.getAttribute("href") === href ? "true" : "false");
