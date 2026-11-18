@@ -3,244 +3,375 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANT — a community token</title>
-<meta name="description" content="ANT is an independent community token on Ethereum. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. Pictures of Anthropic, Claude, and public markets are a story, not a listing.">
-<meta property="og:title" content="ANT — a community token">
-<meta property="og:description" content="Independent community token on Ethereum. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985.">
-<meta property="og:image" content="assets/art/theme-anthropic.webp">
+<title>ANT — the ant in the cream cap</title>
+<meta name="description" content="Anthropic (ANT) is an independent community meme token on Ethereum. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. The fuzzy ant is a community character, not an official mascot and not Anthropic PBC.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ANT — the ant in the cream cap">
+<meta property="og:description" content="Independent community meme token on Ethereum. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. A community character, not an official mascot.">
+<meta property="og:image" content="https://anthropicant.si/assets/art/mascot-reference.png">
+<meta property="og:image:alt" content="A fuzzy brown ant with large glossy black eyes, two antennae, and a cream baseball cap with a small black lettermark.">
 <meta property="og:url" content="https://anthropicant.si/">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ANT — the ant in the cream cap">
+<meta name="twitter:description" content="Independent community meme token on Ethereum. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985.">
+<meta name="twitter:image" content="https://anthropicant.si/assets/art/mascot-reference.png">
+<meta name="twitter:image:alt" content="A fuzzy brown ant with large glossy black eyes, two antennae, and a cream baseball cap.">
 <link rel="canonical" href="https://anthropicant.si/">
-<link rel="icon" href="assets/logo.png">
-<meta name="theme-color" content="#090b10">
+<link rel="icon" type="image/png" href="assets/art/mascot-reference.png">
+<link rel="apple-touch-icon" href="assets/art/mascot-reference.png">
+<meta name="theme-color" content="#f4e7d6">
+<link rel="preload" as="image" href="assets/art/mascot-reference.png">
 <style>
-@font-face{font-family:"Newsreader";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/newsreader-400.woff2") format("woff2")}
-@font-face{font-family:"Newsreader";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/newsreader-500.woff2") format("woff2")}
-@font-face{font-family:"Newsreader";font-style:italic;font-weight:500;font-display:swap;src:url("assets/fonts/newsreader-italic.woff2") format("woff2")}
 @font-face{font-family:"Outfit";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/outfit-400.woff2") format("woff2")}
 @font-face{font-family:"Outfit";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/outfit-600.woff2") format("woff2")}
 :root{
-  --ink:#090b10;--ink-2:#12151d;--panel:#171b24;--cream:#f4efe6;--dim:#b7b0a4;
-  --copper:#e0a15a;--cyan:#8fdfff;--line:rgba(244,239,230,.14);
-  --serif:"Newsreader",Georgia,serif;--sans:"Outfit",system-ui,sans-serif;
+  --bg:#f4e7d6;
+  --bg-deep:#efdcc6;
+  --paper:#fffaf4;
+  --ink:#2a1810;
+  --muted:#5c4032;
+  --caramel:#8d4b28;
+  --caramel-deep:#6e351c;
+  --line:rgba(42,24,16,.12);
+  --shadow:0 18px 40px rgba(92,48,24,.12);
+  --sans:"Outfit",system-ui,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",monospace;
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-html,body{margin:0;background:var(--ink);color:var(--cream);overflow-x:clip}
-body{font:400 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{
+  font:400 18px/1.55 var(--sans);
+  -webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(900px 480px at 110% -10%, rgba(224,140,70,.28), transparent 60%),
+    radial-gradient(720px 420px at -15% 8%, rgba(141,75,40,.14), transparent 55%),
+    var(--bg);
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:radial-gradient(rgba(42,24,16,.09) 1px, transparent 1.2px);
+  background-size:18px 18px;
+  mask-image:linear-gradient(#000 0%, transparent 78%);
+}
 img{max-width:100%;display:block}
-a{color:inherit}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-h1,h2,h3,p,figure{margin:0}
-p,figcaption,dd{overflow-wrap:anywhere}
-:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-.skip{position:absolute;left:12px;top:-48px;z-index:40;background:var(--cream);color:var(--ink);padding:10px 14px;text-decoration:none}
+a{color:var(--caramel-deep)}
+button,a{font:inherit}
+button{color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,p,figure,ul,ol{margin:0}
+p,figcaption,dd,li{overflow-wrap:anywhere}
+:focus-visible{outline:3px solid var(--caramel-deep);outline-offset:3px}
+[id]{scroll-margin-top:188px}
+.skip{position:absolute;left:12px;top:-56px;z-index:50;background:var(--ink);color:var(--paper);padding:10px 14px;border-radius:999px;text-decoration:none}
 .skip:focus{top:12px}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.addr{font-variant-numeric:tabular-nums;letter-spacing:0;overflow-wrap:anywhere;word-break:break-all}
-.bar{position:fixed;top:0;left:0;height:2px;width:0;z-index:40;background:linear-gradient(90deg,var(--copper),var(--cyan))}
-.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,3vw,40px);background:rgba(9,11,16,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand img{width:40px;height:40px;background:#f4efe6}
-.brand strong{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:.08em}
-.nav{display:flex;flex-wrap:wrap;gap:4px 16px}
-.nav a{text-decoration:none;color:var(--dim);min-height:44px;display:inline-flex;align-items:center;font-size:15px}
-.nav a:hover,.nav a[aria-current="true"]{color:var(--cyan)}
-.kicker{color:var(--copper);letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:600;margin-bottom:12px}
-h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.03em;line-height:.94}
-h1{font-size:clamp(34px,3.6vw,56px)}
-h1 em,h2 em{font-style:italic;color:var(--copper)}
-.lede{margin-top:14px;max-width:46ch;color:var(--dim);font-size:18px}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;text-decoration:none;background:var(--cream);color:var(--ink);font-weight:600}
-.btn.quiet{background:transparent;color:var(--cream);border:1px solid var(--line)}
-.btn img{width:18px;height:18px;border-radius:50%;background:#fff}
-.open{padding:18px clamp(16px,3vw,40px) 8px}
-.who{display:grid;grid-template-columns:128px minmax(0,1fr);gap:18px;align-items:center}
-.mascot-intro{width:128px;height:128px;object-fit:cover;object-position:center;background:#f3eee4;border-radius:18px}
-.hero-art,.story-fig,.pair figure,.gallery figure{margin:16px 0 0;background:#07090e;border:1px solid var(--line)}
-.hero-art img,.story-fig img,.pair img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center center;background:#07090e}
-.cap{margin:0;padding:12px 16px 14px;background:#1c1612;color:#f4efe6;font-size:16px;font-weight:600}
-.pair,.gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
-.gallery img,.hero-art img,.story-fig img,.pair img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center center;background:#07090e}
-.gallery img.is-square{aspect-ratio:1}
-.pair .label{margin:0;padding:12px 14px 0;color:var(--cyan);letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600}
-.pad{padding:clamp(56px,8vw,100px) clamp(16px,4vw,64px)}
-.chapter{font-size:clamp(36px,4.6vw,68px)}
-.essay{max-width:62ch;color:var(--dim);font-size:19px;margin-top:14px}
-.story-fig{margin-top:22px}
-.chart-wrap,.buy,.supply{width:min(1100px,100%);margin-inline:auto}
-.chart-box{margin-top:22px;background:#05070b;border:1px solid var(--line)}
-.chart-box iframe{display:block;width:100%;height:clamp(480px,68vh,740px);border:0;background:#0b0e14}
-.chart-links{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:14px}
-.chart-links a,.links a{color:var(--cyan)}
-.chart-links a{min-height:44px;display:inline-flex;align-items:center}
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
-.step{background:linear-gradient(180deg,rgba(224,161,90,.12),transparent 42%),var(--panel);border-top:2px solid var(--copper);padding:20px 16px 24px;min-height:200px}
-.step b{display:block;font-family:var(--serif);font-weight:500;font-size:26px;margin:8px 0}
-.step p{color:var(--dim);font-size:16px}
-.rows{margin-top:22px;border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
-.row dt{color:var(--copper);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
-.row dd{margin:0;min-width:0}
-.copy{min-height:44px;margin-top:10px;padding:0 14px;border:1px solid var(--cream)}
-.copy:hover{background:var(--cream);color:var(--ink)}
-.note{margin-top:18px;color:var(--dim);max-width:70ch;font-size:15px}
-.foot{padding:28px clamp(16px,4vw,56px) 48px;color:var(--dim);border-top:1px solid var(--line);font-size:14px}
-.foot p{max-width:85ch}
-#toast{position:fixed;left:16px;right:16px;bottom:16px;margin:auto;max-width:720px;background:var(--cream);color:var(--ink);padding:12px 14px;transform:translateY(160%);transition:transform .35s var(--ease);z-index:50;overflow-wrap:anywhere}
-#toast.show{transform:none}
-.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.js .reveal.in{opacity:1;transform:none}
-@media (min-width:901px){
-  .hero-art img{height:min(58vh,560px);width:auto;max-width:100%;margin-inline:auto}
+.addr{font-family:var(--mono);font-size:.86em;font-variant-numeric:tabular-nums;letter-spacing:0;overflow-wrap:anywhere;word-break:break-all}
+.bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:40;background:linear-gradient(90deg,var(--caramel),#e08a3c);border-radius:0 3px 3px 0}
+.wrap{width:min(1120px,calc(100% - 32px));margin-inline:auto}
+.top{
+  position:sticky;top:0;z-index:30;
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;
+  padding:10px 16px 12px;
+  background:rgba(244,231,214,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
 }
-@media (max-width:900px){
-  .who,.pair,.gallery,.steps,.row{grid-template-columns:1fr}
-  .mascot-intro{width:112px;height:112px}
-  .top{align-items:flex-start;flex-direction:column}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none;color:var(--ink);min-height:44px}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#f3eadf;box-shadow:0 0 0 3px #fffaf4,0 0 0 4px rgba(141,75,40,.35)}
+.brand strong{font-weight:600;font-size:20px;letter-spacing:.08em}
+.brand small{display:block;font-size:12px;letter-spacing:.04em;color:var(--muted);font-weight:400}
+.nav{display:flex;flex-wrap:wrap;gap:2px;width:100%;order:3}
+.nav a{
+  text-decoration:none;color:var(--ink);
+  min-height:44px;padding:0 12px;border-radius:999px;
+  display:inline-flex;align-items:center;white-space:nowrap;font-size:15px;font-weight:600;
+}
+.nav a:hover{background:rgba(42,24,16,.06)}
+.nav a[aria-current="true"]{background:var(--ink);color:var(--paper)}
+.kicker{color:var(--caramel-deep);letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600;margin-bottom:10px}
+h1,h2{font-weight:600;letter-spacing:-.035em;line-height:.98}
+h1{font-size:clamp(42px,6.4vw,76px)}
+h2{font-size:clamp(32px,4.4vw,52px)}
+h3{font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.lede{margin-top:16px;max-width:46ch;color:var(--muted);font-size:18px}
+.hero{padding:28px 0 12px}
+.hero-grid{display:grid;gap:28px;align-items:center}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:0 18px;border-radius:999px;text-decoration:none;
+  background:var(--ink);color:var(--paper);font-weight:600;
+  box-shadow:0 8px 18px rgba(42,24,16,.16);
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.quiet{background:transparent;color:var(--ink);border:1.5px solid rgba(42,24,16,.28);box-shadow:none}
+.btn.quiet:hover{background:rgba(255,250,244,.7)}
+.btn img{width:22px;height:22px;border-radius:50%;background:#fff}
+.hero-art{position:relative;display:grid;place-items:center;min-height:320px}
+.medallion{
+  width:min(100%,380px);aspect-ratio:1;border-radius:46%;
+  display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 50% 42%, #fffdf8 0%, #f6e7d4 58%, #e7c7a4 100%);
+  box-shadow:
+    0 0 0 10px #fffaf4,
+    0 0 0 12px rgba(141,75,40,.38),
+    0 28px 50px rgba(92,48,24,.18);
+  animation:float 5.5s ease-in-out infinite;
+}
+.medallion img{width:72%;height:auto;border-radius:28px}
+.sticker{
+  position:absolute;left:6%;bottom:8%;
+  margin:0;padding:8px 12px;border-radius:16px;
+  background:var(--paper);color:var(--caramel-deep);
+  font-size:13px;font-weight:600;letter-spacing:.04em;
+  transform:rotate(-7deg);
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+}
+.ticket{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-top:22px;padding:14px 14px 14px 16px;
+  background:var(--paper);border-radius:22px;
+  border:1.5px dashed rgba(110,53,28,.45);
+}
+.ticket p{color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.ticket code{display:block;margin-top:4px;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:0;list-style:none}
+.chips li{
+  background:rgba(255,250,244,.78);border:1px solid var(--line);border-radius:999px;
+  padding:8px 12px;font-size:14px;font-weight:600;
+}
+.chips span{display:block;font-weight:400;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.marquee{margin:28px 0 0;overflow:hidden;border-block:1px solid var(--line);background:rgba(255,250,244,.55)}
+.marquee-track{display:flex;gap:0;width:max-content;animation:ticker 32s linear infinite}
+.marquee span{padding:12px 0;font-weight:600;letter-spacing:.08em;text-transform:lowercase;color:var(--caramel-deep)}
+.marquee i{font-style:normal;padding:0 14px;color:var(--caramel)}
+.pad{padding:clamp(56px,8vw,96px) 0}
+.essay{max-width:62ch;color:var(--muted);margin-top:12px}
+.cards{display:grid;gap:14px;margin-top:28px}
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:28px;
+  padding:22px 20px 24px;box-shadow:var(--shadow);
+  border-top:4px solid var(--caramel);
+}
+.card p{margin-top:8px;color:#3f2a1d}
+.card a{font-weight:600}
+.sketches{display:grid;gap:14px;margin-top:28px}
+.sketch.lead{display:flex;flex-direction:column}
+.sketch{
+  margin:0;background:var(--paper);border-radius:28px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.sketch img{width:100%;height:auto;background:#f3eadf}
+.sketch.lead img{aspect-ratio:1;object-fit:contain}
+.sketch.square img{aspect-ratio:1;object-fit:cover;object-position:center 20%}
+.sketch.wide img{aspect-ratio:16/9;object-fit:cover;object-position:center 30%}
+.sketch figcaption{padding:14px 16px 16px;color:var(--muted);font-size:15px}
+.steps{display:grid;gap:12px;margin-top:28px}
+.step{background:var(--paper);border-radius:28px;border:1px solid var(--line);box-shadow:var(--shadow);padding:20px 18px 22px}
+.num{
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:var(--ink);color:var(--paper);font-weight:600;font-size:14px;margin-bottom:12px;
+}
+.step p{margin-top:8px;color:var(--muted);font-size:16px}
+.chart-box{margin-top:22px;background:#1a120e;border-radius:28px;overflow:hidden;border:1px solid rgba(42,24,16,.2);box-shadow:var(--shadow)}
+.chart-box iframe{display:block;width:100%;height:clamp(380px,68vh,680px);border:0;background:#1a120e}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px}
+.links a{font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+.sheet{margin-top:22px;background:var(--paper);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}
+.row{display:grid;grid-template-columns:minmax(108px,180px) minmax(0,1fr);gap:8px 16px;padding:16px 18px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row dt{color:var(--caramel-deep);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.row dd{margin:0;min-width:0}
+.row a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.note{margin-top:16px;color:var(--muted);max-width:75ch;font-size:15px}
+.copy,.ticket button{
+  min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--ink);
+  font-weight:600;background:var(--paper);
+}
+.copy{margin-top:10px}
+.copy:hover,.ticket button:hover{background:var(--ink);color:var(--paper)}
+.colony{
+  display:grid;gap:16px;align-items:center;
+  background:var(--paper);border-radius:32px;border:1px solid var(--line);box-shadow:var(--shadow);
+  padding:18px;
+}
+.colony img{width:96px;height:96px;border-radius:28px;object-fit:cover;background:#f3eadf}
+.colony p{color:var(--muted);margin-top:8px}
+.foot{padding:8px 0 48px;color:var(--muted);font-size:14px}
+.foot p{max-width:85ch}
+#toast{
+  position:fixed;left:16px;right:16px;bottom:16px;margin:auto;max-width:640px;
+  background:var(--ink);color:var(--paper);padding:14px 16px;border-radius:18px;
+  transform:translateY(160%);transition:transform .35s var(--ease);z-index:50;
+  overflow-wrap:anywhere;box-shadow:var(--shadow);
+}
+#toast.show{transform:none}
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:979px){
+  .hero-grid{display:flex;flex-direction:column}
+  .hero-art{order:-1;min-height:0}
+  .medallion{width:min(100%,280px)}
+  .top>.btn{order:2}
+}
+@media (max-width:800px){
+  .row{grid-template-columns:1fr;gap:4px}
+  .copy{width:100%}
+}
+@media (min-width:720px){
+  .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sketches{grid-template-columns:1fr 1fr}
+  .sketch.wide{grid-column:1 / -1}
+  .colony{grid-template-columns:96px minmax(0,1fr);padding:22px}
+}
+@media (min-width:980px){
+  .top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding-inline:clamp(16px,3vw,36px)}
+  .nav{order:0;width:auto;flex-wrap:nowrap;justify-content:center}
+  .top>.btn{order:0}
+  .brand{margin-right:0}
+  .hero{padding-top:42px}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:40px}
+  .hero-art{order:0;min-height:320px}
+  .medallion{width:min(100%,380px)}
+  .steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:719px){
+  .ticket{flex-direction:column;align-items:stretch}
+  .ticket button{width:100%}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .reveal{opacity:1;transform:none}
+  .marquee-track{flex-wrap:wrap;width:auto;justify-content:center}
+  .marquee .dup{display:none}
 }
 </style>
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-<a class="skip" href="#story">Skip to content</a>
+<a class="skip" href="#home">Skip to content</a>
 <div class="bar" id="bar" aria-hidden="true"></div>
 <header class="top">
-  <a class="brand" href="#story"><img src="assets/logo.png" width="400" height="400" alt=""><strong>ANT</strong></a>
-  <nav class="nav" aria-label="Sections">
-    <a href="#story">Story</a>
-    <a href="#gallery">Mascot</a>
-    <a href="#claude">Claude</a>
-    <a href="#ipo">IPO</a>
-    <a href="#tape">Chart</a>
+  <a class="brand" href="#home">
+    <img src="assets/art/mascot-reference.png" width="256" height="256" alt="">
+    <span><strong>ANT</strong><small>community meme</small></span>
+  </a>
+  <nav class="nav" aria-label="On this page">
+    <a href="#lore">Lore</a>
+    <a href="#sketches">Sketches</a>
     <a href="#buy">Buy</a>
-    <a href="#supply">Supply</a>
-    <a href="#record">Contract</a>
+    <a href="#tape">Chart</a>
+    <a href="#supply">Token</a>
+    <a href="#community">Community</a>
   </nav>
+  <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Buy ANT<span class="sr"> on Uniswap (opens in a new tab)</span></a>
 </header>
 <main>
-  <section class="open" id="story">
-    <div class="who">
-      <img class="mascot-intro" src="assets/art/mascot-reference.png" width="256" height="256" alt="A fuzzy amber ant with large black eyes, wearing a cream cap with a small lettermark.">
+  <section class="hero wrap" id="home">
+    <div class="hero-grid">
       <div>
-        <p class="kicker">Independent community token · Ethereum</p>
-        <h1>Anthropic. Claude. <em>IPO culture.</em></h1>
-        <p class="lede">ANT is a community token, and this ant is its character. The cap is ours. The scenes are imagined. They are not an announcement, a share, or a login to Claude. The mark in the header is our logo.</p>
+        <p class="kicker">Independent meme token · Ethereum</p>
+        <h1>The ant in the cream cap.</h1>
+        <p class="lede">Anthropic, ticker ANT, is a community meme token on Ethereum. Enormous eyes, two antennae, one cream cap. The portrait is a character the community uses. The contract is the part you can check.</p>
+        <div class="actions">
+          <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" width="64" height="64" alt="">Buy on Uniswap<span class="sr"> (opens in a new tab)</span></a>
+          <a class="btn quiet" href="#tape">Live chart</a>
+          <button class="btn quiet" type="button" data-copy="0x0b84cd2a58159057fe71a1a9438a72c5c97ab985">Copy contract</button>
+        </div>
+        <div class="ticket">
+          <div>
+            <p>Contract</p>
+            <code class="addr" id="ca">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</code>
+          </div>
+          <button type="button" data-copy="0x0b84cd2a58159057fe71a1a9438a72c5c97ab985">Copy</button>
+        </div>
+        <ul class="chips">
+          <li>Ethereum<span>Chain</span></li>
+          <li>ERC-20<span>Standard</span></li>
+          <li>1,000,000,000<span>Total supply</span></li>
+          <li>Uniswap v4<span>ANT / ETH</span></li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <div class="medallion">
+          <img src="assets/art/mascot-reference.png" width="256" height="256" fetchpriority="high" alt="Close-up of a fuzzy brown ant with large glossy black eyes, two antennae, and a cream baseball cap with a small black lettermark, on a warm beige background.">
+        </div>
+        <p class="sticker">community character</p>
       </div>
     </div>
-    <figure class="hero-art">
-      <img src="assets/art/theme-anthropic.webp" width="1280" height="720" alt="Imagined night street. Billboards read Anthropic, IPO, and Claude. A lettermark stands in the foreground.">
-      <figcaption class="cap">Community concept art — imagined scene, not an Anthropic announcement.</figcaption>
-    </figure>
-    <div class="pair">
-      <figure>
-        <p class="label">Claude</p>
-        <img src="assets/art/theme-claude.webp" width="1280" height="720" alt="Imagined atelier with a terracotta sunburst and the word Claude, and a lettermark on a stone plaque.">
-        <figcaption class="cap">Community concept art — imagined scene, not an Anthropic announcement.</figcaption>
-      </figure>
-      <figure>
-        <p class="label">IPO culture</p>
-        <img src="assets/art/theme-ipo.webp" width="1280" height="720" alt="Imagined editorial room with the words Anthropic and IPO, a copper bell, and a chart without numbers.">
-        <figcaption class="cap">Community concept art — imagined scene, not an Anthropic announcement.</figcaption>
-      </figure>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>cap on<i>·</i>antennae up<i>·</i>eyes wide<i>·</i>contract public<i>·</i>not a company<i>·</i>not a listing<i>·</i>check the address<i>·</i></span>
+      <span class="dup">cap on<i>·</i>antennae up<i>·</i>eyes wide<i>·</i>contract public<i>·</i>not a company<i>·</i>not a listing<i>·</i>check the address<i>·</i></span>
     </div>
-    <div class="actions">
-      <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer"><img src="assets/dex.png" width="64" height="64" alt="">Buy on Uniswap<span class="sr"> (opens in a new tab)</span></a>
-      <a class="btn quiet" href="#tape">Live chart</a>
-      <button class="btn quiet" type="button" data-copy="0x0b84cd2a58159057fe71a1a9438a72c5c97ab985">Copy contract</button>
-    </div>
-  </section>
+  </div>
 
-  <section class="pad" id="gallery">
-    <p class="kicker">The ant</p>
-    <h2 class="chapter">Cap on. Antennae up.</h2>
-    <p class="essay">Four scenes for the community character. A drawing on this page, not an official mascot and not a claim on a company or its stock.</p>
-    <figure class="story-fig">
-      <img src="assets/art/mascot-hero.webp" width="1280" height="720" alt="A fuzzy amber ant in a cream cap stands before imagined signs that read IPO and Anthropic.">
-      <figcaption class="cap">Community meme, fictional scene. The signs are part of the drawing, not a listing.</figcaption>
-    </figure>
-    <div class="gallery">
-      <figure>
-        <img src="assets/art/mascot-meme-1.webp" width="1280" height="720" alt="The same ant typing at a wooden desk beside a book labeled Claude.">
-        <figcaption class="cap">Warm lamp. Quiet keys. Claude itself still lives at claude.ai.</figcaption>
-      </figure>
-      <figure>
-        <img class="is-square" src="assets/art/mascot-meme-2.webp" width="1024" height="1024" alt="The ant in round glasses, seated on books with a pencil and a cup nearby.">
-        <figcaption class="cap">Glasses on. Coffee near. Still just a community drawing.</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/art/mascot-meme-3.webp" width="1280" height="720" alt="The ant in a pale flight suit, holding a helmet, with a crowd and flags behind.">
-        <figcaption class="cap">Helmet in hand. A party in the picture, not a ticket to stock.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="pad" id="claude" style="background:var(--ink-2)">
-    <p class="kicker">Claude</p>
-    <h2 class="chapter">Reason, write, and code, on the company’s own door.</h2>
-    <p class="essay">Claude is the assistant Anthropic publishes. People use that kind of assistant to unpack a dense passage, shape a draft, or read a failing line. The person still chooses what to send and what to ship. Holding ANT does not sign anyone in, and this page has no chat.</p>
-    <figure class="story-fig reveal">
-      <img src="assets/art/theme-claude.webp" width="1280" height="720" alt="The Claude atelier picture, shown whole.">
-      <figcaption class="cap">Community concept art — imagined scene, not an Anthropic announcement. Claude itself is at <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">claude.ai</a>.</figcaption>
-    </figure>
-  </section>
-
-  <section class="pad" id="ipo">
-    <p class="kicker">IPO culture</p>
-    <h2 class="chapter">A picture of going public. The token stays a token.</h2>
-    <p class="essay">Public markets have a look: a floor, a prospectus, a name on a board. This section borrows that look. ANT on Ethereum is not equity in Anthropic, and this page does not announce a listing, a date, or a valuation.</p>
-    <figure class="story-fig reveal">
-      <img src="assets/art/theme-ipo.webp" width="1280" height="720" alt="The editorial market picture, shown whole.">
-      <figcaption class="cap">Community concept art — imagined scene, not an Anthropic announcement. The chart in the picture has no prices.</figcaption>
-    </figure>
-  </section>
-
-  <section class="pad" id="anthropic" style="background:#10131a">
-    <p class="kicker">Anthropic</p>
-    <h2 class="chapter">The name, kept apart from the company.</h2>
-    <p class="essay">Anthropic is the company. This site is a community page for a token that uses a similar name and the logo in the header. The company’s own writing is at anthropic.com.</p>
-    <figure class="story-fig reveal">
-      <img src="assets/art/theme-anthropic.webp" width="1280" height="720" alt="The night street picture, shown whole.">
-      <figcaption class="cap">Community concept art — imagined scene, not an Anthropic announcement. The header logo is the community mark.</figcaption>
-    </figure>
-  </section>
-
-  <section class="pad" id="tape" style="background:#07090e">
-    <div class="chart-wrap">
-      <p class="kicker">The tape</p>
-      <h2 class="chapter">The pair that matches this contract.</h2>
-      <p class="essay">Dexscreener lists one Ethereum pair whose base token is <span class="addr">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span>. It trades on Uniswap against ETH. The frame below is that pair. The link opens the same page if the frame stays empty.</p>
-      <div class="chart-box reveal">
-        <iframe
-          id="chart"
-          title="ANT price chart on Dexscreener for the Ethereum pair of this contract"
-          src="https://dexscreener.com/ethereum/0x08f1de596f5917010b753dd7549ee1bdef3c59c0dd05baebad42cc43a87b91aa?embed=1&amp;loadChartSettings=0&amp;trades=0&amp;tabs=0&amp;info=0&amp;chartLeftToolbar=0&amp;chartTheme=dark&amp;theme=dark&amp;chartStyle=1&amp;chartType=usd&amp;interval=15"
-          loading="lazy"></iframe>
+  <section class="pad" id="lore">
+    <div class="wrap">
+      <p class="kicker">Lore</p>
+      <h2>A character, not a company.</h2>
+      <p class="essay">This is a fan page for a meme token. The ant lives here because the page put the cap on it. Holding ANT does not open a product, and this page never connects a wallet.</p>
+      <div class="cards">
+        <article class="card reveal">
+          <h3>The face</h3>
+          <p>Fuzzy brown, glossy black eyes, two antennae, and a cream cap with a small lettermark. That portrait is the community character. It is not an official mascot.</p>
+        </article>
+        <article class="card reveal">
+          <h3>The name</h3>
+          <p>On the contract, the token name is Anthropic and the symbol is ANT. Anthropic PBC is a separate organization. Its site is <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer">anthropic.com</a>. Claude is at <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">claude.ai</a>.</p>
+        </article>
+        <article class="card reveal">
+          <h3>The limit</h3>
+          <p>This page does not announce a listing, a valuation, a liquidity lock, a renounced owner, or a tax. If a figure is missing below, it was not verified, so it is not printed.</p>
+        </article>
       </div>
-      <p class="chart-links" id="chart-fallback">
-        <a href="https://dexscreener.com/ethereum/0x08f1de596f5917010b753dd7549ee1bdef3c59c0dd05baebad42cc43a87b91aa" target="_blank" rel="noopener noreferrer">Open this pair on Dexscreener<span class="sr"> (opens in a new tab)</span></a>
-        <a href="https://etherscan.io/token/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token on Etherscan<span class="sr"> (opens in a new tab)</span></a>
-      </p>
+    </div>
+  </section>
+
+  <section class="pad" id="sketches" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">Sketches</p>
+      <h2>Same ant. A few drawings.</h2>
+      <p class="essay">The square portrait is the reference this page is built from. The other two are community drawings of that character.</p>
+      <div class="sketches">
+        <figure class="sketch lead">
+          <img src="assets/art/mascot-reference.png" width="256" height="256" alt="The reference portrait: fuzzy brown ant, large black eyes, two antennae, cream cap, warm beige background.">
+          <figcaption>Reference portrait. Community character, not an official mascot.</figcaption>
+        </figure>
+        <figure class="sketch square">
+          <img src="assets/art/mascot-meme-2.webp" width="1024" height="1024" alt="Community drawing of the same ant wearing round glasses, seated on books beside a pencil and a cup.">
+          <figcaption>Community drawing. Glasses, a pencil, and a cup. Still just a drawing.</figcaption>
+        </figure>
+        <figure class="sketch wide">
+          <img src="assets/art/mascot-meme-3.webp" width="1280" height="720" alt="Community drawing of the ant in a pale flight suit, holding a helmet, with a crowd and flags that read ANT.">
+          <figcaption>Community drawing of a gathering. The flags are part of the picture, not an event and not a listing.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
   <section class="pad" id="buy">
-    <div class="buy">
+    <div class="wrap">
       <p class="kicker">How to buy</p>
-      <h2 class="chapter">ETH in. This contract out.</h2>
+      <h2>ETH in. This contract out.</h2>
       <p class="essay">The swap link already sets Ethereum and this token as the output. This page never connects a wallet and never asks you to sign.</p>
       <div class="steps">
-        <article class="step"><span class="kicker">01</span><b>A wallet you hold.</b><p>Use an Ethereum wallet you already control. Nothing here requests a connection.</p></article>
-        <article class="step"><span class="kicker">02</span><b>ETH for the swap.</b><p>You need ETH for the tokens and for the network fee. The amount is yours to choose in the app.</p></article>
-        <article class="step"><span class="kicker">03</span><b>Open the preset link.</b><p>Uniswap is set to mainnet, ETH in, and <span class="addr">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span> out.</p></article>
-        <article class="step"><span class="kicker">04</span><b>Read it back.</b><p>Compare that address with the copy on this page and with Etherscan before you confirm anything in your own wallet.</p></article>
+        <article class="step reveal"><span class="num">01</span><h3>A wallet you hold.</h3><p>Use an Ethereum wallet you already control. Nothing here requests a connection.</p></article>
+        <article class="step reveal"><span class="num">02</span><h3>ETH for the swap.</h3><p>You need ETH for the tokens and for the network fee. The amount is yours to choose in the app.</p></article>
+        <article class="step reveal"><span class="num">03</span><h3>Open the preset link.</h3><p>Uniswap is set to mainnet, ETH in, and <span class="addr">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span> out.</p></article>
+        <article class="step reveal"><span class="num">04</span><h3>Read it back.</h3><p>Compare that address with the copy on this page and with Etherscan before you confirm anything in your own wallet.</p></article>
       </div>
       <div class="actions">
         <a class="btn" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
@@ -249,41 +380,67 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
     </div>
   </section>
 
-  <section class="pad" id="supply" style="background:var(--ink-2)">
-    <div class="supply">
-      <p class="kicker">What the chain reports</p>
-      <h2 class="chapter">Supply, without a made-up pie.</h2>
-      <dl class="rows">
+  <section class="pad" id="tape" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">The chart</p>
+      <h2>The pair that matches this contract.</h2>
+      <p class="essay">Dexscreener lists one Ethereum pair whose base token is <span class="addr">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span>. It trades on Uniswap against ETH. The frame below is that pair. The link opens the same page if the frame stays empty.</p>
+      <div class="chart-box reveal">
+        <iframe
+          id="chart"
+          title="ANT price chart on Dexscreener for the Ethereum pair of this contract"
+          src="https://dexscreener.com/ethereum/0x08f1de596f5917010b753dd7549ee1bdef3c59c0dd05baebad42cc43a87b91aa?embed=1&amp;loadChartSettings=0&amp;trades=0&amp;tabs=0&amp;info=0&amp;chartLeftToolbar=0&amp;chartTheme=dark&amp;theme=dark&amp;chartStyle=1&amp;chartType=usd&amp;interval=15"
+          loading="lazy"></iframe>
+      </div>
+      <p class="links">
+        <a href="https://dexscreener.com/ethereum/0x08f1de596f5917010b753dd7549ee1bdef3c59c0dd05baebad42cc43a87b91aa" target="_blank" rel="noopener noreferrer">Open this pair on Dexscreener<span class="sr"> (opens in a new tab)</span></a>
+        <a href="https://etherscan.io/token/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token on Etherscan<span class="sr"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </section>
+
+  <section class="pad" id="supply" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">Token</p>
+      <h2>What the chain reports.</h2>
+      <div class="sheet" id="record">
         <div class="row"><dt>Name</dt><dd>Anthropic</dd></div>
         <div class="row"><dt>Symbol</dt><dd>ANT</dd></div>
         <div class="row"><dt>Standard</dt><dd>ERC-20</dd></div>
         <div class="row"><dt>Chain</dt><dd>Ethereum</dd></div>
         <div class="row"><dt>Decimals</dt><dd>18</dd></div>
         <div class="row"><dt>Total supply</dt><dd>1,000,000,000</dd></div>
-        <div class="row"><dt>Contract</dt><dd><span class="addr">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span></dd></div>
+        <div class="row"><dt>Contract</dt><dd><span class="addr">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span><button class="copy" type="button" data-copy="0x0b84cd2a58159057fe71a1a9438a72c5c97ab985">Copy address</button></dd></div>
         <div class="row"><dt>Pair</dt><dd>Uniswap v4, ANT / ETH. Pair id <span class="addr">0x08f1de596f5917010b753dd7549ee1bdef3c59c0dd05baebad42cc43a87b91aa</span></dd></div>
         <div class="row"><dt>Transfer</dt><dd>The verified source moves the full amount in a transfer. This page does not publish a tax rate.</dd></div>
         <div class="row"><dt>Not verified</dt><dd>Liquidity lock, renounce, and any split of the supply. No allocation chart is drawn here.</dd></div>
-      </dl>
+        <div class="row"><dt>Uniswap</dt><dd><a href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Swap ETH for this contract<span class="sr"> (opens in a new tab)</span></a></dd></div>
+        <div class="row"><dt>Dexscreener</dt><dd><a href="https://dexscreener.com/ethereum/0x08f1de596f5917010b753dd7549ee1bdef3c59c0dd05baebad42cc43a87b91aa" target="_blank" rel="noopener noreferrer">The matching pair<span class="sr"> (opens in a new tab)</span></a></dd></div>
+        <div class="row"><dt>Etherscan</dt><dd><a href="https://etherscan.io/token/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token page<span class="sr"> (opens in a new tab)</span></a></dd></div>
+        <div class="row"><dt>X</dt><dd><a href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">https://x.com/anthropiconeth<span class="sr"> (opens in a new tab)</span></a></dd></div>
+      </div>
       <p class="note">Name, symbol, decimals, and total supply were read from the contract on Ethereum. The same name and symbol, and a mint of 1,000,000,000 tokens, are in the Sourcify exact-match source. The pair is the one Dexscreener returns for this contract. Balances move; the explorer is the current ledger.</p>
     </div>
   </section>
 
-  <section class="pad" id="record">
-    <p class="kicker">The record</p>
-    <h2 class="chapter">One address, copied whole.</h2>
-    <dl class="rows links">
-      <div class="row"><dt>Contract</dt><dd><span class="addr" id="ca">0x0b84cd2a58159057fe71a1a9438a72c5c97ab985</span><button class="copy" type="button" data-copy="0x0b84cd2a58159057fe71a1a9438a72c5c97ab985">Copy address</button></dd></div>
-      <div class="row"><dt>Uniswap</dt><dd><a href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Swap ETH for this contract<span class="sr"> (opens in a new tab)</span></a></dd></div>
-      <div class="row"><dt>Dexscreener</dt><dd><a href="https://dexscreener.com/ethereum/0x08f1de596f5917010b753dd7549ee1bdef3c59c0dd05baebad42cc43a87b91aa" target="_blank" rel="noopener noreferrer">The matching pair<span class="sr"> (opens in a new tab)</span></a></dd></div>
-      <div class="row"><dt>Etherscan</dt><dd><a href="https://etherscan.io/token/0x0b84cd2a58159057fe71a1a9438a72c5c97ab985" target="_blank" rel="noopener noreferrer">Token page<span class="sr"> (opens in a new tab)</span></a></dd></div>
-      <div class="row"><dt>X</dt><dd><a href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">https://x.com/anthropiconeth<span class="sr"> (opens in a new tab)</span></a></dd></div>
-      <div class="row"><dt>Company</dt><dd><a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer">anthropic.com<span class="sr"> (opens in a new tab)</span></a> · <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">claude.ai<span class="sr"> (opens in a new tab)</span></a></dd></div>
-    </dl>
+  <section class="pad" id="community" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">Community</p>
+      <h2>Where the posts are.</h2>
+      <div class="colony reveal">
+        <img src="assets/art/mascot-reference.png" width="256" height="256" alt="">
+        <div>
+          <h3>One account on file.</h3>
+          <p>The X account recorded for this page is <a href="https://x.com/anthropiconeth" target="_blank" rel="noopener noreferrer">x.com/anthropiconeth</a>. Telegram and other chats are not listed here.</p>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 <footer class="foot">
-  <p>© <span id="year"></span> ANT community page. Independent of Anthropic PBC and of Claude. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. Pictures of markets are a concept, not a listing and not ownership of a company. Cryptocurrency can go to zero.</p>
+  <div class="wrap">
+    <p>© <span id="year"></span> ANT community page. Independent of Anthropic PBC and of Claude. The ant is a community character, not an official mascot. Contract 0x0b84cd2a58159057fe71a1a9438a72c5c97ab985. This token is not equity in a company and this page does not announce a listing. The company site is <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer">anthropic.com</a>. Claude is at <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">claude.ai</a>. Cryptocurrency can go to zero.</p>
+  </div>
 </footer>
 <div id="toast" role="status" aria-live="polite"></div>
 <script>
@@ -292,19 +449,24 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
   var bar = document.getElementById("bar");
-  var ids = ["story","gallery","claude","ipo","anthropic","tape","buy","supply","record"];
+  var ids = ["home","lore","sketches","buy","tape","supply","community"];
   function onScroll(){
     var max = document.documentElement.scrollHeight - innerHeight;
-    if (bar) bar.style.width = (max > 0 ? scrollY / max * 100 : 0) + "%";
-    var cur = "";
+    if (bar) bar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + "%";
+    var line = 120;
+    var header = document.querySelector(".top");
+    if (header) line = header.getBoundingClientRect().bottom + 48;
+    var cur = "home";
     ids.forEach(function(id){
       var el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top < innerHeight * 0.35) cur = id;
+      if (el && el.getBoundingClientRect().top <= line) cur = id;
     });
-    var map = {story:"story",gallery:"gallery",claude:"claude",ipo:"ipo",anthropic:"story",tape:"tape",buy:"buy",supply:"supply",record:"record"};
-    var href = "#" + (map[cur] || "");
+    var maxScroll = document.documentElement.scrollHeight - innerHeight;
+    if (maxScroll > 0 && scrollY >= maxScroll - 2) cur = ids[ids.length - 1];
+    var href = "#" + cur;
     document.querySelectorAll(".nav a").forEach(function(a){
-      a.setAttribute("aria-current", a.getAttribute("href") === href ? "true" : "false");
+      if (a.getAttribute("href") === href) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
     });
   }
   onScroll();
@@ -332,7 +494,7 @@ h1 em,h2 em{font-style:italic;color:var(--copper)}
         area.remove();
         if (ok) done(); else say("Address: " + text);
       }
-      if (navigator.clipboard && isSecureContext) navigator.clipboard.writeText(text).then(done, fallbackCopy);
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallbackCopy);
       else fallbackCopy();
     });
   });

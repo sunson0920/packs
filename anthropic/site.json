@@ -6,10 +6,10 @@
   "domain": "anthropicant.si",
   "ca": "0x0b84cd2a58159057fe71a1a9438a72c5c97ab985",
   "chain": "ethereum",
-  "theme_mode": "preset",
-  "theme_preset": "mint-pastel",
-  "theme_primary": "#6ee7b7",
-  "theme_secondary": "#a7f3d0",
+  "theme_mode": "original",
+  "theme_preset": "",
+  "theme_primary": "#8d4b28",
+  "theme_secondary": "#f4e7d6",
   "domain_status": "live",
   "dns_records": [
     {
@@ -25,8 +25,8 @@
       "host": "www.anthropicant.si"
     }
   ],
-  "tagline": "",
-  "about": "",
+  "tagline": "The ant in the cream cap. An independent community meme token on Ethereum.",
+  "about": "Anthropic (ANT) is a community meme token. The fuzzy ant is a community character, not an official mascot and not Anthropic PBC.",
   "x_url": "https://x.com/anthropiconeth",
   "tg_url": "",
   "ref_x_url": "",
@@ -43,8 +43,8 @@
   "wallet": "",
   "vercel_a": "",
   "vercel_cname": "",
-  "logo": "assets/logo.png",
-  "banner": "assets/banner.webp",
+  "logo": "assets/art/mascot-reference.png",
+  "banner": "assets/art/mascot-reference.png",
   "images": [],
   "characters": [],
   "backgrounds": [],
