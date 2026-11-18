@@ -8,8 +8,8 @@
   "chain": "ethereum",
   "theme_mode": "original",
   "theme_preset": "",
-  "theme_primary": "#8d4b28",
-  "theme_secondary": "#f4e7d6",
+  "theme_primary": "#ff7a24",
+  "theme_secondary": "#070403",
   "domain_status": "not_connected",
   "dns_records": [
     {
