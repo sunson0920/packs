@@ -52,11 +52,12 @@ h1,h2,p{margin:0}
 .buy{background:var(--ember);color:#1a0a04;box-shadow:0 0 0 3px rgba(255,197,109,.35)}
 .world{position:relative;min-height:100svh;overflow:hidden;perspective:1400px}
 .bg{position:absolute;inset:-8%;background:#1a0c08 center/cover no-repeat;transform:translate3d(0,0,0) scale(1.08);will-change:transform}
-.bg img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
+.bg img,.bg video{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
+.bg video{position:absolute;inset:0}
 .fog{position:absolute;inset:0;background:linear-gradient(100deg,rgba(12,6,3,.94) 0%,rgba(12,6,3,.82) 46%,rgba(12,6,3,.28) 100%)}
 .stage{position:relative;z-index:2;width:min(1180px,calc(100% - 28px));margin:0 auto;min-height:100svh;display:grid;align-items:center;gap:12px;padding:18px 0 36px}
-.copy{position:relative;z-index:3;max-width:640px;padding:8px 4px 12px}
-.copy h1{font-family:var(--display);font-weight:400;font-size:clamp(92px,18vw,210px);line-height:.84;letter-spacing:-.03em}
+.hero-copy{position:relative;z-index:3;max-width:640px;padding:8px 4px 12px}
+.hero-copy h1{font-family:var(--display);font-weight:400;font-size:clamp(92px,18vw,210px);line-height:.84;letter-spacing:-.03em;color:var(--cream)}
 .kicker{color:var(--gold);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:12px}
 .lede{font-size:clamp(22px,3vw,34px);font-weight:600;letter-spacing:-.03em;max-width:16ch}
 .cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
@@ -66,10 +67,10 @@ h1,h2,p{margin:0}
 .ticket{margin-top:14px;max-width:540px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:12px;border:1.5px dashed var(--gold);border-radius:18px;background:rgba(18,8,4,.55)}
 .ticket p{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .ticket button,.copy{min-height:48px;padding:0 14px;border-radius:999px;background:var(--cream);color:var(--ink);font-weight:600}
-.card3d{justify-self:center;width:min(100%,440px);aspect-ratio:1;transform-style:preserve-3d;will-change:transform}
-.card3d .plate{height:100%;border-radius:36px;padding:14px;background:linear-gradient(160deg,#fff8ef,#e7c49a);box-shadow:0 30px 60px rgba(0,0,0,.45), 18px 22px 0 #ff6a1a;transform:translateZ(40px)}
-.card3d img{width:100%;height:100%;object-fit:cover;border-radius:26px}
-.float-tag{position:absolute;right:8%;top:18%;background:var(--gold);color:var(--ink);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px;padding:8px 10px;transform:rotate(7deg) translateZ(80px)}
+.mark{width:112px;margin-top:16px;border-radius:22px;border:3px solid var(--cream);box-shadow:8px 8px 0 var(--ember);transform:rotate(-6deg)}
+.scene{margin:0 0 28px;border-radius:28px;overflow:hidden;box-shadow:14px 16px 0 #ff6a1a}
+.scene img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.buy-grid{display:grid;gap:22px;align-items:center}
 .marquee{overflow:hidden;background:var(--ember);color:#1a0a04}
 .track{display:flex;width:max-content;animation:slide 24s linear infinite}
 .track b{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.08em;padding:8px 0}
@@ -106,13 +107,14 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,88px);lin
 video[data-slot="hero-video"]{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:26px}
 @keyframes slide{to{transform:translateX(-50%)}}
 @media(min-width:900px){
-  .stage{grid-template-columns:1.05fr .95fr}
+  .stage{grid-template-columns:1fr}
+  .buy-grid{grid-template-columns:.9fr 1.1fr}
+  .buy-grid .path{grid-template-columns:1fr 1fr}
   .path{grid-template-columns:repeat(4,1fr)}
   .nest{grid-template-columns:repeat(3,1fr)}
   .socials{grid-template-columns:1fr 1fr}
 }
 @media(max-width:899px){
-  .card3d{order:-1;width:min(86vw,360px)}
   .row{grid-template-columns:1fr}
   .copy,.ticket button{width:100%}
 }
@@ -140,10 +142,13 @@ video[data-slot="hero-video"]{position:absolute;inset:0;width:100%;height:100%;o
 </header>
 <main id="home">
   <section class="world">
-    <div class="bg" data-depth="0.18" aria-hidden="true"><img data-slot="world-still" src="assets/art/mascot-meme-3.webp" alt=""></div>
+    <div class="bg" data-depth="0.18">
+      <img data-slot="world-still" src="assets/cinema/hero-colony.webp" width="1280" height="720" alt="A cream-capped ant celebrates in a golden cave with a crowd of smaller ants and bowls of amber beads.">
+      <video data-slot="hero-video" hidden muted playsinline loop></video>
+    </div>
     <div class="fog" aria-hidden="true"></div>
     <div class="stage">
-      <div class="copy">
+      <div class="hero-copy">
         <p class="kicker">Independent community meme · Ethereum</p>
         <h1>ANT</h1>
         <p class="lede">The ant in the cream cap.</p>
@@ -160,13 +165,7 @@ video[data-slot="hero-video"]{position:absolute;inset:0;width:100%;height:100%;o
           </div>
           <button type="button" data-copy="0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca">Copy</button>
         </div>
-      </div>
-      <div class="card3d" id="tilt">
-        <div class="plate">
-          <img data-slot="hero-still" src="assets/art/mascot-reference.png" width="256" height="256" alt="Fuzzy brown ant with large black eyes, two antennae, and a cream cap.">
-          <video data-slot="hero-video" hidden muted playsinline loop></video>
-        </div>
-        <p class="float-tag">community ant</p>
+        <img class="mark" src="assets/art/mascot-reference.png" width="256" height="256" alt="The uploaded mascot: fuzzy brown ant, large black eyes, cream cap.">
       </div>
     </div>
   </section>
@@ -174,6 +173,11 @@ video[data-slot="hero-video"]{position:absolute;inset:0;width:100%;height:100%;o
 
   <section class="band cream" id="buy">
     <div class="wrap">
+      <div class="buy-grid">
+      <figure class="scene">
+        <img src="assets/cinema/buy-coin.webp" width="1280" height="720" alt="The cream-capped ant carries a large gold coin through a glowing tunnel.">
+      </figure>
+      <div>
       <p class="kicker" style="color:#8a3e12">How to buy</p>
       <h2>Four moves. No wallet login.</h2>
       <ol class="path">
@@ -185,11 +189,16 @@ video[data-slot="hero-video"]{position:absolute;inset:0;width:100%;height:100%;o
       <div class="cta">
         <a class="fill" style="background:#120804;color:#f6efe4" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
       </div>
+      </div>
+      </div>
     </div>
   </section>
 
   <section class="band" id="tokenomics">
     <div class="wrap">
+      <figure class="scene">
+        <img src="assets/cinema/tokenomics-team.webp" width="1280" height="720" alt="Cream-capped ants roll glowing amber spheres through a sunlit cave.">
+      </figure>
       <p class="kicker">Tokenomics</p>
       <h2>What the chain shows.</h2>
       <div class="nest">
@@ -250,14 +259,12 @@ video[data-slot="hero-video"]{position:absolute;inset:0;width:100%;height:100%;o
   if(year) year.textContent=String(new Date().getFullYear());
   var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   var fine=matchMedia("(pointer: fine)").matches;
-  var tilt=document.getElementById("tilt");
   var bg=document.querySelector(".bg");
-  if(!reduce && fine && tilt){
+  if(!reduce && fine && bg){
     window.addEventListener("pointermove", function(e){
-      var x=(e.clientX/innerWidth-.5)*14;
-      var y=(e.clientY/innerHeight-.5)*-10;
-      tilt.style.transform="rotateY("+x+"deg) rotateX("+y+"deg)";
-      if(bg) bg.style.transform="translate3d("+(x*-1.2)+"px,"+(y*-1.2)+"px,0) scale(1.08)";
+      var x=(e.clientX/innerWidth-.5)*16;
+      var y=(e.clientY/innerHeight-.5)*-12;
+      bg.style.transform="translate3d("+(x*-1.1)+"px,"+(y*-1.1)+"px,0) scale(1.08)";
     }, {passive:true});
   }
   if(!reduce){
@@ -266,25 +273,12 @@ video[data-slot="hero-video"]{position:absolute;inset:0;width:100%;height:100%;o
       bg.style.transform="translate3d(0,"+(scrollY*0.12)+"px,0) scale(1.08)";
     }, {passive:true});
   }
-  function mount(slot, url){
-    var el=document.querySelector('[data-slot="'+slot+'"]');
-    if(!el) return;
-    if(el.tagName==="IMG"){
-      var probe=new Image();
-      probe.onload=function(){ el.src=url; };
-      probe.src=url;
-    }
-  }
-  mount("hero-still","assets/cinema/hero.webp");
-  mount("world-still","assets/cinema/world.webp");
   var vid=document.querySelector('[data-slot="hero-video"]');
   if(vid){
     fetch("assets/cinema/hero.mp4",{method:"HEAD"}).then(function(r){
       if(!r.ok) return;
       vid.src="assets/cinema/hero.mp4";
       vid.hidden=false;
-      var still=document.querySelector('[data-slot="hero-still"]');
-      if(still) still.hidden=true;
       if(!reduce) vid.play().catch(function(){});
     }).catch(function(){});
   }
