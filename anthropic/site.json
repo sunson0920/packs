@@ -8,8 +8,8 @@
   "chain": "ethereum",
   "theme_mode": "original",
   "theme_preset": "",
-  "theme_primary": "#ff7a24",
-  "theme_secondary": "#070403",
+  "theme_primary": "#ffb547",
+  "theme_secondary": "#0e0805",
   "domain_status": "not_connected",
   "dns_records": [
     {
@@ -25,7 +25,7 @@
       "host": "www.antoneth.fun"
     }
   ],
-  "tagline": "The ant in the cream cap. An independent community meme token on Ethereum.",
+  "tagline": "Tiny legs. Heavy bags. A colony digging on Ethereum.",
   "about": "Anthropic (ANT) is a community meme token. The fuzzy ant is a community character, not an official mascot and not Anthropic PBC.",
   "x_url": "https://x.com/anthropiceth_x",
   "tg_url": "https://t.me/anthropiceth_tg",

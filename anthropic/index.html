@@ -2,538 +2,312 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANT — the ant in the cream cap</title>
-<meta name="description" content="ANT is an independent community meme on Ethereum. Contract 0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca. Not Anthropic's mascot and not a share of the company.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>$ANT | Anthropic - The Colony on Ethereum</title>
+<meta name="description" content="$ANT is an independent community meme token on Ethereum. Dig in, join the colony.">
+<meta name="theme-color" content="#120a06">
+<meta property="og:title" content="$ANT | The Colony on Ethereum">
+<meta property="og:description" content="An independent community meme token on Ethereum. Six legs, one colony.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ANT — the ant in the cream cap">
-<meta property="og:description" content="Independent community meme on Ethereum. Contract 0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca.">
-<meta property="og:image" content="https://antoneth.fun/assets/art/mascot-reference.png">
-<meta property="og:image:alt" content="A fuzzy brown ant with large black eyes and a cream cap.">
-<meta property="og:url" content="https://antoneth.fun/">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ANT — the ant in the cream cap">
-<meta name="twitter:description" content="Independent community meme on Ethereum. Contract 0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca.">
-<meta name="twitter:image" content="https://antoneth.fun/assets/art/mascot-reference.png">
-<link rel="canonical" href="https://antoneth.fun/">
-<link rel="icon" type="image/png" href="assets/art/mascot-reference.png">
-<link rel="apple-touch-icon" href="assets/art/mascot-reference.png">
-<meta name="theme-color" content="#070403">
-<link rel="preload" as="image" href="assets/art/mascot-reference.png">
-<style>
-@font-face{font-family:"Anton";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/anton-400.woff2") format("woff2")}
-@font-face{font-family:"Outfit";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/outfit-400.woff2") format("woff2")}
-@font-face{font-family:"Outfit";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/outfit-600.woff2") format("woff2")}
-:root{
-  --void:#070403; --soil:#120806; --cream:#f7efe3; --gold:#f3c56a; --ember:#ff7a24;
-  --line:rgba(243,197,106,.38); --display:"Anton",Impact,sans-serif; --sans:"Outfit",system-ui,sans-serif;
-  --mono:ui-monospace,"Cascadia Mono",monospace;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;color:var(--cream);background:
-    radial-gradient(900px 520px at 88% -8%, rgba(255,122,36,.28), transparent 62%),
-    radial-gradient(760px 480px at -10% 18%, rgba(180,72,18,.22), transparent 58%),
-    var(--void);
-  font:400 18px/1.45 var(--sans);
-}
-img{max-width:100%;display:block}
-a{color:inherit}
-button,summary{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-h1,h2,h3,p{margin:0}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-[id]{scroll-margin-top:92px}
-.skip{position:absolute;left:12px;top:-64px;z-index:100;background:var(--cream);color:#1a0c07;padding:10px 14px;border-radius:999px;font-weight:600;text-decoration:none}
-.skip:focus{top:12px}
-.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.addr{font-family:var(--mono);font-size:.78em;overflow-wrap:anywhere}
-#dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
-.top{
-  position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;
-  padding:10px 16px 10px 22px;background:rgba(7,4,3,.78);
-  border-bottom:1px solid var(--line);backdrop-filter:blur(16px);
-}
-.brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none;min-height:48px}
-.brand img{width:46px;height:46px;border-radius:14px;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 18px rgba(255,122,36,.45)}
-.brand b{font-family:var(--display);font-weight:400;font-size:30px;letter-spacing:.06em}
-.nav{display:flex;flex-wrap:wrap;gap:8px}
-.nav a,.buy{
-  min-height:48px;padding:0 14px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
-  text-decoration:none;font-weight:600;
-}
-.nav a{border:1px solid var(--line)}
-.nav a[aria-current="true"]{background:rgba(243,197,106,.16);border-color:var(--gold)}
-.buy{background:linear-gradient(180deg,#ffd27a,#ff7a24);color:#1a0c07;box-shadow:0 0 22px rgba(255,122,36,.45)}
-.rail{
-  position:fixed;z-index:45;left:18px;top:50%;transform:translateY(-50%);
-  display:flex;flex-direction:column;gap:14px;
-}
-.rail a{position:relative;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--gold);text-decoration:none}
-.rail a[aria-current="true"]{background:var(--ember);box-shadow:0 0 14px var(--ember)}
-.rail a span{
-  position:absolute;left:22px;top:50%;transform:translateY(-50%);
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
-  white-space:nowrap;opacity:0;background:rgba(7,4,3,.88);padding:4px 8px;border-radius:999px;
-}
-.rail a:hover span,.rail a:focus-visible span,.rail a[aria-current="true"] span{opacity:1}
-.hero{position:relative;z-index:2;min-height:calc(100svh - 68px);display:grid;align-items:center;padding:28px 16px 36px}
-.stage{width:min(1180px,100%);max-width:100%;margin:0 auto;display:grid;gap:28px;align-items:center;min-width:0}
-.stage>*,.split>*,.copy,.frame,.ticket{min-width:0}
-.copy h1{
-  font-family:var(--display);font-weight:400;font-size:clamp(96px,16vw,188px);line-height:.8;letter-spacing:-.02em;
-  background:linear-gradient(185deg,#fff8ea 10%,#f3c56a 46%,#ff7a24 78%,#a34716);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 18px 28px rgba(255,122,36,.28));
-}
-.kicker{color:var(--gold);font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:12px}
-.lede{margin-top:8px;font-size:clamp(26px,3.4vw,40px);font-weight:600;letter-spacing:-.03em;max-width:16ch}
-.fine{margin-top:10px;max-width:38ch;color:#eadccb}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.cta a,.ticket button,.copybtn,.replay{
-  min-height:48px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
-  text-decoration:none;font-weight:600;
-}
-.cta .fill{background:var(--cream);color:#1a0c07}
-.cta .ghost{border:1.5px solid var(--cream)}
-.ticket{
-  margin-top:16px;max-width:560px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
-  padding:12px 14px;border-radius:18px;border:1px solid var(--line);
-  background:linear-gradient(180deg,rgba(243,197,106,.12),rgba(7,4,3,.4));
-  box-shadow:inset 0 0 24px rgba(255,122,36,.12);
-}
-.ticket p{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.ticket button,.copybtn{background:var(--cream);color:#1a0c07}
-.frame{
-  position:relative;padding:8px;border-radius:30px;
-  background:linear-gradient(145deg,#ffe7b2,#8d4518 38%,#ffb24a 68%,#3a160a);
-  box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 48px rgba(255,122,36,.28);
-  transform-style:preserve-3d;
-}
-.screen{position:relative;border-radius:22px;overflow:hidden;background:#1a0c08;aspect-ratio:16/9}
-.screen img,.screen video{width:100%;height:100%;object-fit:cover}
-.screen video{position:absolute;inset:0}
-.replay{position:absolute;right:18px;bottom:18px;z-index:3;background:rgba(7,4,3,.78);border:1.5px solid var(--cream)}
-.crest{
-  position:absolute;left:-18px;bottom:-22px;width:108px;height:108px;border-radius:28px;object-fit:cover;
-  border:3px solid var(--cream);box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 24px rgba(255,122,36,.4);transform:rotate(-8deg);
-}
-.ribbon{position:relative;z-index:2;overflow:hidden;border-block:1px solid var(--line);background:linear-gradient(90deg,#3a1608,#ff7a24,#f3c56a,#3a1608);color:#1a0c07}
-.track{display:flex;width:max-content;animation:slide 28s linear infinite}
-.track b{font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:.14em;padding:10px 0}
-.track i{font-style:normal;padding:0 14px}
-.chamber{position:relative;z-index:2;padding:clamp(72px,10vw,120px) 16px}
-.wrap{width:min(1120px,100%);margin:0 auto}
-.chamber h2{font-family:var(--display);font-weight:400;font-size:clamp(52px,8vw,96px);line-height:.86;letter-spacing:-.02em}
-.chamber .kicker{margin-bottom:8px}
-.split{display:grid;gap:22px;align-items:center;margin-top:22px}
-.plate{
-  border-radius:28px;overflow:hidden;border:1px solid var(--line);
-  box-shadow:0 18px 50px rgba(0,0,0,.35),0 0 30px rgba(255,122,36,.12);
-}
-.plate img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
-.prose{color:#eadccb;max-width:62ch}
-.prose p+p{margin-top:12px}
-.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
-.tile{
-  position:relative;padding:0;border-radius:22px;overflow:hidden;min-height:180px;border:1px solid var(--line);
-  background:#1a0c08;box-shadow:0 12px 30px rgba(0,0,0,.28);
-}
-.tile img{width:100%;height:100%;object-fit:cover;aspect-ratio:1;transition:transform .45s ease}
-.tile:hover img,.tile:focus-visible img{transform:scale(1.05)}
-.tile span{
-  position:absolute;left:10px;right:10px;bottom:10px;padding:8px 10px;border-radius:14px;
-  background:rgba(7,4,3,.72);color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.04em;text-align:left;
-}
-.steps{display:grid;gap:12px;margin-top:22px;list-style:none;padding:0}
-.step{
-  position:relative;min-height:168px;padding:18px 16px 20px;border-radius:24px;
-  background:linear-gradient(180deg,rgba(243,197,106,.12),rgba(18,8,6,.72));
-  border:1px solid var(--line);box-shadow:0 16px 36px rgba(0,0,0,.28);
-}
-.step em{font-family:var(--display);font-style:normal;font-size:42px;color:var(--gold)}
-.step strong{display:block;font-size:22px;margin-top:2px}
-.step span{display:block;margin-top:6px;color:#eadccb}
-.vault{display:grid;gap:12px;margin-top:22px}
-.cell{
-  padding:18px 16px;border-radius:22px;border:1px solid var(--line);
-  background:radial-gradient(420px 140px at 20% 0%,rgba(255,122,36,.22),transparent 60%),rgba(18,8,6,.8);
-  box-shadow:inset 0 0 24px rgba(243,197,106,.08);
-}
-.cell b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(30px,4vw,46px);line-height:.95}
-.cell span{display:block;margin-top:6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.sheet{margin-top:16px;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:rgba(247,239,227,.96);color:#1a0c07}
-.row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:8px;padding:14px 16px;border-top:1px solid rgba(26,12,7,.1)}
-.row:first-child{border-top:0}
-.row dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#8a3e12}
-.row dd{margin:0}
-.row a{font-weight:600}
-.note{margin-top:14px;color:#eadccb;max-width:75ch}
-.chart{margin-top:18px;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#0c0705;box-shadow:0 0 40px rgba(255,122,36,.16)}
-.chart iframe{width:100%;height:clamp(380px,62vh,640px);border:0;display:block}
-.links{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
-.links a{min-height:48px;display:inline-flex;align-items:center;font-weight:600;color:var(--gold)}
-.gates{display:grid;gap:12px;margin-top:22px}
-.gates a{
-  min-height:110px;border-radius:28px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;
-  text-decoration:none;font-family:var(--display);font-size:clamp(40px,6vw,72px);letter-spacing:.04em;
-  border:1px solid var(--line);background:linear-gradient(110deg,rgba(255,122,36,.28),rgba(18,8,6,.2) 42%,rgba(243,197,106,.16));
-  box-shadow:0 18px 40px rgba(0,0,0,.3);
-}
-.gates small{font-family:var(--sans);font-size:14px;letter-spacing:.16em;font-weight:600}
-.foot{position:relative;z-index:2;padding:8px 16px 64px;color:#d9c7b4;font-size:15px}
-.foot p{width:min(78ch,100%);margin:0 auto}
-#toast{
-  position:fixed;left:16px;right:16px;bottom:16px;max-width:520px;margin:auto;z-index:80;
-  background:var(--cream);color:#1a0c07;font-weight:600;padding:14px 16px;border-radius:16px;
-  transform:translateY(160%);box-shadow:0 16px 40px rgba(0,0,0,.35);
-}
-#toast.show{transform:none}
-dialog{border:0;padding:0;background:transparent;max-width:min(1080px,calc(100% - 24px));color:var(--cream)}
-dialog::backdrop{background:rgba(4,2,1,.86)}
-.light{position:relative}
-.light img{width:100%;max-height:78vh;object-fit:contain;border-radius:18px;background:#120806}
-.light figcaption{margin-top:10px;color:var(--gold);font-weight:600}
-.x{
-  position:absolute;top:-6px;right:-6px;width:48px;height:48px;border-radius:50%;
-  background:var(--cream);color:#1a0c07;font-size:28px;line-height:1;
-}
-@keyframes slide{to{transform:translateX(-50%)}}
-@media(min-width:900px){
-  .hero{padding-left:72px;padding-right:28px}
-  .chamber{padding-left:72px;padding-right:28px}
-  .stage,.split{grid-template-columns:1.05fr .95fr}
-  .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .steps{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .vault{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .gates{grid-template-columns:1fr 1fr}
-  .foot{padding-left:72px}
-}
-@media(max-width:899px){
-  .rail{position:sticky;top:68px;left:auto;transform:none;flex-direction:row;gap:4px;width:100%;max-width:100%;padding:8px 10px;background:rgba(7,4,3,.92);border-bottom:1px solid var(--line);overflow:hidden}
-  .rail a span{position:static;transform:none;opacity:1;font-size:9px;letter-spacing:.06em;background:none;padding:0}
-  .rail a{width:auto;height:auto;border:0;border-radius:0;display:flex;flex:1 1 0;flex-direction:column;align-items:center;gap:4px;min-width:0}
-  .rail a::before{content:"";width:10px;height:10px;border-radius:50%;border:1.5px solid var(--gold)}
-  .rail a[aria-current="true"]{background:none;box-shadow:none}
-  .rail a[aria-current="true"]::before{background:var(--ember);box-shadow:0 0 10px var(--ember)}
-  .nav a:not(.keep){display:none}
-  .row{grid-template-columns:1fr}
-  .copybtn,.ticket button{width:100%}
-  .crest{width:84px;height:84px;left:10px;bottom:-16px}
-}
-.split .steps{grid-template-columns:1fr}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .track{flex-wrap:wrap;width:auto}
-  .track .dup{display:none}
-  .tile img{transform:none}
-  #dust{display:none}
-}
-</style>
+<meta property="og:image" content="https://www.antoneth.fun/assets/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@anthropiceth_x">
+<link rel="canonical" href="https://www.antoneth.fun/">
+<meta property="og:url" content="https://www.antoneth.fun/">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<a class="skip" href="#home">Skip to content</a>
-<canvas id="dust" aria-hidden="true"></canvas>
-<header class="top">
-  <a class="brand" href="#home"><img src="assets/art/mascot-reference.png" width="256" height="256" alt=""><b>ANT</b></a>
-  <nav class="nav" aria-label="On this page">
+<!-- SVG icon sprite: every icon on the page is an inline SVG symbol (no emoji). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 4.2 2.9 11.3c-.9.3-.9.9-.2 1.1l4.8 1.5 11.1-7c.5-.3.9-.1.6.2l-9 8.2-.3 4.6c.4 0 .6-.2.9-.4l2.1-2 4.4 3.2c.8.4 1.4.2 1.6-.7l2.9-13.7c.3-1.2-.4-1.7-1.2-1.3Z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L2.9 2h6.4l4.4 5.9L18.9 2Zm-1.1 18h1.7L8.3 3.9H6.5L17.8 20Z"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-4 3 3 6-7"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m4 12 5 5L20 6"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h12v4"/><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 13.5h2"/></g></symbol>
+  <symbol id="i-eth" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2 5 12.2 12 16l7-3.8L12 2Z"/><path d="M5 13.6 12 22l7-8.4L12 17.5 5 13.6Z"/></g></symbol>
+  <symbol id="i-diamond" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 3h12l4 6-10 12L2 9l4-6Zm-4 6h20M9 3l3 18 3-18"/></symbol>
+  <symbol id="i-ant" viewBox="0 0 64 64"><g fill="currentColor"><ellipse cx="32" cy="14" rx="7" ry="7"/><ellipse cx="32" cy="28" rx="6" ry="7.5"/><ellipse cx="32" cy="47" rx="10" ry="13"/></g><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M28 9 21 2M36 9l7-7M27 25l-12-6-4 4M37 25l12-6 4 4M27 30l-14 2-3 6M37 30l14 2 3 6M28 34l-10 10-1 8M36 34l10 10 1 8"/></g></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m15 5-7 7 7 7"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-shovel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 2l3 3M20.5 3.5 13 11M9 9l6 6-3 3a4.2 4.2 0 0 1-6 0 4.2 4.2 0 0 1 0-6l3-3Z"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 18h18M4 15 3 6l5 4 4-6 4 6 5-4-1 9H4Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14a6.5 6.5 0 0 1 3.5 6"/></g></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></g></symbol>
+  <symbol id="i-pie" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3a9 9 0 1 0 9 9h-9V3Zm3-1v7h7a7 7 0 0 0-7-7Z"/></symbol>
+  <symbol id="i-percent" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></g></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12Z"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<canvas id="trail" aria-hidden="true"></canvas>
+
+<!-- depth meter -->
+<div class="depth" aria-hidden="true">
+  <div class="depth__bar"><span class="depth__fill"></span></div>
+  <div class="depth__readout"><span id="depthVal">0</span>m</div>
+  <div class="depth__label">depth</div>
+</div>
+
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="$ANT home">
+    <img src="assets/logo.png" alt="" width="40" height="40" class="nav__logo">
+    <span>$ANT</span>
+  </a>
+  <nav class="nav__links" id="navLinks" aria-label="Primary">
     <a href="#lore">Lore</a>
-    <a href="#archive">Archive</a>
-    <a href="#buy">Buy</a>
-    <a href="#tokenomics">Vault</a>
-    <a href="#tape">Chart</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#buy">How to Buy</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#faq">FAQ</a>
   </nav>
-  <a class="buy" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Buy<span class="sr"> on Uniswap (opens in a new tab)</span></a>
+  <div class="nav__cta">
+    <a class="icon-btn" data-x-link href="https://x.com/anthropiceth_x" target="_blank" rel="noopener" aria-label="$ANT on X"><svg><use href="#i-x"/></svg></a>
+    <a class="icon-btn" data-tg-link href="https://t.me/anthropiceth_tg" target="_blank" rel="noopener" aria-label="$ANT on Telegram"><svg><use href="#i-tg"/></svg></a>
+    <a class="btn btn--amber btn--sm magnetic" data-buy-link href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener"><svg><use href="#i-swap"/></svg><span>Buy $ANT</span></a>
+    <button class="icon-btn nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><svg><use href="#i-menu"/></svg></button>
+  </div>
 </header>
-<nav class="rail" aria-label="Chambers">
-  <a href="#home"><span>Gate</span></a>
-  <a href="#lore"><span>Lore</span></a>
-  <a href="#archive"><span>Archive</span></a>
-  <a href="#buy"><span>Buy</span></a>
-  <a href="#tokenomics"><span>Vault</span></a>
-  <a href="#tape"><span>Chart</span></a>
-  <a href="#swarm"><span>Swarm</span></a>
-</nav>
-<main id="home">
-  <section class="hero">
-    <div class="stage">
-      <div class="copy">
-        <p class="kicker">Chamber 00 · The gate · Ethereum</p>
-        <h1>ANT</h1>
-        <p class="lede">The ant in the cream cap.</p>
-        <p class="fine">An independent community meme. The fuzzy ant with the cream cap is this token’s character. It is not Anthropic’s mascot, and this token is not a share of the company.</p>
-        <div class="cta">
-          <a class="fill" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Buy on Uniswap<span class="sr"> (opens in a new tab)</span></a>
-          <a class="ghost" href="#tape">Open the chart</a>
-          <a class="ghost" href="https://x.com/anthropiceth_x" target="_blank" rel="noopener noreferrer">X<span class="sr"> (opens in a new tab)</span></a>
-          <a class="ghost" href="https://t.me/anthropiceth_tg" target="_blank" rel="noopener noreferrer">Telegram<span class="sr"> (opens in a new tab)</span></a>
+
+<svg id="tunnel" class="tunnel" aria-hidden="true">
+  <defs><mask id="digMask" maskUnits="userSpaceOnUse" x="0" y="0" width="10000" height="100000"><path class="tunnel__mask"/></mask></defs>
+  <path class="tunnel__wall"/><path class="tunnel__bore"/><path class="tunnel__pher" mask="url(#digMask)"/>
+</svg>
+
+<main id="main">
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="surface" aria-hidden="true">
+    <div class="surface__sky"></div>
+    <svg class="surface__grass" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 120V70 L6 65 L13 70 L20 71 L27 70 L32 40 L36 70 L40 51 L45 70 L54 71 L62 70 L70 61 L78 70 L82 69 L86 70 L93 48 L100 70 L104 59 L109 70 L114 39 L118 70 L125 71 L132 70 L140 67 L149 70 L154 37 L160 70 L164 38 L168 70 L176 49 L185 70 L189 60 L193 70 L197 39 L201 70 L206 56 L211 70 L218 65 L225 70 L233 67 L241 70 L250 55 L258 70 L266 63 L274 70 L278 37 L283 70 L292 62 L300 70 L306 68 L313 70 L321 70 L329 70 L338 71 L346 70 L354 61 L363 70 L370 40 L378 70 L385 54 L392 70 L400 37 L407 70 L414 51 L422 70 L428 59 L434 70 L439 59 L444 70 L448 38 L453 70 L459 41 L465 70 L472 53 L480 70 L488 56 L495 70 L504 70 L512 70 L516 42 L521 70 L528 64 L535 70 L542 65 L548 70 L556 48 L563 70 L567 70 L571 70 L579 38 L587 70 L594 53 L600 70 L606 36 L613 70 L620 37 L628 70 L636 70 L643 70 L648 57 L652 70 L660 70 L667 70 L671 55 L675 70 L684 38 L693 70 L702 46 L711 70 L717 50 L723 70 L732 52 L741 70 L745 45 L749 70 L756 64 L762 70 L770 67 L779 70 L786 71 L794 70 L800 56 L805 70 L810 59 L815 70 L822 49 L829 70 L836 69 L844 70 L849 46 L854 70 L861 39 L868 70 L874 66 L880 70 L887 39 L894 70 L900 48 L906 70 L912 50 L919 70 L924 65 L930 70 L934 63 L939 70 L944 60 L949 70 L958 60 L967 70 L971 43 L975 70 L984 63 L992 70 L998 56 L1004 70 L1008 65 L1012 70 L1019 40 L1026 70 L1032 38 L1039 70 L1046 66 L1052 70 L1060 71 L1068 70 L1076 39 L1083 70 L1090 49 L1097 70 L1104 49 L1111 70 L1116 44 L1120 70 L1129 49 L1138 70 L1142 62 L1146 70 L1150 61 L1155 70 L1162 64 L1170 70 L1174 53 L1179 70 L1188 71 L1196 70 L1200 74 L1205 70 L1214 65 L1222 70 L1230 68 L1238 70 L1244 73 L1251 70 L1256 61 L1260 70 L1268 50 L1277 70 L1282 58 L1287 70 L1294 36 L1300 70 L1306 44 L1313 70 L1318 67 L1322 70 L1330 45 L1337 70 L1344 44 L1352 70 L1358 69 L1364 70 L1369 68 L1374 70 L1380 58 L1387 70 L1394 64 L1402 70 L1410 73 L1418 70 L1424 41 L1429 70 L1436 65 L1442 70 V120Z"/></svg>
+  </div>
+  <div class="strata" aria-hidden="true">
+    <div class="stratum s1" data-speed="0.15"></div>
+    <div class="stratum s2" data-speed="0.3"></div>
+    <div class="stratum s3" data-speed="0.45"></div>
+  </div>
+  <canvas id="swarm" class="hero__swarm" aria-hidden="true"></canvas>
+
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow reveal"><svg><use href="#i-eth"/></svg> Ethereum mainnet &middot; community meme token</p>
+      <h1 class="hero__title reveal" data-split>
+        <span class="hero__name">Anthropic</span>
+        <span class="hero__ticker">$ANT</span>
+      </h1>
+      <p class="hero__sub reveal">Tiny legs. Heavy bags. A colony of degens digging the deepest tunnel on Ethereum, one block at a time.</p>
+
+      <div class="ca reveal march" id="caBox">
+        <span class="ca__label">CA</span>
+        <code class="ca__value" id="caValue">0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</code>
+        <button class="ca__copy" id="caCopy" type="button" aria-label="Copy contract address"><svg class="ico-copy"><use href="#i-copy"/></svg><svg class="ico-ok"><use href="#i-check"/></svg><span class="ca__copy-text">Copy</span></button>
+      </div>
+
+      <div class="hero__btns reveal">
+        <a class="btn btn--amber magnetic" data-buy-link href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener"><svg><use href="#i-swap"/></svg><span>Buy on Uniswap</span></a>
+        <a class="btn btn--ghost magnetic" data-chart-link href="https://dexscreener.com/ethereum/0xf0dac68bdda3b651a9c9a48cbfba9ff178067d57674fb9cfb33b499a36228ccc" target="_blank" rel="noopener"><svg><use href="#i-chart"/></svg><span>Chart</span></a>
+        <a class="btn btn--ghost magnetic" data-x-link href="https://x.com/anthropiceth_x" target="_blank" rel="noopener"><svg><use href="#i-x"/></svg><span>Follow on X</span></a>
+      </div>
+
+      <ul class="hero__stats reveal">
+        <li><b data-count="6">0</b><span>legs per holder</span></li>
+        <li><b data-count="50" data-suffix="x">0</b><span>own weight, lifted</span></li>
+        <li><b data-count="1">0</b><span>colony</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__coin reveal" aria-hidden="false">
+      <div class="coin" id="coin">
+        <div class="coin__glow"></div>
+        <svg class="coin__orbit" viewBox="0 0 400 400" aria-hidden="true">
+          <defs><path id="orbitPath" d="M200,200 m-170,0 a170,170 0 1,1 340,0 a170,170 0 1,1 -340,0"/></defs>
+          <circle cx="200" cy="200" r="170" class="coin__ring"/>
+          <text class="coin__orbit-text"><textPath href="#orbitPath">$ANT &#183; THE COLONY &#183; ETHEREUM &#183; DIG DEEPER &#183; $ANT &#183; THE COLONY &#183; ETHEREUM &#183; DIG DEEPER &#183;</textPath></text>
+        </svg>
+        <div class="coin__marchers" aria-hidden="true">
+          <svg style="--i:0"><use href="#i-ant"/></svg><svg style="--i:1"><use href="#i-ant"/></svg><svg style="--i:2"><use href="#i-ant"/></svg><svg style="--i:3"><use href="#i-ant"/></svg><svg style="--i:4"><use href="#i-ant"/></svg><svg style="--i:5"><use href="#i-ant"/></svg>
         </div>
-        <div class="ticket">
-          <div>
-            <p>Contract</p>
-            <code class="addr">0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</code>
-          </div>
-          <button type="button" data-copy="0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca">Copy</button>
-        </div>
-      </div>
-      <div class="frame" id="tilt">
-        <div class="screen">
-          <img src="assets/cinema/hero-colony.webp" width="1280" height="720" alt="A cream-capped ant celebrates in a golden cave with a crowd of smaller ants and bowls of amber beads.">
-          <video id="wave" src="assets/cinema/hero-ant-wave.mp4" poster="assets/cinema/hero-poster.webp" muted playsinline loop preload="metadata" aria-label="Short loop of the cream-capped ant waving in the colony"></video>
-        </div>
-        <button class="replay" type="button" id="replay">Replay</button>
-        <img class="crest" src="assets/art/mascot-reference.png" width="256" height="256" alt="The uploaded mascot: fuzzy brown ant, large black eyes, cream cap.">
+        <img class="coin__logo" src="assets/logo.png" alt="$ANT logo" width="512" height="512">
       </div>
     </div>
-  </section>
-  <div class="ribbon" aria-hidden="true"><div class="track"><b>ANT<i>·</i>CREAM CAP<i>·</i>ETHEREUM<i>·</i>CHECK THE ADDRESS<i>·</i>1,000,000,000<i>·</i></b><b class="dup">ANT<i>·</i>CREAM CAP<i>·</i>ETHEREUM<i>·</i>CHECK THE ADDRESS<i>·</i>1,000,000,000<i>·</i></b></div></div>
+  </div>
 
-  <section class="chamber" id="lore">
-    <div class="wrap">
-      <p class="kicker">Chamber 01 · Lore</p>
-      <h2>A colony, not a company.</h2>
-      <div class="split">
-        <div class="prose">
-          <p>Down here the light is amber and the work is loud. The ant in the cream cap stands at the mouth of the tunnel, and the rest of the colony answers with bowls of beads, a coin too big to carry, and a wave that lasts one and a half heartbeats.</p>
-          <p>ANT is the ticker on the contract. The pictures are community art of that character. Nothing on this page is an announcement from Anthropic, a filing, or a claim on anyone else’s name.</p>
-        </div>
-        <figure class="plate">
-          <img src="assets/art/mascot-meme-3.webp" width="1280" height="720" alt="The cream-capped ant in a flight suit among a gathering of ants.">
-        </figure>
-      </div>
-    </div>
-  </section>
+  <a class="hero__dig" href="#lore"><span>Dig in</span><svg><use href="#i-arrow-down"/></svg></a>
+  <p class="hero__hint" aria-hidden="true">move your cursor through the swarm &middot; click to scatter</p>
+</section>
 
-  <section class="chamber" id="archive">
-    <div class="wrap">
-      <p class="kicker">Chamber 02 · Archive</p>
-      <h2>Stills from the tunnels.</h2>
-      <div class="gallery">
-        <button class="tile" type="button" data-full="assets/cinema/hero-colony.webp" data-cap="The celebration in the golden cave.">
-          <img src="assets/cinema/hero-colony.webp" width="1280" height="720" alt="Cream-capped ant celebrating with the colony.">
-          <span>The celebration</span>
-        </button>
-        <button class="tile" type="button" data-full="assets/cinema/buy-coin.webp" data-cap="The ant carries one gold coin through the tunnel.">
-          <img src="assets/cinema/buy-coin.webp" width="1280" height="720" alt="Cream-capped ant carrying a large gold coin.">
-          <span>The coin</span>
-        </button>
-        <button class="tile" type="button" data-full="assets/cinema/tokenomics-team.webp" data-cap="The colony rolls amber beads together.">
-          <img src="assets/cinema/tokenomics-team.webp" width="1280" height="720" alt="Ants rolling glowing amber spheres.">
-          <span>The beads</span>
-        </button>
-        <button class="tile" type="button" data-full="assets/art/mascot-meme-2.webp" data-cap="The ant at the books, glasses on.">
-          <img src="assets/art/mascot-meme-2.webp" width="1024" height="1024" alt="Cream-capped ant with glasses and books.">
-          <span>The books</span>
-        </button>
-        <button class="tile" type="button" data-full="assets/art/mascot-meme-3.webp" data-cap="The gathering around the ant in the flight suit.">
-          <img src="assets/art/mascot-meme-3.webp" width="1280" height="720" alt="Cream-capped ant in a flight suit with the colony.">
-          <span>The gathering</span>
-        </button>
-        <button class="tile" type="button" data-full="assets/art/mascot-reference.png" data-cap="The uploaded portrait: fuzzy brown ant, cream cap, black eyes.">
-          <img src="assets/art/mascot-reference.png" width="256" height="256" alt="Uploaded portrait of the fuzzy brown ant in a cream cap.">
-          <span>The portrait</span>
-        </button>
-      </div>
-    </div>
-  </section>
+<!-- ============ TICKER TAPE ============ -->
+<div class="tape" aria-hidden="true">
+  <div class="tape__track">
+    <span>$ANT</span><svg><use href="#i-ant"/></svg><span>Dig deeper</span><svg><use href="#i-ant"/></svg><span>Six legs, no paper hands</span><svg><use href="#i-ant"/></svg><span>The colony on Ethereum</span><svg><use href="#i-ant"/></svg><span>Follow the trail</span><svg><use href="#i-ant"/></svg>
+    <span>$ANT</span><svg><use href="#i-ant"/></svg><span>Dig deeper</span><svg><use href="#i-ant"/></svg><span>Six legs, no paper hands</span><svg><use href="#i-ant"/></svg><span>The colony on Ethereum</span><svg><use href="#i-ant"/></svg><span>Follow the trail</span><svg><use href="#i-ant"/></svg>
+  </div>
+</div>
 
-  <section class="chamber" id="buy">
-    <div class="wrap">
-      <p class="kicker">Chamber 03 · Acquisition</p>
-      <h2>Four moves. No wallet login.</h2>
-      <figure class="plate" style="margin-top:22px">
-        <img src="assets/cinema/buy-coin.webp" width="1280" height="720" alt="The cream-capped ant carries a large gold coin through a glowing tunnel.">
-      </figure>
-      <ol class="steps">
-        <li class="step"><em>01</em><strong>A wallet you hold.</strong><span>This site never asks for a seed or a signature.</span></li>
-        <li class="step"><em>02</em><strong>ETH for the swap and gas.</strong><span>You choose the amount inside Uniswap.</span></li>
-        <li class="step"><em>03</em><strong>Open the preset swap.</strong><span>Output is <span class="addr">0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</span></span></li>
-        <li class="step"><em>04</em><strong>Check it yourself.</strong><span>Match that address on this page and on Etherscan before you sign.</span></li>
-      </ol>
-      <div class="cta">
-        <a class="fill" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
-        <a class="ghost" href="https://etherscan.io/token/0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Read the contract<span class="sr"> on Etherscan (opens in a new tab)</span></a>
+<!-- ============ LORE ============ -->
+<section class="section" id="lore" data-chamber="left">
+  <div class="chamber chamber--wide reveal">
+    <div class="chamber__tag"><span>Chamber 01</span><em>-12m</em></div>
+    <div class="lore">
+      <div class="lore__text">
+        <h2 class="h2">The lore of the <span class="hl">colony</span></h2>
+        <p>Nobody saw them coming. While the surface argued about charts, a few ants kept digging. One tunnel became ten. Ten became a network. The network became a colony, and the colony found Ethereum.</p>
+        <p>$ANT is the token of that colony: a community meme coin for anyone who believes small things working together can move a mountain. No queen hoarding the honey, no promises from the surface. Just a swarm, a trail, and a ticker.</p>
+        <p class="lore__kicker">Every ant carries something. What are you carrying?</p>
       </div>
+      <ul class="lore__traits">
+        <li class="trait march"><svg><use href="#i-users"/></svg><div><b>Swarm-first</b><span>Community owned and community driven. The colony decides.</span></div></li>
+        <li class="trait march"><svg><use href="#i-shovel"/></svg><div><b>Always digging</b><span>Builders who show up every day, bull or bear, rain or shine.</span></div></li>
+        <li class="trait march"><svg><use href="#i-eth"/></svg><div><b>Ethereum native</b><span>Lives on Ethereum mainnet. Trades on Uniswap.</span></div></li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="chamber" id="tokenomics">
-    <div class="wrap">
-      <p class="kicker">Chamber 04 · Reserves</p>
-      <h2>What the chain shows.</h2>
-      <figure class="plate" style="margin-top:22px">
-        <img src="assets/cinema/tokenomics-team.webp" width="1280" height="720" alt="Cream-capped ants roll glowing amber spheres through a sunlit cave.">
-      </figure>
-      <div class="vault">
-        <article class="cell"><b>Anthropic</b><span>Name on the contract</span></article>
-        <article class="cell"><b>ANT</b><span>Symbol</span></article>
-        <article class="cell"><b>1,000,000,000</b><span>Supply · 18 decimals</span></article>
-        <article class="cell"><b>Ethereum</b><span>ERC-20</span></article>
-        <article class="cell"><b>Uniswap v4</b><span>ANT / ETH pair</span></article>
-        <article class="cell"><b>515252</b><span>LP receipt at the burn address</span></article>
-      </div>
-      <div class="sheet">
-        <div class="row"><dt>Contract</dt><dd><span class="addr">0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</span> <button class="copybtn" type="button" data-copy="0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca">Copy address</button></dd></div>
-        <div class="row"><dt>Pair</dt><dd><span class="addr">0xf0dac68bdda3b651a9c9a48cbfba9ff178067d57674fb9cfb33b499a36228ccc</span></dd></div>
-        <div class="row"><dt>LP receipt</dt><dd>Uniswap v4 position 515252 for this pool is owned by 0x000000000000000000000000000000000000dead and still holds the liquidity that was added. No other lock is claimed.</dd></div>
-        <div class="row"><dt>Not claimed</dt><dd>Tax rate, renounce, and any split of the supply.</dd></div>
-        <div class="row"><dt>Links</dt><dd>
-          <a href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Uniswap<span class="sr"> (opens in a new tab)</span></a>
-          · <a href="https://dexscreener.com/ethereum/0xf0dac68bdda3b651a9c9a48cbfba9ff178067d57674fb9cfb33b499a36228ccc" target="_blank" rel="noopener noreferrer">Dexscreener<span class="sr"> (opens in a new tab)</span></a>
-          · <a href="https://etherscan.io/token/0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Etherscan<span class="sr"> (opens in a new tab)</span></a>
-        </dd></div>
-      </div>
-      <p class="note">Name, symbol, 18 decimals, and a supply of 1,000,000,000 were read from this contract. Sourcify has an exact match that mints that amount. The pair is the Uniswap v4 ANT/ETH market Dexscreener lists.</p>
-    </div>
-  </section>
+<!-- ============ GALLERY ============ -->
+<section class="section" id="gallery" data-chamber="right">
+  <div class="section__head reveal">
+    <div class="chamber__tag"><span>Chamber 02</span><em>-27m</em></div>
+    <h2 class="h2">The <span class="hl">archive</span></h2>
+    <p class="section__lead">Fossils from the colony feed. Tap any frame to open it.</p>
+  </div>
+  <div class="gallery" id="galleryGrid"><!-- filled by js/main.js from GALLERY config --></div>
+</section>
 
-  <section class="chamber" id="tape">
-    <div class="wrap">
-      <p class="kicker">Chamber 05 · The tape</p>
-      <h2>The pair.</h2>
-      <div class="chart">
-        <iframe title="ANT chart on Dexscreener for this Ethereum pair" src="https://dexscreener.com/ethereum/0xf0dac68bdda3b651a9c9a48cbfba9ff178067d57674fb9cfb33b499a36228ccc?embed=1&amp;loadChartSettings=0&amp;trades=0&amp;tabs=0&amp;info=0&amp;chartLeftToolbar=0&amp;chartTheme=dark&amp;theme=dark&amp;chartStyle=1&amp;chartType=usd&amp;interval=15" loading="lazy"></iframe>
-      </div>
-      <p class="links">
-        <a href="https://dexscreener.com/ethereum/0xf0dac68bdda3b651a9c9a48cbfba9ff178067d57674fb9cfb33b499a36228ccc" target="_blank" rel="noopener noreferrer">Open the pair<span class="sr"> (opens in a new tab)</span></a>
-        <a href="https://etherscan.io/token/0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Etherscan<span class="sr"> (opens in a new tab)</span></a>
-      </p>
-    </div>
-  </section>
+<!-- ============ HOW TO BUY ============ -->
+<section class="section" id="buy" data-chamber="left">
+  <div class="section__head reveal">
+    <div class="chamber__tag"><span>Chamber 03</span><em>-41m</em></div>
+    <h2 class="h2">How to <span class="hl">join the colony</span></h2>
+    <p class="section__lead">Four tunnels to your first $ANT.</p>
+  </div>
+  <ol class="steps">
+    <li class="step reveal">
+      <div class="step__num">01</div>
+      <div class="step__icon"><svg><use href="#i-wallet"/></svg></div>
+      <h3>Get a wallet</h3>
+      <p>Install an Ethereum wallet such as MetaMask, Rabby, or Coinbase Wallet. Write down your seed phrase offline and never share it.</p>
+    </li>
+    <li class="step reveal">
+      <div class="step__num">02</div>
+      <div class="step__icon"><svg><use href="#i-eth"/></svg></div>
+      <h3>Get some ETH</h3>
+      <p>Buy ETH on an exchange or in your wallet and send it to your address on Ethereum mainnet. Keep a little extra for gas.</p>
+    </li>
+    <li class="step reveal">
+      <div class="step__num">03</div>
+      <div class="step__icon"><svg><use href="#i-swap"/></svg></div>
+      <h3>Swap on Uniswap</h3>
+      <p>Open <a data-buy-link href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener">Uniswap</a>, connect your wallet, and swap ETH for $ANT. Always double check the contract address below.</p>
+      <div class="ca ca--mini" data-ca-mini><code data-ca-text>0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</code><button type="button" class="ca__copy" data-copy-ca aria-label="Copy contract address"><svg class="ico-copy"><use href="#i-copy"/></svg><svg class="ico-ok"><use href="#i-check"/></svg></button></div>
+    </li>
+    <li class="step reveal">
+      <div class="step__num">04</div>
+      <div class="step__icon"><svg><use href="#i-diamond"/></svg></div>
+      <h3>Hold with the colony</h3>
+      <p>Welcome underground. Follow us on X and Telegram, join the swarm, and keep digging together.</p>
+    </li>
+  </ol>
+  <div class="center reveal"><a class="btn btn--amber btn--lg magnetic" data-buy-link href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener"><svg><use href="#i-swap"/></svg><span>Buy $ANT on Uniswap</span></a></div>
+</section>
 
-  <section class="chamber" id="swarm">
-    <div class="wrap">
-      <p class="kicker">Chamber 06 · The swarm</p>
-      <h2>Where it talks.</h2>
-      <div class="gates">
-        <a href="https://x.com/anthropiceth_x" target="_blank" rel="noopener noreferrer">X<small>@anthropiceth_x<span class="sr"> (opens in a new tab)</span></small></a>
-        <a href="https://t.me/anthropiceth_tg" target="_blank" rel="noopener noreferrer">TG<small>t.me/anthropiceth_tg<span class="sr"> (opens in a new tab)</span></small></a>
-      </div>
-    </div>
-  </section>
+<!-- ============ TOKENOMICS ============ -->
+<section class="section" id="tokenomics" data-chamber="right">
+  <div class="section__head reveal">
+    <div class="chamber__tag"><span>Chamber 04</span><em>-58m</em></div>
+    <h2 class="h2"><span class="hl">Tokenomics</span></h2>
+    <p class="section__lead">1 billion tokens on Ethereum.</p>
+  </div>
+  <div class="toks">
+    <div class="tok reveal march"><svg><use href="#i-pie"/></svg><span>Total supply</span><b>1B</b></div>
+    <div class="tok reveal march"><svg><use href="#i-lock"/></svg><span>Chain</span><b data-chain>Ethereum</b></div>
+  </div>
+  <div class="tok-ca reveal"><span>Contract</span><code data-ca-text>0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</code><button type="button" class="ca__copy" data-copy-ca aria-label="Copy contract address"><svg class="ico-copy"><use href="#i-copy"/></svg><svg class="ico-ok"><use href="#i-check"/></svg><span class="ca__copy-text">Copy</span></button></div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section class="section" id="roadmap" data-chamber="left">
+  <div class="section__head reveal">
+    <div class="chamber__tag"><span>Chamber 05</span><em>-73m</em></div>
+    <h2 class="h2">The <span class="hl">dig plan</span></h2>
+    <p class="section__lead">No dates, no promises. Just the direction the tunnel is heading.</p>
+  </div>
+  <div class="roadmap">
+    <div class="rm reveal"><div class="rm__dot"><svg><use href="#i-shovel"/></svg></div><div class="rm__body"><em>Phase 1</em><h3>First Tunnel</h3><ul><li>Launch on Ethereum</li><li>Website and socials live</li><li>First colony members arrive</li></ul></div></div>
+    <div class="rm reveal"><div class="rm__dot"><svg><use href="#i-users"/></svg></div><div class="rm__body"><em>Phase 2</em><h3>Grow the Nest</h3><ul><li>Community raids and memes</li><li>Holder growth</li><li>Community art and contests</li></ul></div></div>
+    <div class="rm reveal"><div class="rm__dot"><svg><use href="#i-chart"/></svg></div><div class="rm__body"><em>Phase 3</em><h3>Expand the Network</h3><ul><li>Broader visibility for $ANT</li><li>Tracker listings as the colony grows</li><li>More chambers, more builders</li></ul></div></div>
+    <div class="rm reveal"><div class="rm__dot"><svg><use href="#i-crown"/></svg></div><div class="rm__body"><em>Phase 4</em><h3>Supercolony</h3><ul><li>Community-led ideas take the wheel</li><li>Keep digging, keep memeing</li><li>The trail never ends</li></ul></div></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" data-chamber="right">
+  <div class="section__head reveal">
+    <div class="chamber__tag"><span>Chamber 06</span><em>-86m</em></div>
+    <h2 class="h2">Questions from the <span class="hl">surface</span></h2>
+  </div>
+  <div class="faq">
+    <details class="qa reveal"><summary>What is $ANT?<svg><use href="#i-plus"/></svg></summary><div><p>$ANT is a community meme token on Ethereum built around the colony: lots of small holders working together. It is for fun and community.</p></div></details>
+    <details class="qa reveal"><summary>Is $ANT affiliated with Anthropic PBC?<svg><use href="#i-plus"/></svg></summary><div><p><strong>No.</strong> $ANT is an independent community meme token. It is not affiliated with, endorsed by, or connected to Anthropic PBC or its products.</p></div></details>
+    <details class="qa reveal"><summary>Which chain is $ANT on?<svg><use href="#i-plus"/></svg></summary><div><p>Ethereum mainnet. Make sure your wallet is on Ethereum before you swap.</p></div></details>
+    <details class="qa reveal"><summary>How do I buy?<svg><use href="#i-plus"/></svg></summary><div><p>Use the Buy button to open Uniswap with the $ANT contract pre-filled, connect your wallet, and swap ETH for $ANT. See the How to Buy chamber for step by step instructions.</p></div></details>
+    <details class="qa reveal"><summary>What are the tokenomics?<svg><use href="#i-plus"/></svg></summary><div><p>Total supply is 1B $ANT on Ethereum.</p></div></details>
+    <details class="qa reveal"><summary>Is this financial advice?<svg><use href="#i-plus"/></svg></summary><div><p>No. $ANT is a meme coin with no intrinsic value or expectation of financial return. Nothing on this site is financial advice. Only spend what you can afford to lose and always do your own research.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section class="section community" id="community" data-chamber="center">
+  <div class="queen reveal march">
+    <div class="chamber__tag"><span>The Queen's Chamber</span><em>-100m</em></div>
+    <h2 class="h2">Join the <span class="hl">swarm</span></h2>
+    <p>Official channels are X and Telegram. Anything else claiming to be us is not us.</p>
+    <div class="queen__links"><a class="btn btn--amber btn--lg magnetic" data-x-link href="https://x.com/anthropiceth_x" target="_blank" rel="noopener"><svg><use href="#i-x"/></svg><span data-x-handle>@anthropiceth_x</span></a><a class="btn btn--ghost btn--lg magnetic" data-tg-link href="https://t.me/anthropiceth_tg" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg><span>Telegram</span></a></div>
+    <svg class="queen__ant" aria-hidden="true"><use href="#i-ant"/></svg>
+  </div>
+</section>
 </main>
-<footer class="foot">
-  <p>© <span id="year"></span> Independent community page for a meme token. This ant is not Anthropic's mascot, and ANT here is not the company's stock. Contract 0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca. Cryptocurrency can go to zero.</p>
+
+<footer class="footer">
+  <div class="footer__top">
+    <a class="nav__brand" href="#top"><img src="assets/logo.png" alt="" width="40" height="40" class="nav__logo"><span>$ANT</span></a>
+    <div class="footer__links">
+      <a data-x-link href="https://x.com/anthropiceth_x" target="_blank" rel="noopener" class="icon-btn" aria-label="X"><svg><use href="#i-x"/></svg></a>
+      <a data-tg-link href="https://t.me/anthropiceth_tg" target="_blank" rel="noopener" class="icon-btn" aria-label="Telegram"><svg><use href="#i-tg"/></svg></a>
+      <a data-chart-link href="https://dexscreener.com/ethereum/0xf0dac68bdda3b651a9c9a48cbfba9ff178067d57674fb9cfb33b499a36228ccc" target="_blank" rel="noopener" class="icon-btn" aria-label="Chart on DexScreener"><svg><use href="#i-chart"/></svg></a>
+      <a data-buy-link href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener" class="icon-btn" aria-label="Buy on Uniswap"><svg><use href="#i-swap"/></svg></a>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <svg><use href="#i-alert"/></svg>
+    <div>
+      <p><strong>$ANT is an independent community meme token. It is not affiliated with, endorsed by, or connected to Anthropic PBC or its products.</strong></p>
+      <p>$ANT is a meme coin with no intrinsic value or expectation of financial return. There is no formal team or roadmap commitment. Nothing on this website is financial advice. Crypto assets are highly volatile; only spend what you can afford to lose and always do your own research.</p>
+    </div>
+  </div>
+  <p class="footer__copy">&copy; <span id="year">2026</span> $ANT community. Dig responsibly.</p>
 </footer>
-<div id="toast" role="status" aria-live="polite"></div>
-<dialog id="light">
-  <figure class="light">
-    <button class="x" type="button" id="close-light" aria-label="Close">×</button>
-    <img id="light-img" alt="">
-    <figcaption id="light-cap"></figcaption>
-  </figure>
-</dialog>
-<script>
-(function(){
-  var year=document.getElementById("year");
-  if(year) year.textContent=String(new Date().getFullYear());
-  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var fine=matchMedia("(pointer: fine)").matches;
-  var dust=document.getElementById("dust");
-  if(dust && !reduce){
-    var ctx=dust.getContext("2d");
-    var motes=[];
-    function size(){
-      dust.width=dust.clientWidth;
-      dust.height=dust.clientHeight;
-    }
-    function seed(){
-      motes=[];
-      var n=Math.min(70, Math.floor(dust.width/18));
-      for(var i=0;i<n;i++){
-        motes.push({
-          x:Math.random()*dust.width,
-          y:Math.random()*dust.height,
-          r:Math.random()*1.8+.4,
-          v:.15+Math.random()*.55,
-          a:.25+Math.random()*.55
-        });
-      }
-    }
-    function draw(){
-      ctx.clearRect(0,0,dust.width,dust.height);
-      motes.forEach(function(m){
-        m.y-=m.v;
-        if(m.y<-4){m.y=dust.height+4;m.x=Math.random()*dust.width;}
-        ctx.beginPath();
-        ctx.fillStyle="rgba(243,197,106,"+m.a+")";
-        ctx.arc(m.x,m.y,m.r,0,6.283);
-        ctx.fill();
-      });
-      requestAnimationFrame(draw);
-    }
-    size(); seed(); draw();
-    addEventListener("resize", function(){size(); seed();});
-  }
-  var tilt=document.getElementById("tilt");
-  if(!reduce && fine && tilt){
-    tilt.addEventListener("pointermove", function(e){
-      var r=tilt.getBoundingClientRect();
-      var x=(e.clientX-r.left)/r.width-.5;
-      var y=(e.clientY-r.top)/r.height-.5;
-      tilt.style.transform="rotateY("+(x*8)+"deg) rotateX("+(y*-6)+"deg)";
-    });
-    tilt.addEventListener("pointerleave", function(){tilt.style.transform="";});
-  }
-  var vid=document.getElementById("wave");
-  function playWave(){
-    if(!vid) return;
-    vid.currentTime=0;
-    var p=vid.play();
-    if(p&&p.catch) p.catch(function(){});
-  }
-  if(vid && !reduce) playWave();
-  var replay=document.getElementById("replay");
-  if(replay) replay.addEventListener("click", playWave);
-  var links=Array.prototype.slice.call(document.querySelectorAll(".rail a"));
-  var sections=links.map(function(a){return document.querySelector(a.getAttribute("href"));}).filter(Boolean);
-  function mark(){
-    var current=sections[0];
-    sections.forEach(function(s){
-      if(s.getBoundingClientRect().top<=innerHeight*0.45) current=s;
-    });
-    links.forEach(function(a){
-      var on=current && a.getAttribute("href")==="#"+current.id;
-      if(on) a.setAttribute("aria-current","true");
-      else a.removeAttribute("aria-current");
-    });
-  }
-  addEventListener("scroll", mark, {passive:true});
-  mark();
-  var toast=document.getElementById("toast"), timer=0;
-  function say(m){toast.textContent=m;toast.classList.add("show");clearTimeout(timer);timer=setTimeout(function(){toast.classList.remove("show");},2200);}
-  document.querySelectorAll("[data-copy]").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var text=btn.getAttribute("data-copy")||"";
-      function done(){say("Copied "+text);}
-      function fallback(){
-        var area=document.createElement("textarea");
-        area.value=text; area.setAttribute("readonly","");
-        area.style.position="fixed"; area.style.left="-999px";
-        document.body.appendChild(area); area.focus(); area.select();
-        var ok=false; try{ok=document.execCommand("copy");}catch(e){ok=false;}
-        area.remove();
-        if(ok) done(); else say(text);
-      }
-      if(navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
-      else fallback();
-    });
-  });
-  var dlg=document.getElementById("light");
-  var limg=document.getElementById("light-img");
-  var lcap=document.getElementById("light-cap");
-  document.querySelectorAll(".tile").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      limg.src=btn.getAttribute("data-full");
-      limg.alt=btn.querySelector("img").alt;
-      lcap.textContent=btn.getAttribute("data-cap")||"";
-      if(dlg.showModal) dlg.showModal();
-    });
-  });
-  document.getElementById("close-light").addEventListener("click", function(){dlg.close();});
-  dlg.addEventListener("click", function(e){if(e.target===dlg) dlg.close();});
-})();
-</script>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" hidden>
+  <button class="lb__btn lb__close" id="lbClose" aria-label="Close"><svg><use href="#i-close"/></svg></button>
+  <button class="lb__btn lb__prev" id="lbPrev" aria-label="Previous image"><svg><use href="#i-left"/></svg></button>
+  <figure class="lb__fig"><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb__btn lb__next" id="lbNext" aria-label="Next image"><svg><use href="#i-right"/></svg></button>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
