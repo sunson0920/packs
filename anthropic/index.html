@@ -18,145 +18,254 @@
 <link rel="canonical" href="https://antoneth.fun/">
 <link rel="icon" type="image/png" href="assets/art/mascot-reference.png">
 <link rel="apple-touch-icon" href="assets/art/mascot-reference.png">
-<meta name="theme-color" content="#120804">
+<meta name="theme-color" content="#070403">
 <link rel="preload" as="image" href="assets/art/mascot-reference.png">
 <style>
 @font-face{font-family:"Anton";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/anton-400.woff2") format("woff2")}
 @font-face{font-family:"Outfit";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/outfit-400.woff2") format("woff2")}
 @font-face{font-family:"Outfit";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/outfit-600.woff2") format("woff2")}
 :root{
-  --ink:#120804; --cream:#f6efe4; --paper:#fff8ef; --ember:#ff6a1a; --gold:#ffc56d;
-  --display:"Anton",Impact,sans-serif; --sans:"Outfit",system-ui,sans-serif;
+  --void:#070403; --soil:#120806; --cream:#f7efe3; --gold:#f3c56a; --ember:#ff7a24;
+  --line:rgba(243,197,106,.38); --display:"Anton",Impact,sans-serif; --sans:"Outfit",system-ui,sans-serif;
   --mono:ui-monospace,"Cascadia Mono",monospace;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--cream);font:400 18px/1.4 var(--sans)}
+body{
+  margin:0;color:var(--cream);background:
+    radial-gradient(900px 520px at 88% -8%, rgba(255,122,36,.28), transparent 62%),
+    radial-gradient(760px 480px at -10% 18%, rgba(180,72,18,.22), transparent 58%),
+    var(--void);
+  font:400 18px/1.45 var(--sans);
+}
 img{max-width:100%;display:block}
 a{color:inherit}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-h1,h2,p{margin:0}
+button,summary{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,p{margin:0}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-[id]{scroll-margin-top:88px}
-.skip{position:absolute;left:12px;top:-60px;z-index:90;background:var(--cream);color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:600;text-decoration:none}
+[id]{scroll-margin-top:92px}
+.skip{position:absolute;left:12px;top:-64px;z-index:100;background:var(--cream);color:#1a0c07;padding:10px 14px;border-radius:999px;font-weight:600;text-decoration:none}
 .skip:focus{top:12px}
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.addr{font-family:var(--mono);font-size:.78em;word-break:break-all}
-.top{position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 14px;background:rgba(18,8,4,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(246,239,228,.12)}
-.brand{display:flex;align-items:center;gap:8px;margin-right:auto;text-decoration:none;min-height:48px}
-.brand img{width:44px;height:44px;border-radius:12px;object-fit:cover;border:2px solid var(--cream)}
-.brand b{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.04em}
+.addr{font-family:var(--mono);font-size:.78em;overflow-wrap:anywhere}
+#dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.top{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;
+  padding:10px 16px 10px 22px;background:rgba(7,4,3,.78);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(16px);
+}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none;min-height:48px}
+.brand img{width:46px;height:46px;border-radius:14px;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 18px rgba(255,122,36,.45)}
+.brand b{font-family:var(--display);font-weight:400;font-size:30px;letter-spacing:.06em}
 .nav{display:flex;flex-wrap:wrap;gap:8px}
-.nav a,.buy{min-height:48px;padding:0 14px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:600}
-.nav a{border:1.5px solid rgba(246,239,228,.4)}
-.buy{background:var(--ember);color:#1a0a04;box-shadow:0 0 0 3px rgba(255,197,109,.35)}
-.world{position:relative;min-height:100svh;overflow:hidden;perspective:1400px}
-.bg{position:absolute;inset:-8%;background:#1a0c08 center/cover no-repeat;transform:translate3d(0,0,0) scale(1.08);will-change:transform}
-.bg img,.bg video{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
-.bg video{position:absolute;inset:0}
-.fog{position:absolute;inset:0;background:linear-gradient(100deg,rgba(12,6,3,.94) 0%,rgba(12,6,3,.82) 46%,rgba(12,6,3,.28) 100%)}
-.stage{position:relative;z-index:2;width:min(1180px,calc(100% - 28px));margin:0 auto;min-height:100svh;display:grid;align-items:center;gap:12px;padding:18px 0 36px}
-.hero-copy{position:relative;z-index:3;max-width:640px;padding:8px 4px 12px}
-.hero-copy h1{font-family:var(--display);font-weight:400;font-size:clamp(92px,18vw,210px);line-height:.84;letter-spacing:-.03em;color:var(--cream)}
-.kicker{color:var(--gold);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:12px}
-.lede{font-size:clamp(22px,3vw,34px);font-weight:600;letter-spacing:-.03em;max-width:16ch}
-.cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.cta a{min-height:52px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;text-decoration:none;font-weight:600}
-.cta .fill{background:var(--cream);color:var(--ink)}
+.nav a,.buy{
+  min-height:48px;padding:0 14px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+  text-decoration:none;font-weight:600;
+}
+.nav a{border:1px solid var(--line)}
+.nav a[aria-current="true"]{background:rgba(243,197,106,.16);border-color:var(--gold)}
+.buy{background:linear-gradient(180deg,#ffd27a,#ff7a24);color:#1a0c07;box-shadow:0 0 22px rgba(255,122,36,.45)}
+.rail{
+  position:fixed;z-index:45;left:18px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:14px;
+}
+.rail a{position:relative;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--gold);text-decoration:none}
+.rail a[aria-current="true"]{background:var(--ember);box-shadow:0 0 14px var(--ember)}
+.rail a span{
+  position:absolute;left:22px;top:50%;transform:translateY(-50%);
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+  white-space:nowrap;opacity:0;background:rgba(7,4,3,.88);padding:4px 8px;border-radius:999px;
+}
+.rail a:hover span,.rail a:focus-visible span,.rail a[aria-current="true"] span{opacity:1}
+.hero{position:relative;z-index:2;min-height:calc(100svh - 68px);display:grid;align-items:center;padding:28px 16px 36px}
+.stage{width:min(1180px,100%);max-width:100%;margin:0 auto;display:grid;gap:28px;align-items:center;min-width:0}
+.stage>*,.split>*,.copy,.frame,.ticket{min-width:0}
+.copy h1{
+  font-family:var(--display);font-weight:400;font-size:clamp(96px,16vw,188px);line-height:.8;letter-spacing:-.02em;
+  background:linear-gradient(185deg,#fff8ea 10%,#f3c56a 46%,#ff7a24 78%,#a34716);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 18px 28px rgba(255,122,36,.28));
+}
+.kicker{color:var(--gold);font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:12px}
+.lede{margin-top:8px;font-size:clamp(26px,3.4vw,40px);font-weight:600;letter-spacing:-.03em;max-width:16ch}
+.fine{margin-top:10px;max-width:38ch;color:#eadccb}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.cta a,.ticket button,.copybtn,.replay{
+  min-height:48px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+  text-decoration:none;font-weight:600;
+}
+.cta .fill{background:var(--cream);color:#1a0c07}
 .cta .ghost{border:1.5px solid var(--cream)}
-.ticket{margin-top:14px;max-width:540px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:12px;border:1.5px dashed var(--gold);border-radius:18px;background:rgba(18,8,4,.55)}
-.ticket p{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.ticket button,.copy{min-height:48px;padding:0 14px;border-radius:999px;background:var(--cream);color:var(--ink);font-weight:600}
-.mark{width:112px;margin-top:16px;border-radius:22px;border:3px solid var(--cream);box-shadow:8px 8px 0 var(--ember);transform:rotate(-6deg)}
-.scene{margin:0 0 28px;border-radius:28px;overflow:hidden;box-shadow:14px 16px 0 #ff6a1a}
-.scene img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-.buy-grid{display:grid;gap:22px;align-items:center}
-.marquee{overflow:hidden;background:var(--ember);color:#1a0a04}
-.track{display:flex;width:max-content;animation:slide 24s linear infinite}
-.track b{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.08em;padding:8px 0}
-.track i{font-style:normal;padding:0 12px}
-.band{padding:clamp(64px,9vw,110px) 16px}
-.wrap{width:min(1100px,100%);margin:0 auto}
-.cream{background:var(--cream);color:var(--ink)}
-h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,88px);line-height:.88}
-.path{display:grid;gap:14px;margin-top:22px}
-.step{position:relative;background:var(--ink);color:var(--cream);border-radius:28px;padding:18px 16px 20px;min-height:160px;box-shadow:10px 10px 0 var(--ember)}
-.step em{font-family:var(--display);font-style:normal;font-size:40px;color:var(--gold)}
-.step strong{display:block;font-size:24px;margin-top:4px}
-.nest{display:grid;gap:12px;margin-top:22px}
-.cell{background:var(--ink);color:var(--cream);border-radius:24px;padding:16px}
-.cell b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,42px);line-height:.95}
-.cell span{display:block;margin-top:4px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.sheet{margin-top:14px;background:#fff;border-radius:24px;overflow:hidden}
-.row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px;padding:12px 14px;border-top:1px solid rgba(18,8,4,.08)}
+.ticket{
+  margin-top:16px;max-width:560px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:12px 14px;border-radius:18px;border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(243,197,106,.12),rgba(7,4,3,.4));
+  box-shadow:inset 0 0 24px rgba(255,122,36,.12);
+}
+.ticket p{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.ticket button,.copybtn{background:var(--cream);color:#1a0c07}
+.frame{
+  position:relative;padding:8px;border-radius:30px;
+  background:linear-gradient(145deg,#ffe7b2,#8d4518 38%,#ffb24a 68%,#3a160a);
+  box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 48px rgba(255,122,36,.28);
+  transform-style:preserve-3d;
+}
+.screen{position:relative;border-radius:22px;overflow:hidden;background:#1a0c08;aspect-ratio:16/9}
+.screen img,.screen video{width:100%;height:100%;object-fit:cover}
+.screen video{position:absolute;inset:0}
+.replay{position:absolute;right:18px;bottom:18px;z-index:3;background:rgba(7,4,3,.78);border:1.5px solid var(--cream)}
+.crest{
+  position:absolute;left:-18px;bottom:-22px;width:108px;height:108px;border-radius:28px;object-fit:cover;
+  border:3px solid var(--cream);box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 24px rgba(255,122,36,.4);transform:rotate(-8deg);
+}
+.ribbon{position:relative;z-index:2;overflow:hidden;border-block:1px solid var(--line);background:linear-gradient(90deg,#3a1608,#ff7a24,#f3c56a,#3a1608);color:#1a0c07}
+.track{display:flex;width:max-content;animation:slide 28s linear infinite}
+.track b{font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:.14em;padding:10px 0}
+.track i{font-style:normal;padding:0 14px}
+.chamber{position:relative;z-index:2;padding:clamp(72px,10vw,120px) 16px}
+.wrap{width:min(1120px,100%);margin:0 auto}
+.chamber h2{font-family:var(--display);font-weight:400;font-size:clamp(52px,8vw,96px);line-height:.86;letter-spacing:-.02em}
+.chamber .kicker{margin-bottom:8px}
+.split{display:grid;gap:22px;align-items:center;margin-top:22px}
+.plate{
+  border-radius:28px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 18px 50px rgba(0,0,0,.35),0 0 30px rgba(255,122,36,.12);
+}
+.plate img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
+.prose{color:#eadccb;max-width:62ch}
+.prose p+p{margin-top:12px}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.tile{
+  position:relative;padding:0;border-radius:22px;overflow:hidden;min-height:180px;border:1px solid var(--line);
+  background:#1a0c08;box-shadow:0 12px 30px rgba(0,0,0,.28);
+}
+.tile img{width:100%;height:100%;object-fit:cover;aspect-ratio:1;transition:transform .45s ease}
+.tile:hover img,.tile:focus-visible img{transform:scale(1.05)}
+.tile span{
+  position:absolute;left:10px;right:10px;bottom:10px;padding:8px 10px;border-radius:14px;
+  background:rgba(7,4,3,.72);color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.04em;text-align:left;
+}
+.steps{display:grid;gap:12px;margin-top:22px;list-style:none;padding:0}
+.step{
+  position:relative;min-height:168px;padding:18px 16px 20px;border-radius:24px;
+  background:linear-gradient(180deg,rgba(243,197,106,.12),rgba(18,8,6,.72));
+  border:1px solid var(--line);box-shadow:0 16px 36px rgba(0,0,0,.28);
+}
+.step em{font-family:var(--display);font-style:normal;font-size:42px;color:var(--gold)}
+.step strong{display:block;font-size:22px;margin-top:2px}
+.step span{display:block;margin-top:6px;color:#eadccb}
+.vault{display:grid;gap:12px;margin-top:22px}
+.cell{
+  padding:18px 16px;border-radius:22px;border:1px solid var(--line);
+  background:radial-gradient(420px 140px at 20% 0%,rgba(255,122,36,.22),transparent 60%),rgba(18,8,6,.8);
+  box-shadow:inset 0 0 24px rgba(243,197,106,.08);
+}
+.cell b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(30px,4vw,46px);line-height:.95}
+.cell span{display:block;margin-top:6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sheet{margin-top:16px;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:rgba(247,239,227,.96);color:#1a0c07}
+.row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:8px;padding:14px 16px;border-top:1px solid rgba(26,12,7,.1)}
 .row:first-child{border-top:0}
 .row dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#8a3e12}
 .row dd{margin:0}
-.row a{font-weight:600;min-height:44px;display:inline-flex;align-items:center}
-.note{margin-top:12px;color:#4d3424;font-size:15px;max-width:75ch}
-.chart{margin-top:16px;border:3px solid var(--cream);border-radius:24px;overflow:hidden;background:#0c0705}
-.chart iframe{width:100%;height:clamp(360px,60vh,620px);border:0;display:block}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.row a{font-weight:600}
+.note{margin-top:14px;color:#eadccb;max-width:75ch}
+.chart{margin-top:18px;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#0c0705;box-shadow:0 0 40px rgba(255,122,36,.16)}
+.chart iframe{width:100%;height:clamp(380px,62vh,640px);border:0;display:block}
+.links{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
 .links a{min-height:48px;display:inline-flex;align-items:center;font-weight:600;color:var(--gold)}
-.socials{display:grid;gap:12px;margin-top:18px}
-.socials a{min-height:88px;border-radius:28px;background:var(--ink);color:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:0 20px;text-decoration:none;font-family:var(--display);font-size:clamp(36px,6vw,64px)}
-.foot{padding:28px 16px 56px;color:#d9c7b4;font-size:15px}
+.gates{display:grid;gap:12px;margin-top:22px}
+.gates a{
+  min-height:110px;border-radius:28px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;
+  text-decoration:none;font-family:var(--display);font-size:clamp(40px,6vw,72px);letter-spacing:.04em;
+  border:1px solid var(--line);background:linear-gradient(110deg,rgba(255,122,36,.28),rgba(18,8,6,.2) 42%,rgba(243,197,106,.16));
+  box-shadow:0 18px 40px rgba(0,0,0,.3);
+}
+.gates small{font-family:var(--sans);font-size:14px;letter-spacing:.16em;font-weight:600}
+.foot{position:relative;z-index:2;padding:8px 16px 64px;color:#d9c7b4;font-size:15px}
 .foot p{width:min(78ch,100%);margin:0 auto}
-#toast{position:fixed;left:16px;right:16px;bottom:16px;max-width:520px;margin:auto;z-index:80;background:var(--cream);color:var(--ink);font-weight:600;padding:12px 14px;border-radius:16px;transform:translateY(160%)}
+#toast{
+  position:fixed;left:16px;right:16px;bottom:16px;max-width:520px;margin:auto;z-index:80;
+  background:var(--cream);color:#1a0c07;font-weight:600;padding:14px 16px;border-radius:16px;
+  transform:translateY(160%);box-shadow:0 16px 40px rgba(0,0,0,.35);
+}
 #toast.show{transform:none}
-.bg video{border-radius:0}
-.replay{position:absolute;right:16px;bottom:18px;z-index:4;min-height:48px;padding:0 16px;border-radius:999px;background:rgba(18,8,4,.78);color:var(--cream);font-weight:600;border:1.5px solid var(--cream)}
+dialog{border:0;padding:0;background:transparent;max-width:min(1080px,calc(100% - 24px));color:var(--cream)}
+dialog::backdrop{background:rgba(4,2,1,.86)}
+.light{position:relative}
+.light img{width:100%;max-height:78vh;object-fit:contain;border-radius:18px;background:#120806}
+.light figcaption{margin-top:10px;color:var(--gold);font-weight:600}
+.x{
+  position:absolute;top:-6px;right:-6px;width:48px;height:48px;border-radius:50%;
+  background:var(--cream);color:#1a0c07;font-size:28px;line-height:1;
+}
 @keyframes slide{to{transform:translateX(-50%)}}
 @media(min-width:900px){
-  .stage{grid-template-columns:1fr}
-  .buy-grid{grid-template-columns:.9fr 1.1fr}
-  .buy-grid .path{grid-template-columns:1fr 1fr}
-  .path{grid-template-columns:repeat(4,1fr)}
-  .nest{grid-template-columns:repeat(3,1fr)}
-  .socials{grid-template-columns:1fr 1fr}
+  .hero{padding-left:72px;padding-right:28px}
+  .chamber{padding-left:72px;padding-right:28px}
+  .stage,.split{grid-template-columns:1.05fr .95fr}
+  .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .vault{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .gates{grid-template-columns:1fr 1fr}
+  .foot{padding-left:72px}
 }
 @media(max-width:899px){
+  .rail{position:sticky;top:68px;left:auto;transform:none;flex-direction:row;gap:4px;width:100%;max-width:100%;padding:8px 10px;background:rgba(7,4,3,.92);border-bottom:1px solid var(--line);overflow:hidden}
+  .rail a span{position:static;transform:none;opacity:1;font-size:9px;letter-spacing:.06em;background:none;padding:0}
+  .rail a{width:auto;height:auto;border:0;border-radius:0;display:flex;flex:1 1 0;flex-direction:column;align-items:center;gap:4px;min-width:0}
+  .rail a::before{content:"";width:10px;height:10px;border-radius:50%;border:1.5px solid var(--gold)}
+  .rail a[aria-current="true"]{background:none;box-shadow:none}
+  .rail a[aria-current="true"]::before{background:var(--ember);box-shadow:0 0 10px var(--ember)}
+  .nav a:not(.keep){display:none}
   .row{grid-template-columns:1fr}
-  .copy,.ticket button{width:100%}
+  .copybtn,.ticket button{width:100%}
+  .crest{width:84px;height:84px;left:10px;bottom:-16px}
 }
+.split .steps{grid-template-columns:1fr}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .track{flex-wrap:wrap;width:auto}
   .track .dup{display:none}
-  .bg{transform:none}
+  .tile img{transform:none}
+  #dust{display:none}
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#home">Skip to content</a>
+<canvas id="dust" aria-hidden="true"></canvas>
 <header class="top">
   <a class="brand" href="#home"><img src="assets/art/mascot-reference.png" width="256" height="256" alt=""><b>ANT</b></a>
   <nav class="nav" aria-label="On this page">
-    <a href="#buy">How to buy</a>
-    <a href="#tokenomics">Tokenomics</a>
+    <a href="#lore">Lore</a>
+    <a href="#archive">Archive</a>
+    <a href="#buy">Buy</a>
+    <a href="#tokenomics">Vault</a>
     <a href="#tape">Chart</a>
-    <a href="https://x.com/anthropiceth_x" target="_blank" rel="noopener noreferrer">X<span class="sr"> (opens in a new tab)</span></a>
-    <a href="https://t.me/anthropiceth_tg" target="_blank" rel="noopener noreferrer">Telegram<span class="sr"> (opens in a new tab)</span></a>
   </nav>
   <a class="buy" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Buy<span class="sr"> on Uniswap (opens in a new tab)</span></a>
 </header>
+<nav class="rail" aria-label="Chambers">
+  <a href="#home"><span>Gate</span></a>
+  <a href="#lore"><span>Lore</span></a>
+  <a href="#archive"><span>Archive</span></a>
+  <a href="#buy"><span>Buy</span></a>
+  <a href="#tokenomics"><span>Vault</span></a>
+  <a href="#tape"><span>Chart</span></a>
+  <a href="#swarm"><span>Swarm</span></a>
+</nav>
 <main id="home">
-  <section class="world">
-    <div class="bg" data-depth="0.18">
-      <img data-slot="world-still" src="assets/cinema/hero-colony.webp" width="1280" height="720" alt="A cream-capped ant celebrates in a golden cave with a crowd of smaller ants and bowls of amber beads.">
-      <video data-slot="hero-video" src="assets/cinema/hero-ant-wave.mp4" poster="assets/cinema/hero-poster.webp" muted playsinline loop preload="metadata" aria-label="Short loop of the cream-capped ant waving in the colony"></video>
-    </div>
-    <button class="replay" type="button" id="replay">Replay</button>
-    <div class="fog" aria-hidden="true"></div>
+  <section class="hero">
     <div class="stage">
-      <div class="hero-copy">
-        <p class="kicker">Independent community meme · Ethereum</p>
+      <div class="copy">
+        <p class="kicker">Chamber 00 · The gate · Ethereum</p>
         <h1>ANT</h1>
         <p class="lede">The ant in the cream cap.</p>
+        <p class="fine">An independent community meme. The fuzzy ant with the cream cap is this token’s character. It is not Anthropic’s mascot, and this token is not a share of the company.</p>
         <div class="cta">
           <a class="fill" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Buy on Uniswap<span class="sr"> (opens in a new tab)</span></a>
-          <a class="ghost" href="#tape">Chart</a>
+          <a class="ghost" href="#tape">Open the chart</a>
           <a class="ghost" href="https://x.com/anthropiceth_x" target="_blank" rel="noopener noreferrer">X<span class="sr"> (opens in a new tab)</span></a>
           <a class="ghost" href="https://t.me/anthropiceth_tg" target="_blank" rel="noopener noreferrer">Telegram<span class="sr"> (opens in a new tab)</span></a>
         </div>
@@ -167,52 +276,105 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,88px);lin
           </div>
           <button type="button" data-copy="0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca">Copy</button>
         </div>
-        <img class="mark" src="assets/art/mascot-reference.png" width="256" height="256" alt="The uploaded mascot: fuzzy brown ant, large black eyes, cream cap.">
+      </div>
+      <div class="frame" id="tilt">
+        <div class="screen">
+          <img src="assets/cinema/hero-colony.webp" width="1280" height="720" alt="A cream-capped ant celebrates in a golden cave with a crowd of smaller ants and bowls of amber beads.">
+          <video id="wave" src="assets/cinema/hero-ant-wave.mp4" poster="assets/cinema/hero-poster.webp" muted playsinline loop preload="metadata" aria-label="Short loop of the cream-capped ant waving in the colony"></video>
+        </div>
+        <button class="replay" type="button" id="replay">Replay</button>
+        <img class="crest" src="assets/art/mascot-reference.png" width="256" height="256" alt="The uploaded mascot: fuzzy brown ant, large black eyes, cream cap.">
       </div>
     </div>
   </section>
-  <div class="marquee" aria-hidden="true"><div class="track"><b>ANT<i>·</i>CREAM CAP<i>·</i>ETHEREUM<i>·</i>CHECK THE ADDRESS<i>·</i></b><b class="dup">ANT<i>·</i>CREAM CAP<i>·</i>ETHEREUM<i>·</i>CHECK THE ADDRESS<i>·</i></b></div></div>
+  <div class="ribbon" aria-hidden="true"><div class="track"><b>ANT<i>·</i>CREAM CAP<i>·</i>ETHEREUM<i>·</i>CHECK THE ADDRESS<i>·</i>1,000,000,000<i>·</i></b><b class="dup">ANT<i>·</i>CREAM CAP<i>·</i>ETHEREUM<i>·</i>CHECK THE ADDRESS<i>·</i>1,000,000,000<i>·</i></b></div></div>
 
-  <section class="band cream" id="buy">
+  <section class="chamber" id="lore">
     <div class="wrap">
-      <div class="buy-grid">
-      <figure class="scene">
+      <p class="kicker">Chamber 01 · Lore</p>
+      <h2>A colony, not a company.</h2>
+      <div class="split">
+        <div class="prose">
+          <p>Down here the light is amber and the work is loud. The ant in the cream cap stands at the mouth of the tunnel, and the rest of the colony answers with bowls of beads, a coin too big to carry, and a wave that lasts one and a half heartbeats.</p>
+          <p>ANT is the ticker on the contract. The pictures are community art of that character. Nothing on this page is an announcement from Anthropic, a filing, or a claim on anyone else’s name.</p>
+        </div>
+        <figure class="plate">
+          <img src="assets/art/mascot-meme-3.webp" width="1280" height="720" alt="The cream-capped ant in a flight suit among a gathering of ants.">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="chamber" id="archive">
+    <div class="wrap">
+      <p class="kicker">Chamber 02 · Archive</p>
+      <h2>Stills from the tunnels.</h2>
+      <div class="gallery">
+        <button class="tile" type="button" data-full="assets/cinema/hero-colony.webp" data-cap="The celebration in the golden cave.">
+          <img src="assets/cinema/hero-colony.webp" width="1280" height="720" alt="Cream-capped ant celebrating with the colony.">
+          <span>The celebration</span>
+        </button>
+        <button class="tile" type="button" data-full="assets/cinema/buy-coin.webp" data-cap="The ant carries one gold coin through the tunnel.">
+          <img src="assets/cinema/buy-coin.webp" width="1280" height="720" alt="Cream-capped ant carrying a large gold coin.">
+          <span>The coin</span>
+        </button>
+        <button class="tile" type="button" data-full="assets/cinema/tokenomics-team.webp" data-cap="The colony rolls amber beads together.">
+          <img src="assets/cinema/tokenomics-team.webp" width="1280" height="720" alt="Ants rolling glowing amber spheres.">
+          <span>The beads</span>
+        </button>
+        <button class="tile" type="button" data-full="assets/art/mascot-meme-2.webp" data-cap="The ant at the books, glasses on.">
+          <img src="assets/art/mascot-meme-2.webp" width="1024" height="1024" alt="Cream-capped ant with glasses and books.">
+          <span>The books</span>
+        </button>
+        <button class="tile" type="button" data-full="assets/art/mascot-meme-3.webp" data-cap="The gathering around the ant in the flight suit.">
+          <img src="assets/art/mascot-meme-3.webp" width="1280" height="720" alt="Cream-capped ant in a flight suit with the colony.">
+          <span>The gathering</span>
+        </button>
+        <button class="tile" type="button" data-full="assets/art/mascot-reference.png" data-cap="The uploaded portrait: fuzzy brown ant, cream cap, black eyes.">
+          <img src="assets/art/mascot-reference.png" width="256" height="256" alt="Uploaded portrait of the fuzzy brown ant in a cream cap.">
+          <span>The portrait</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="chamber" id="buy">
+    <div class="wrap">
+      <p class="kicker">Chamber 03 · Acquisition</p>
+      <h2>Four moves. No wallet login.</h2>
+      <figure class="plate" style="margin-top:22px">
         <img src="assets/cinema/buy-coin.webp" width="1280" height="720" alt="The cream-capped ant carries a large gold coin through a glowing tunnel.">
       </figure>
-      <div>
-      <p class="kicker" style="color:#8a3e12">How to buy</p>
-      <h2>Four moves. No wallet login.</h2>
-      <ol class="path">
-        <li class="step"><em>01</em><strong>An Ethereum wallet you hold.</strong><span>This site never asks for a seed or a signature.</span></li>
+      <ol class="steps">
+        <li class="step"><em>01</em><strong>A wallet you hold.</strong><span>This site never asks for a seed or a signature.</span></li>
         <li class="step"><em>02</em><strong>ETH for the swap and gas.</strong><span>You choose the amount inside Uniswap.</span></li>
-        <li class="step"><em>03</em><strong>Open the preset swap.</strong><span>Output is <span class="addr">0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</span>.</span></li>
+        <li class="step"><em>03</em><strong>Open the preset swap.</strong><span>Output is <span class="addr">0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</span></span></li>
         <li class="step"><em>04</em><strong>Check it yourself.</strong><span>Match that address on this page and on Etherscan before you sign.</span></li>
       </ol>
       <div class="cta">
-        <a class="fill" style="background:#120804;color:#f6efe4" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
-      </div>
-      </div>
+        <a class="fill" href="https://app.uniswap.org/swap?chain=mainnet&amp;inputCurrency=NATIVE&amp;outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Open Uniswap<span class="sr"> (opens in a new tab)</span></a>
+        <a class="ghost" href="https://etherscan.io/token/0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca" target="_blank" rel="noopener noreferrer">Read the contract<span class="sr"> on Etherscan (opens in a new tab)</span></a>
       </div>
     </div>
   </section>
 
-  <section class="band" id="tokenomics">
+  <section class="chamber" id="tokenomics">
     <div class="wrap">
-      <figure class="scene">
+      <p class="kicker">Chamber 04 · Reserves</p>
+      <h2>What the chain shows.</h2>
+      <figure class="plate" style="margin-top:22px">
         <img src="assets/cinema/tokenomics-team.webp" width="1280" height="720" alt="Cream-capped ants roll glowing amber spheres through a sunlit cave.">
       </figure>
-      <p class="kicker">Tokenomics</p>
-      <h2>What the chain shows.</h2>
-      <div class="nest">
+      <div class="vault">
         <article class="cell"><b>Anthropic</b><span>Name on the contract</span></article>
         <article class="cell"><b>ANT</b><span>Symbol</span></article>
         <article class="cell"><b>1,000,000,000</b><span>Supply · 18 decimals</span></article>
         <article class="cell"><b>Ethereum</b><span>ERC-20</span></article>
         <article class="cell"><b>Uniswap v4</b><span>ANT / ETH pair</span></article>
-        <article class="cell"><b>Position 515252</b><span>LP receipt at the burn address</span></article>
+        <article class="cell"><b>515252</b><span>LP receipt at the burn address</span></article>
       </div>
       <div class="sheet">
-        <div class="row"><dt>Contract</dt><dd><span class="addr">0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</span><button class="copy" type="button" data-copy="0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca">Copy address</button></dd></div>
+        <div class="row"><dt>Contract</dt><dd><span class="addr">0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca</span> <button class="copybtn" type="button" data-copy="0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca">Copy address</button></dd></div>
         <div class="row"><dt>Pair</dt><dd><span class="addr">0xf0dac68bdda3b651a9c9a48cbfba9ff178067d57674fb9cfb33b499a36228ccc</span></dd></div>
         <div class="row"><dt>LP receipt</dt><dd>Uniswap v4 position 515252 for this pool is owned by 0x000000000000000000000000000000000000dead and still holds the liquidity that was added. No other lock is claimed.</dd></div>
         <div class="row"><dt>Not claimed</dt><dd>Tax rate, renounce, and any split of the supply.</dd></div>
@@ -226,9 +388,9 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,88px);lin
     </div>
   </section>
 
-  <section class="band cream" id="tape">
+  <section class="chamber" id="tape">
     <div class="wrap">
-      <p class="kicker" style="color:#8a3e12">Chart</p>
+      <p class="kicker">Chamber 05 · The tape</p>
       <h2>The pair.</h2>
       <div class="chart">
         <iframe title="ANT chart on Dexscreener for this Ethereum pair" src="https://dexscreener.com/ethereum/0xf0dac68bdda3b651a9c9a48cbfba9ff178067d57674fb9cfb33b499a36228ccc?embed=1&amp;loadChartSettings=0&amp;trades=0&amp;tabs=0&amp;info=0&amp;chartLeftToolbar=0&amp;chartTheme=dark&amp;theme=dark&amp;chartStyle=1&amp;chartType=usd&amp;interval=15" loading="lazy"></iframe>
@@ -240,13 +402,13 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,88px);lin
     </div>
   </section>
 
-  <section class="band" id="social">
+  <section class="chamber" id="swarm">
     <div class="wrap">
-      <p class="kicker">Colony</p>
+      <p class="kicker">Chamber 06 · The swarm</p>
       <h2>Where it talks.</h2>
-      <div class="socials">
-        <a href="https://x.com/anthropiceth_x" target="_blank" rel="noopener noreferrer">X<span class="sr"> (opens in a new tab)</span></a>
-        <a href="https://t.me/anthropiceth_tg" target="_blank" rel="noopener noreferrer">TELEGRAM<span class="sr"> (opens in a new tab)</span></a>
+      <div class="gates">
+        <a href="https://x.com/anthropiceth_x" target="_blank" rel="noopener noreferrer">X<small>@anthropiceth_x<span class="sr"> (opens in a new tab)</span></small></a>
+        <a href="https://t.me/anthropiceth_tg" target="_blank" rel="noopener noreferrer">TG<small>t.me/anthropiceth_tg<span class="sr"> (opens in a new tab)</span></small></a>
       </div>
     </div>
   </section>
@@ -255,36 +417,90 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,88px);lin
   <p>© <span id="year"></span> Independent community page for a meme token. This ant is not Anthropic's mascot, and ANT here is not the company's stock. Contract 0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca. Cryptocurrency can go to zero.</p>
 </footer>
 <div id="toast" role="status" aria-live="polite"></div>
+<dialog id="light">
+  <figure class="light">
+    <button class="x" type="button" id="close-light" aria-label="Close">×</button>
+    <img id="light-img" alt="">
+    <figcaption id="light-cap"></figcaption>
+  </figure>
+</dialog>
 <script>
 (function(){
   var year=document.getElementById("year");
   if(year) year.textContent=String(new Date().getFullYear());
   var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   var fine=matchMedia("(pointer: fine)").matches;
-  var bg=document.querySelector(".bg");
-  if(!reduce && fine && bg){
-    window.addEventListener("pointermove", function(e){
-      var x=(e.clientX/innerWidth-.5)*16;
-      var y=(e.clientY/innerHeight-.5)*-12;
-      bg.style.transform="translate3d("+(x*-1.1)+"px,"+(y*-1.1)+"px,0) scale(1.08)";
-    }, {passive:true});
+  var dust=document.getElementById("dust");
+  if(dust && !reduce){
+    var ctx=dust.getContext("2d");
+    var motes=[];
+    function size(){
+      dust.width=dust.clientWidth;
+      dust.height=dust.clientHeight;
+    }
+    function seed(){
+      motes=[];
+      var n=Math.min(70, Math.floor(dust.width/18));
+      for(var i=0;i<n;i++){
+        motes.push({
+          x:Math.random()*dust.width,
+          y:Math.random()*dust.height,
+          r:Math.random()*1.8+.4,
+          v:.15+Math.random()*.55,
+          a:.25+Math.random()*.55
+        });
+      }
+    }
+    function draw(){
+      ctx.clearRect(0,0,dust.width,dust.height);
+      motes.forEach(function(m){
+        m.y-=m.v;
+        if(m.y<-4){m.y=dust.height+4;m.x=Math.random()*dust.width;}
+        ctx.beginPath();
+        ctx.fillStyle="rgba(243,197,106,"+m.a+")";
+        ctx.arc(m.x,m.y,m.r,0,6.283);
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    size(); seed(); draw();
+    addEventListener("resize", function(){size(); seed();});
   }
-  if(!reduce){
-    addEventListener("scroll", function(){
-      if(!bg) return;
-      bg.style.transform="translate3d(0,"+(scrollY*0.12)+"px,0) scale(1.08)";
-    }, {passive:true});
+  var tilt=document.getElementById("tilt");
+  if(!reduce && fine && tilt){
+    tilt.addEventListener("pointermove", function(e){
+      var r=tilt.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5;
+      var y=(e.clientY-r.top)/r.height-.5;
+      tilt.style.transform="rotateY("+(x*8)+"deg) rotateX("+(y*-6)+"deg)";
+    });
+    tilt.addEventListener("pointerleave", function(){tilt.style.transform="";});
   }
-  var vid=document.querySelector('[data-slot="hero-video"]');
-  var replay=document.getElementById("replay");
+  var vid=document.getElementById("wave");
   function playWave(){
     if(!vid) return;
     vid.currentTime=0;
     var p=vid.play();
-    if(p) p.catch(function(){});
+    if(p&&p.catch) p.catch(function(){});
   }
   if(vid && !reduce) playWave();
+  var replay=document.getElementById("replay");
   if(replay) replay.addEventListener("click", playWave);
+  var links=Array.prototype.slice.call(document.querySelectorAll(".rail a"));
+  var sections=links.map(function(a){return document.querySelector(a.getAttribute("href"));}).filter(Boolean);
+  function mark(){
+    var current=sections[0];
+    sections.forEach(function(s){
+      if(s.getBoundingClientRect().top<=innerHeight*0.45) current=s;
+    });
+    links.forEach(function(a){
+      var on=current && a.getAttribute("href")==="#"+current.id;
+      if(on) a.setAttribute("aria-current","true");
+      else a.removeAttribute("aria-current");
+    });
+  }
+  addEventListener("scroll", mark, {passive:true});
+  mark();
   var toast=document.getElementById("toast"), timer=0;
   function say(m){toast.textContent=m;toast.classList.add("show");clearTimeout(timer);timer=setTimeout(function(){toast.classList.remove("show");},2200);}
   document.querySelectorAll("[data-copy]").forEach(function(btn){
@@ -294,7 +510,7 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,88px);lin
       function fallback(){
         var area=document.createElement("textarea");
         area.value=text; area.setAttribute("readonly","");
-        area.style.position="fixed"; area.style.left="0"; area.style.top="0";
+        area.style.position="fixed"; area.style.left="-999px";
         document.body.appendChild(area); area.focus(); area.select();
         var ok=false; try{ok=document.execCommand("copy");}catch(e){ok=false;}
         area.remove();
@@ -304,6 +520,19 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,88px);lin
       else fallback();
     });
   });
+  var dlg=document.getElementById("light");
+  var limg=document.getElementById("light-img");
+  var lcap=document.getElementById("light-cap");
+  document.querySelectorAll(".tile").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      limg.src=btn.getAttribute("data-full");
+      limg.alt=btn.querySelector("img").alt;
+      lcap.textContent=btn.getAttribute("data-cap")||"";
+      if(dlg.showModal) dlg.showModal();
+    });
+  });
+  document.getElementById("close-light").addEventListener("click", function(){dlg.close();});
+  dlg.addEventListener("click", function(e){if(e.target===dlg) dlg.close();});
 })();
 </script>
 </body>
