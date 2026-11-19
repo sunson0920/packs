@@ -4,11 +4,11 @@
 const TOKEN_NAME = 'Anthropic';
 const TICKER = '$ANT';
 const CHAIN = 'Ethereum';
-const CONTRACT_ADDRESS = '0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca'; // required: shown in every CA box
+const CONTRACT_ADDRESS = '0xd8aa2557e62c508a8e167b711bab4172b74bc5d6'; // required: shown in every CA box
 // Exact buy link used by every Buy button. Leave '' to auto-build from CONTRACT_ADDRESS.
-const BUY_URL = 'https://app.uniswap.org/swap?chain=mainnet&inputCurrency=NATIVE&outputCurrency=0xb4c879af837b49c398ba756bdf4fc6c85f4a8dca';
+const BUY_URL = 'https://app.uniswap.org/swap?chain=mainnet&inputCurrency=NATIVE&outputCurrency=0xd8aa2557e62c508a8e167b711bab4172b74bc5d6';
 // Chart link. Leave '' to auto-build from CONTRACT_ADDRESS.
-const CHART_URL = 'https://dexscreener.com/ethereum/0xf0dac68bdda3b651a9c9a48cbfba9ff178067d57674fb9cfb33b499a36228ccc';
+const CHART_URL = 'https://dexscreener.com/ethereum/0x4fc4c9e786c60886bf38b858465cc1b071e08ac57ae18d202b99c84f948c3e94';
 const X_URL = 'https://x.com/anthropiceth_x';
 const TG_URL = 'https://t.me/anthropiceth_tg';
 
