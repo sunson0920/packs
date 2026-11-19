@@ -9,7 +9,7 @@ const CONTRACT_ADDRESS = '0xd8aa2557e62c508a8e167b711bab4172b74bc5d6'; // requir
 const BUY_URL = 'https://app.uniswap.org/swap?chain=mainnet&inputCurrency=NATIVE&outputCurrency=0xd8aa2557e62c508a8e167b711bab4172b74bc5d6';
 // Chart link. Leave '' to auto-build from CONTRACT_ADDRESS.
 const CHART_URL = 'https://dexscreener.com/ethereum/0x4fc4c9e786c60886bf38b858465cc1b071e08ac57ae18d202b99c84f948c3e94';
-const X_URL = 'https://x.com/anthropiceth_x';
+const X_URL = 'https://x.com/anthropicethonx';
 const TG_URL = 'https://t.me/anthropiceth_tg';
 
 // Gallery: files live in assets/gallery/. Post sources + view counts are recorded in README.md.
