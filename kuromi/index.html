@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kuromi — $KUROMI</title>
+<meta name="description" content="Kuromi ($KUROMI) is an unofficial fan meme token on Solana. The contract address is TBA. The community is on X @kuromionsol_x.">
+<meta name="theme-color" content="#17091f">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Kuromi — $KUROMI">
+<meta property="og:description" content="Unofficial fan meme token on Solana. Contract TBA. Follow @kuromionsol_x.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kuromi banner with pink skulls, sparkles, and Kuromi in a jester hood.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kuromionsol_x">
+<meta name="twitter:title" content="Kuromi — $KUROMI">
+<meta name="twitter:description" content="Unofficial fan meme token on Solana. Contract TBA. Follow @kuromionsol_x.">
+<meta name="twitter:image" content="assets/og.png">
+<meta name="twitter:image:alt" content="Kuromi banner with pink skulls, sparkles, and Kuromi in a jester hood.">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch.png">
+<link rel="preload" href="assets/fonts/fredoka-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/character.png" as="image">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-tail" viewBox="0 0 72 24">
+    <path d="M3 15C14 15 16 6 30 9c10 2.4 12 9 24 6.5 4-1 7-3 10-2" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M56 6.5 69 13.5 55 19" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-skull" viewBox="0 0 64 64">
+    <path fill="#ff9ec8" stroke="#14080f" stroke-width="3.4" stroke-linejoin="round" d="M32 7c-13 0-23 10-23 23.2 0 8 4 14 8.6 17.2V53a4 4 0 0 0 4 4h3.4V51h13.9v6H46a4 4 0 0 0 4-4v-5.6C54.6 44.2 59 38.2 59 30.2 59 17 49 7 32 7z"/>
+    <ellipse cx="23.5" cy="31" rx="5" ry="6.4" fill="#14080f"/>
+    <ellipse cx="40.5" cy="31" rx="5" ry="6.4" fill="#14080f"/>
+    <path fill="#14080f" d="M29.6 41.2h4.8l-1.5 4.6h-1.8z"/>
+    <path fill="none" stroke="#14080f" stroke-width="2.2" stroke-linecap="round" d="M26.5 50.5h11"/>
+  </symbol>
+  <symbol id="i-spark" viewBox="0 0 32 32">
+    <path fill="#ffe4f6" stroke="#14080f" stroke-width="1.6" stroke-linejoin="round" d="m16 1.5 2.8 9.4L28.5 14 18.8 16.7 16 26.5 13.2 16.7 3.5 14l9.7-3.1z"/>
+  </symbol>
+  <symbol id="i-heart" viewBox="0 0 32 32">
+    <path fill="#ff7eb6" stroke="#14080f" stroke-width="2" stroke-linejoin="round" d="M16 27S7 21.2 7 14.6A5.2 5.2 0 0 1 16 12a5.2 5.2 0 0 1 9 2.6C25 21.2 16 27 16 27z"/>
+  </symbol>
+  <symbol id="i-x" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M14.6 10.4 21.8 2h-2.1l-6.2 7.2L8.3 2H2.2l7.6 11.1L2.2 22h2.1l6.7-7.8L15.5 22h6.1l-7-11.6Zm-2.4 2.7-.8-1.1-6.2-8.8h2.7l5 7.1.8 1.1 6.4 9.2h-2.7l-5.2-7.5Z"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h11"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/>
+  </symbol>
+</svg>
+
+<template id="tpl-skull">
+  <svg class="burst burst--skull" viewBox="0 0 64 64" width="22" height="22" aria-hidden="true"><use href="#i-skull"/></svg>
+</template>
+<template id="tpl-spark">
+  <svg class="burst burst--spark" viewBox="0 0 32 32" width="16" height="16" aria-hidden="true"><use href="#i-spark"/></svg>
+</template>
+
+<header class="nav" id="nav">
+  <div class="nav__bar wrap">
+    <a class="brand" href="#top">
+      <img src="assets/character.png" alt="" width="44" height="44">
+      <span>Kuromi</span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#story">Story<svg class="ulink" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+      <a href="#diary">Diary<svg class="ulink" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+      <a href="#buy">Buy<svg class="ulink" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+      <a href="#token">Token<svg class="ulink" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+      <a class="nav__xtext" href="https://x.com/kuromionsol_x" target="_blank" rel="noopener noreferrer">X @kuromionsol_x<svg class="ulink" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+      <a class="btn-tail nav__buy-menu" data-buy href="#buy">How to buy<svg class="tip" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+    </nav>
+    <div class="nav__tools">
+      <a class="icon-btn" href="https://x.com/kuromionsol_x" target="_blank" rel="noopener noreferrer" aria-label="Kuromi on X">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg>
+      </a>
+      <a class="btn-tail btn-tail--sm nav__buy" data-buy href="#buy">How to buy<svg class="tip" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <svg class="menu-open-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="menu-close-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero__skull" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-skull"/></svg></div>
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">Solana · unofficial fan meme</p>
+        <h1 class="hero__title">
+          <span class="hero__name">Kuromi</span>
+          <span class="hero__ticker">$KUROMI</span>
+        </h1>
+        <p class="hero__lead">Unofficial fan meme token on Solana. Jester hood, pink skull, devil tail. The contract is TBA.</p>
+        <div class="ca">
+          <p class="ca__line">
+            <span class="ca__k">CA:</span>
+            <strong class="tba" data-ca-value>TBA</strong>
+            <button class="ca__copy" type="button" data-ca-copy disabled>Copy</button>
+          </p>
+          <p class="ca__note">Copy unlocks when the contract address is live.</p>
+        </div>
+        <div class="hero__actions">
+          <a class="btn-tail" data-buy href="#buy">How to buy<svg class="tip" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+          <a class="btn-ghost" href="https://x.com/kuromionsol_x" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg>
+            <span>Follow on X</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="stage" id="stage">
+        <svg class="spark spark--a" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-spark"/></svg>
+        <svg class="spark spark--b" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-spark"/></svg>
+        <svg class="spark spark--c" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-heart"/></svg>
+        <svg class="spark spark--d" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-skull"/></svg>
+        <details class="mascot" id="mascot">
+          <summary>
+            <img src="assets/character.png" alt="Kuromi" width="360" height="360" fetchpriority="high" decoding="async">
+            <span class="eye eye--l" aria-hidden="true"></span>
+            <span class="eye eye--r" aria-hidden="true"></span>
+            <span class="sr-only">Click for a remark</span>
+          </summary>
+          <p class="bubble" id="bubble">Eyes up. I saw that.</p>
+        </details>
+        <p class="stage__hint">Her eyes follow a cursor. Tap her.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <p class="marquee__set">
+        <span>$KUROMI</span><svg viewBox="0 0 64 64"><use href="#i-skull"/></svg>
+        <span>Solana</span><svg viewBox="0 0 32 32"><use href="#i-spark"/></svg>
+        <span>pink skull</span><svg viewBox="0 0 32 32"><use href="#i-heart"/></svg>
+        <span>devil tail</span><svg viewBox="0 0 72 24"><use href="#i-tail"/></svg>
+        <span>CA TBA</span><svg viewBox="0 0 64 64"><use href="#i-skull"/></svg>
+        <span>@kuromionsol_x</span><svg viewBox="0 0 32 32"><use href="#i-spark"/></svg>
+      </p>
+      <p class="marquee__set marquee__extra">
+        <span>$KUROMI</span><svg viewBox="0 0 64 64"><use href="#i-skull"/></svg>
+        <span>Solana</span><svg viewBox="0 0 32 32"><use href="#i-spark"/></svg>
+        <span>pink skull</span><svg viewBox="0 0 32 32"><use href="#i-heart"/></svg>
+        <span>devil tail</span><svg viewBox="0 0 72 24"><use href="#i-tail"/></svg>
+        <span>CA TBA</span><svg viewBox="0 0 64 64"><use href="#i-skull"/></svg>
+        <span>@kuromionsol_x</span><svg viewBox="0 0 32 32"><use href="#i-spark"/></svg>
+      </p>
+    </div>
+  </div>
+
+  <section class="section" id="story">
+    <div class="wrap">
+      <h2 class="h2">The mischief<svg class="h2__tail" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></h2>
+      <p class="lead">Kuromi ($KUROMI) is a Solana meme token with one public home: <a href="https://x.com/kuromionsol_x" target="_blank" rel="noopener noreferrer">@kuromionsol_x</a>. The picture on this page is the logo itself. Black jester hood, pink skull on the forehead, sharp little smile, devil tail. No supply, pair, or tax number was published with it. Unofficial fan art, not Sanrio.</p>
+      <div class="traits">
+        <article class="sticker">
+          <svg class="sticker__icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-spark"/></svg>
+          <h3>Jester hood</h3>
+          <p>Two long points with pink tips. You can read the silhouette before you can read the ticker.</p>
+        </article>
+        <article class="sticker">
+          <svg class="sticker__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-skull"/></svg>
+          <h3>Pink skull</h3>
+          <p>It sits on the hood. Click the page and the same skull scatters, along with the sparkles from the banner.</p>
+        </article>
+        <article class="sticker">
+          <svg class="sticker__icon" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg>
+          <h3>Devil tail</h3>
+          <p>One tail, the whole way down. It underlines the nav, grows along the bottom as you scroll, and curls off the buy button.</p>
+        </article>
+      </div>
+      <figure class="banner">
+        <img src="assets/banner.png" width="3000" height="1000" alt="Banner reading Kuromi, with pink skulls, sparkles, hearts, and Kuromi in a jester hood." loading="lazy" decoding="async">
+        <figcaption>The banner art. Same character, same pink skulls, same glow.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="diary">
+    <div class="wrap">
+      <h2 class="h2">The diary<svg class="h2__tail" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></h2>
+      <p class="lead">She writes things down, and she pulls pranks. The contract is not one of the things written down.</p>
+      <details class="diary" id="diaryBook">
+        <summary class="diary__cover">
+          <svg class="diary__skull" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-skull"/></svg>
+          <span class="diary__title">Kuromi's diary</span>
+          <span class="diary__cta when-closed">Open the diary</span>
+          <span class="diary__cta when-open">Shut the diary</span>
+        </summary>
+        <div class="diary__spread">
+          <article class="page">
+            <h3>Today's list</h3>
+            <ul>
+              <li>Keep the hood on.</li>
+              <li>Leave the tail in the way.</li>
+              <li>Say the contract when it exists.</li>
+            </ul>
+          </article>
+          <article class="page">
+            <p class="scribble">I wrote the contract in here.</p>
+            <p class="stamp">Still TBA</p>
+            <p class="page__fine">Click the cover to shut it. She will not add a mint address.</p>
+          </article>
+        </div>
+      </details>
+      <details class="yank" id="yank">
+        <summary class="btn-tail">Pull the tail<svg class="tip" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></summary>
+        <p class="yank__note">Ow. The contract is still TBA. The tail at the bottom of the screen only tracks how far you have scrolled.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="buy">
+    <div class="wrap">
+      <h2 class="h2">How to buy<svg class="h2__tail" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></h2>
+      <p class="lead">A short path on Solana. Nothing here is a promise about price. There is nothing to swap until a contract address is published.</p>
+      <ol class="steps">
+        <li class="sticker step">
+          <span class="step__n">1</span>
+          <h3>Get SOL</h3>
+          <p>Buy Solana (SOL) on an exchange you already use, then withdraw it to a wallet you control. You need SOL for the swap and for the network fee.</p>
+        </li>
+        <li class="sticker step">
+          <span class="step__n">2</span>
+          <h3>Open Phantom</h3>
+          <p>Install Phantom, or another Solana wallet you already trust. Write the recovery phrase on paper and keep it offline. Never share it.</p>
+        </li>
+        <li class="sticker step">
+          <span class="step__n">3</span>
+          <h3>Swap once the CA is live</h3>
+          <p>When the contract address is published, paste it into a Solana DEX and swap SOL for $KUROMI. Until then the copy buttons on this page stay off, and there is no pool to trade.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="token">
+    <div class="wrap">
+      <h2 class="h2">The numbers<svg class="h2__tail" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></h2>
+      <p class="lead">Supply, liquidity, and tax were not published. A blank here means TBA. It does not mean zero.</p>
+      <table class="token">
+        <caption>No numeric claim is made for $KUROMI.</caption>
+        <tbody>
+          <tr><th scope="row">Contract</th><td><span class="tba" data-ca-value>TBA</span></td></tr>
+          <tr><th scope="row">Supply</th><td><span class="tba">TBA</span></td></tr>
+          <tr><th scope="row">Liquidity</th><td><span class="tba">TBA</span></td></tr>
+          <tr><th scope="row">Tax</th><td><span class="tba">TBA</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="community">
+    <div class="wrap">
+      <h2 class="h2">On X, and only there<svg class="h2__tail" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></h2>
+      <p class="lead">The community is one account. There is no Telegram for this token.</p>
+      <a class="xcard" href="https://x.com/kuromionsol_x" target="_blank" rel="noopener noreferrer">
+        <svg class="xcard__mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg>
+        <span class="xcard__kicker">Follow the feed</span>
+        <span class="xcard__handle">@kuromionsol_x</span>
+        <span class="xcard__text">Contract news, if it comes, comes from this account. The diary on this page will not leak it first.</span>
+        <span class="xcard__go">Follow on X</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section close" id="end">
+    <div class="wrap close__grid">
+      <img class="close__kuromi" src="assets/character.png" alt="" width="360" height="360" decoding="async">
+      <div>
+        <h2 class="h2">The address is still TBA.<svg class="h2__tail" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></h2>
+        <p class="lead">One character, one feed, one contract that is not live yet.</p>
+        <div class="ca">
+          <p class="ca__line">
+            <span class="ca__k">CA:</span>
+            <strong class="tba" data-ca-value>TBA</strong>
+            <button class="ca__copy" type="button" data-ca-copy disabled>Copy</button>
+          </p>
+          <p class="ca__note">Copy unlocks when the contract address is live.</p>
+        </div>
+        <div class="hero__actions">
+          <a class="btn-tail" data-buy href="#buy">How to buy $KUROMI<svg class="tip" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+          <a class="btn-ghost" href="https://x.com/kuromionsol_x" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg>
+            <span>@kuromionsol_x</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__card">
+    <p class="disclaimer">Kuromi ($KUROMI) is an unofficial fan meme token. It is not affiliated with, endorsed by, or connected to Sanrio. Nothing on this page is financial advice.</p>
+    <div class="footer__row">
+      <p class="footer__ca">CA: <strong class="tba" data-ca-value>TBA</strong></p>
+      <button class="ca__copy" type="button" data-ca-copy disabled aria-label="Copy contract address">Copy</button>
+      <a href="https://x.com/kuromionsol_x" target="_blank" rel="noopener noreferrer">Follow @kuromionsol_x</a>
+      <a class="btn-tail" data-buy href="#buy">How to buy $KUROMI<svg class="tip" viewBox="0 0 72 24" aria-hidden="true"><use href="#i-tail"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<div class="tail-progress" id="tailProgress" aria-hidden="true">
+  <div class="tail-progress__grow" id="tailGrow">
+    <svg class="tail-progress__body" viewBox="0 0 200 32" preserveAspectRatio="none">
+      <path vector-effect="non-scaling-stroke" d="M0 18C20 18 22 7 44 11S78 27 104 16 146 6 168 15 192 20 200 16" fill="none" stroke="#14080f" stroke-width="8" stroke-linecap="round"/>
+      <path vector-effect="non-scaling-stroke" d="M0 18C20 18 22 7 44 11S78 27 104 16 146 6 168 15 192 20 200 16" fill="none" stroke="#ff7eb6" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <svg class="tail-progress__tip" viewBox="0 0 36 36">
+      <path d="M3 18 27 4l-7 14 7 14Z" fill="#ff7eb6" stroke="#14080f" stroke-width="3" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
