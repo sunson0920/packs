@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meme Stonks</title>
+<meta name="description" content="Meme Stonks is a Solana meme-token page. A man in a black suit, a rainbow ring, and an arrow that only points up. Ticker, contract, supply, tax, X, and Telegram are TBA.">
+<meta name="theme-color" content="#011b40">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Meme Stonks">
+<meta property="og:description" content="Solana. Arms crossed. Arrow up. Ticker, contract, supply, and tax are TBA.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Meme Man beside the glowing words Meme Stonks, framed by rainbow rings on a navy stock board.">
+<meta property="og:image" content="assets/logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="1280">
+<meta property="og:image:alt" content="Meme Man in a black suit, arms crossed, inside a rainbow ring on a blue stock board.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meme Stonks">
+<meta name="twitter:description" content="Solana. Arms crossed. Arrow up. Ticker, contract, supply, and tax are TBA.">
+<meta name="twitter:image" content="assets/og.png">
+<meta name="twitter:image:alt" content="Meme Man beside the glowing words Meme Stonks, framed by rainbow rings on a navy stock board.">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch.png">
+<link rel="preload" href="assets/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/banner.png" as="image">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__bar wrap">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="" width="1280" height="1280">
+      <span>Meme Stonks</span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#lore">Lore</a>
+      <a href="#chart">Chart</a>
+      <a href="#buy">Buy</a>
+      <a href="#token">Token</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#community">Community</a>
+      <a class="btn btn--orange nav__cta" data-buy href="#buy">How to buy</a>
+    </nav>
+    <div class="nav__tools">
+      <a class="btn btn--orange nav__cta-bar" data-buy href="#buy">How to buy</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <svg class="menu-open-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h12"/></svg>
+        <svg class="menu-close-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <figure class="hero__billboard">
+      <img src="assets/banner.png" width="3000" height="1000" alt="Meme Man in a black suit, arms crossed, beside the glowing words Meme Stonks. Rainbow rings frame a blue stock board and an orange arrow." fetchpriority="high" decoding="async">
+    </figure>
+
+    <div class="tape" aria-hidden="true">
+      <p class="tape__badge">The board</p>
+      <div class="tape__rows">
+        <div class="tape__row">
+          <div class="tape__track">
+            <div class="tape__set" data-tape>
+              <span class="tape__item">Solana</span>
+              <span class="tape__item">Stonks <b>↑</b></span>
+              <span class="tape__item tape__item--down">Not stonks <b>↓</b></span>
+              <span class="tape__item">Buy high</span>
+              <span class="tape__item">Sell low</span>
+              <span class="tape__item">Arms crossed</span>
+              <span class="tape__item">CA TBA</span>
+              <span class="tape__item">Ticker TBA</span>
+              <span class="tape__item">Supply TBA</span>
+              <span class="tape__item">Tax TBA</span>
+              <span class="tape__item tape__item--dim">2.286</span>
+              <span class="tape__item tape__item--dim">1.28</span>
+              <span class="tape__item tape__item--dim">10.11%</span>
+              <span class="tape__item tape__item--dim">1.4563</span>
+              <span class="tape__item tape__item--dim">0.15%</span>
+              <span class="tape__item">Number go up</span>
+              <span class="tape__item">The ring holds</span>
+            </div>
+          </div>
+        </div>
+        <div class="tape__row">
+          <div class="tape__track tape__track--rev">
+            <div class="tape__set" data-tape>
+              <span class="tape__item tape__item--dim">0267</span>
+              <span class="tape__item tape__item--dim">.334</span>
+              <span class="tape__item tape__item--dim">080</span>
+              <span class="tape__item tape__item--dim">0:61</span>
+              <span class="tape__item">Solana</span>
+              <span class="tape__item">Stonks <b>↑</b></span>
+              <span class="tape__item tape__item--dim">1.4563</span>
+              <span class="tape__item tape__item--down">Not stonks <b>↓</b></span>
+              <span class="tape__item tape__item--dim">10.11%</span>
+              <span class="tape__item">Arms crossed</span>
+              <span class="tape__item tape__item--dim">0.15%</span>
+              <span class="tape__item">TBA</span>
+              <span class="tape__item tape__item--dim">1.28</span>
+              <span class="tape__item">Arrow up</span>
+              <span class="tape__item tape__item--dim">2.286</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="tape__note wrap">The moving line is the board talking. The digits are painted into the artwork. None of it is a price, a supply, or a tax.</p>
+
+    <div class="wrap hero__grid">
+      <div class="hero__intro">
+        <p class="kicker"><span class="chain-badge">Solana</span> Address TBA</p>
+        <h1 class="hero__title">Meme<br><em>Stonks</em><sup aria-hidden="true">↑</sup></h1>
+        <p class="printout" aria-hidden="true">
+          <span class="printout__k">Board paint</span>
+          <span class="printout__n" id="printout">2.286</span>
+          <span class="printout__s">↑</span>
+        </p>
+      </div>
+
+      <div class="stage-wrap" id="stage">
+        <div class="stage" id="stageRing">
+          <div class="halo" aria-hidden="true"></div>
+          <button class="mascot" id="mascot" type="button" aria-describedby="stageHint">
+            <img src="assets/logo.png" width="1280" height="1280" alt="Meme Man. Hear another line.">
+          </button>
+        </div>
+        <p class="bubble" id="bubble" role="status">Stonks.</p>
+        <p class="stage__hint" id="stageHint">Tap him for a line. With a mouse, he leans.</p>
+      </div>
+
+      <div class="hero__rest">
+        <p class="lead">A bald man in a black suit stands on a blue board with his arms crossed. The orange arrow behind him only points one way. The chain is Solana. The ticker, the contract, the supply, and the tax were not published. They are TBA.</p>
+        <ul class="pills">
+          <li><span>Chain</span> <strong>Solana</strong></li>
+          <li><span>Ticker</span> <strong>TBA</strong></li>
+          <li><span>Supply</span> <strong>TBA</strong></li>
+          <li><span>Tax</span> <strong>TBA</strong></li>
+        </ul>
+        <div class="ca">
+          <p class="ca__line">
+            <span class="ca__k">CA</span>
+            <strong data-ca-value>TBA</strong>
+            <button class="ca__copy" type="button" data-ca-copy aria-describedby="ca-note">Copy</button>
+          </p>
+          <p class="ca__note" id="ca-note" data-ca-note>Nothing copies while the address is TBA.</p>
+        </div>
+        <div class="hero__actions">
+          <a class="btn btn--orange" data-buy href="#buy">How to buy</a>
+          <a class="btn btn--ghost" href="#chart">See the chart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lore">
+    <div class="arc arc--tr" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span>01</span> The man</p>
+        <h2>He does not uncross.</h2>
+        <p class="lead">Meme Stonks is the picture: the suit, the crossed arms, the rainbow circle, the arrow. The chain is Solana. A ticker, a supply, a tax, and a social link were not in the picture. Those stay blank on purpose.</p>
+      </header>
+      <div class="lore">
+        <article class="lore-card">
+          <img src="assets/gallery/suit.png" width="850" height="580" alt="" loading="lazy" decoding="async">
+          <div class="lore-card__body">
+            <h3>Crossed arms</h3>
+            <p>The pose is the whole thesis. He is not reaching for a button. He is not pointing at a buy. He is waiting, and he looks pleased about it.</p>
+          </div>
+        </article>
+        <article class="lore-card">
+          <img src="assets/gallery/arrow.png" width="450" height="490" alt="" loading="lazy" decoding="async">
+          <div class="lore-card__body">
+            <h3>One arrow</h3>
+            <p>It is orange, it glows, and it aims up. That is a mood painted into the art. It is not a forecast, and it is not a price.</p>
+          </div>
+        </article>
+        <article class="lore-card">
+          <img src="assets/gallery/board.png" width="480" height="720" alt="" loading="lazy" decoding="async">
+          <div class="lore-card__body">
+            <h3>The ring</h3>
+            <p>Red to violet, the long way around. Every section on this page borrows that circle. He does not leave it, and the numbers inside it are paint.</p>
+          </div>
+        </article>
+      </div>
+      <figure class="pull">
+        <blockquote>
+          <p>Buy high. Sell low. Leave the suit buttoned.</p>
+        </blockquote>
+        <figcaption>A joke in his handwriting. Not a strategy, and not a line from a filing. There is no filing.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="chart">
+    <div class="arc arc--bl" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span>02</span> The drawing</p>
+        <h2>A line, not a market.</h2>
+        <p class="lead">It draws itself as you scroll. Stonks goes up. Not stonks goes down. Neither one is data, and neither one knows a number we were given, because we were not given one.</p>
+      </header>
+      <div class="frame">
+        <div class="chart-card">
+          <div class="chart-card__bar">
+            <div class="seg" role="group" aria-label="Chart mood">
+              <button type="button" id="modeUp" aria-pressed="true">Stonks</button>
+              <button type="button" id="modeDown" aria-pressed="false">Not stonks</button>
+            </div>
+            <p class="chart-card__tag">Drawn on scroll · not a market</p>
+          </div>
+          <div class="chart-card__stage">
+            <p class="chart-card__watermark" id="chartMark" aria-hidden="true">Stonks</p>
+            <svg id="chartSvg" class="chart-svg" viewBox="0 0 1000 460" role="img" aria-labelledby="chartTitle chartDesc">
+              <title id="chartTitle">A joke chart</title>
+              <desc id="chartDesc">A line that rises when Stonks is selected and falls when Not stonks is selected. It is decoration, not a price history.</desc>
+              <defs>
+                <linearGradient id="upGrad" x1="40" y1="340" x2="960" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#4c8dff"/>
+                  <stop offset="0.55" stop-color="#ffb000"/>
+                  <stop offset="1" stop-color="#ff5a1f"/>
+                </linearGradient>
+                <marker id="headUp" viewBox="0 0 12 12" refX="10.2" refY="6" markerWidth="28" markerHeight="28" orient="auto" markerUnits="userSpaceOnUse">
+                  <path d="M1.2 1.3 10.6 6 1.2 10.7Z" fill="#ff7a1a" stroke="#ffe7c4" stroke-width="0.8" stroke-linejoin="round"/>
+                </marker>
+                <marker id="headDown" viewBox="0 0 12 12" refX="10.2" refY="6" markerWidth="28" markerHeight="28" orient="auto" markerUnits="userSpaceOnUse">
+                  <path d="M1.2 1.3 10.6 6 1.2 10.7Z" fill="#ff4d6a" stroke="#ffd5de" stroke-width="0.8" stroke-linejoin="round"/>
+                </marker>
+              </defs>
+              <g class="chart-grid" aria-hidden="true">
+                <path d="M40 80H960M40 160H960M40 240H960M40 320H960M40 400H960"/>
+              </g>
+              <g id="upGroup">
+                <path id="lineUp" class="chart__line chart__line--up" stroke="url(#upGrad)" d="M40 332C110 340 150 300 214 314C290 330 330 292 400 300C470 308 500 236 572 248C650 262 690 196 760 168C830 140 880 96 940 64"/>
+              </g>
+              <g id="downGroup">
+                <path id="lineDown" class="chart__line chart__line--down" d="M40 78C120 96 160 150 230 156C310 164 340 126 410 176C490 234 530 214 610 250C700 292 740 286 820 328C890 364 920 352 940 372"/>
+              </g>
+            </svg>
+          </div>
+          <p class="chart-card__foot" id="chartFoot">Stonks. It climbs because that is the joke.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="buy">
+    <div class="arc arc--tr" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span>03</span> The order</p>
+        <h2>How to buy on Solana.</h2>
+        <p class="lead">Phantom or Solflare, some SOL, then a swap once the contract address is live. Until that address replaces TBA, there is nothing to trade.</p>
+      </header>
+      <ol class="steps" id="steps">
+        <li>
+          <span class="steps__n">1</span>
+          <div>
+            <h3>Get Phantom or Solflare</h3>
+            <p>Install Phantom or Solflare. Write the recovery phrase on paper and keep it offline. Never type it into a website, and never send it to someone who offers to help.</p>
+          </div>
+        </li>
+        <li>
+          <span class="steps__n">2</span>
+          <div>
+            <h3>Buy SOL</h3>
+            <p>Buy SOL on an exchange you already use, then send it to that wallet. You need SOL for the swap and for the Solana network fee.</p>
+          </div>
+        </li>
+        <li>
+          <span class="steps__n">3</span>
+          <div>
+            <h3>Paste the contract</h3>
+            <p>The contract on this page reads TBA. When it is a real address, copy it from here. Check it character by character before you paste it anywhere. A similar name is not the address.</p>
+          </div>
+        </li>
+        <li>
+          <span class="steps__n">4</span>
+          <div>
+            <h3>Swap on a Solana DEX</h3>
+            <p>Paste that address into Jupiter, Raydium, or pump.fun and swap SOL for the token. Until the contract is live, those sites have nothing of ours to trade. Ignore a direct message that offers a different address, or asks for your recovery phrase.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="token">
+    <div class="arc arc--bl" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span>04</span> The blanks</p>
+        <h2>The figures that are not figures.</h2>
+        <p class="lead">The chain is Solana. Supply and tax are TBA. So is the ticker. A blank is a blank. It does not mean zero, and it does not mean a number you heard somewhere else.</p>
+      </header>
+      <div class="frame">
+        <div class="board-card" id="tokenCard">
+          <div class="board__scan" aria-hidden="true"></div>
+          <table class="board">
+            <caption id="tokenCap">No numeric claim is made for Meme Stonks.</caption>
+            <tbody>
+              <tr>
+                <th scope="row">Chain</th>
+                <td>Solana</td>
+              </tr>
+              <tr>
+                <th scope="row">Ticker</th>
+                <td>TBA</td>
+              </tr>
+              <tr>
+                <th scope="row">Contract</th>
+                <td><span data-ca-value>TBA</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Supply</th>
+                <td>TBA</td>
+              </tr>
+              <tr>
+                <th scope="row">Tax</th>
+                <td>TBA</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="board-card__actions">
+            <button class="btn btn--ghost" type="button" id="refreshBoard">Ask the board again</button>
+            <button class="btn btn--orange" type="button" data-ca-copy aria-describedby="tokenCap">Copy contract</button>
+          </div>
+          <p class="board__status" id="boardStatus" role="status"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="arc arc--tr" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span>05</span> The stills</p>
+        <h2>Same two pictures, cropped.</h2>
+        <p class="lead">Nothing in this grid was redrawn. The logo, the banner, and closer looks at the face, the arrow, the suit, the painted board, and the wordmark.</p>
+      </header>
+      <div class="bento">
+        <button class="tile tile--logo" type="button" data-src="assets/logo.png" data-alt="Meme Man in a black suit and blue tie, arms crossed, inside a rainbow ring on a blue stock board with an orange arrow." data-cap="Arms crossed, case closed.">
+          <img src="assets/logo.png" width="1280" height="1280" alt="" loading="lazy" decoding="async">
+          <span class="tile__cap">Arms crossed, case closed.</span>
+        </button>
+        <button class="tile tile--face" type="button" data-src="assets/gallery/face.png" data-alt="Close crop of Meme Man’s face: blue eyes, a slight smile, and the blue board behind him." data-cap="The look. Just off to the side of wherever you are standing.">
+          <img src="assets/gallery/face.png" width="360" height="400" alt="" loading="lazy" decoding="async">
+          <span class="tile__cap">The look.</span>
+        </button>
+        <button class="tile tile--arrow" type="button" data-src="assets/gallery/arrow.png" data-alt="The orange upward arrow on the blue board, with a purple slice of the rainbow ring." data-cap="The arrow has not heard of down.">
+          <img src="assets/gallery/arrow.png" width="450" height="490" alt="" loading="lazy" decoding="async">
+          <span class="tile__cap">Has not heard of down.</span>
+        </button>
+        <button class="tile tile--board" type="button" data-src="assets/gallery/board.png" data-alt="Crop of the painted board figures beside the red and orange ring, with Meme Man’s shoulder in the corner." data-cap="Painted figures. Not a quote.">
+          <img src="assets/gallery/board.png" width="480" height="720" alt="" loading="lazy" decoding="async">
+          <span class="tile__cap">Painted. Not a quote.</span>
+        </button>
+        <button class="tile tile--suit" type="button" data-src="assets/gallery/suit.png" data-alt="Close crop of the black suit, blue tie, and crossed arms, with the yellow and green ring along the bottom." data-cap="The suit does not wrinkle. The thesis does not either.">
+          <img src="assets/gallery/suit.png" width="850" height="580" alt="" loading="lazy" decoding="async">
+          <span class="tile__cap">The suit holds.</span>
+        </button>
+        <button class="tile tile--banner" type="button" data-src="assets/banner.png" data-alt="Wide banner of Meme Man beside glowing text that reads Meme Stonks, with rainbow arcs on a navy background." data-cap="The billboard. Same man, same board, the name written in light.">
+          <img src="assets/banner.png" width="3000" height="1000" alt="" loading="lazy" decoding="async">
+          <span class="tile__cap">The billboard.</span>
+        </button>
+        <button class="tile tile--word" type="button" data-src="assets/gallery/wordmark.png" data-alt="The words Meme Stonks in glowing white letters on navy." data-cap="Two words, one glow.">
+          <img src="assets/gallery/wordmark.png" width="1400" height="414" alt="" loading="lazy" decoding="async">
+          <span class="tile__cap">Two words, one glow.</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="community">
+    <div class="arc arc--bl" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span>06</span> The crowd</p>
+        <h2>Nobody to @ yet.</h2>
+        <p class="lead">X and Telegram were not provided. Both are TBA. When a real link exists, it can replace the blank. This page will not guess a handle.</p>
+      </header>
+      <div class="socials">
+        <article class="social">
+          <header class="social__top">
+            <span class="social__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M14.6 10.4 21.8 2h-2.1l-6.2 7.2L8.3 2H2.2l7.6 11.1L2.2 22h2.1l6.7-7.8L15.5 22h6.1l-7-11.6Zm-2.4 2.7-.8-1.1-6.2-8.8h2.7l5 7.1.8 1.1 6.4 9.2h-2.7l-5.2-7.5Z"/></svg>
+            </span>
+            <span class="social__wait">No link published</span>
+          </header>
+          <h3>X</h3>
+          <p class="social__value">TBA<span class="caret" aria-hidden="true"></span></p>
+          <p>There is no X handle on this page until one is real.</p>
+        </article>
+        <article class="social">
+          <header class="social__top">
+            <span class="social__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 4.4 2.7 11.1c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 11.1-7c.5-.3 1-.1.6.2l-9 8.1-.3 4.6c.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.9l3.3-15.2c.3-1.3-.5-1.9-1.7-1.4Z"/></svg>
+            </span>
+            <span class="social__wait">No link published</span>
+          </header>
+          <h3>Telegram</h3>
+          <p class="social__value">TBA<span class="caret" aria-hidden="true"></span></p>
+          <p>There is no group link on this page until one is real.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section close" id="end">
+    <div class="wrap">
+      <div class="frame">
+        <div class="close__card">
+          <img src="assets/logo.png" alt="" width="1280" height="1280" decoding="async">
+          <div>
+            <p class="kicker"><span class="kicker__dot" aria-hidden="true"></span> Still on the board</p>
+            <h2>The address is still TBA.</h2>
+            <p class="lead">Solana. The suit is on. The arrow is up. The contract is not a contract yet.</p>
+            <div class="ca">
+              <p class="ca__line">
+                <span class="ca__k">CA</span>
+                <strong data-ca-value>TBA</strong>
+                <button class="ca__copy" type="button" data-ca-copy aria-describedby="ca-note-end">Copy</button>
+              </p>
+              <p class="ca__note" id="ca-note-end" data-ca-note>Nothing copies while the address is TBA.</p>
+            </div>
+            <div class="hero__actions">
+              <a class="btn btn--orange" data-buy href="#buy">How to buy</a>
+              <a class="btn btn--ghost" href="#community">Community</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__card">
+    <p class="disclaimer">Meme Stonks is a Solana meme-token page. Nothing here is an offer, a solicitation, or financial advice. The chart, the scrolling tape, and the digits painted into the artwork are jokes and decoration. They are not prices, market data, or promises. Ticker, contract address, supply, tax, X, and Telegram are TBA. Do not send funds to anyone who claims otherwise.</p>
+    <div class="footer__row">
+      <p class="footer__ca">CA: <strong data-ca-value>TBA</strong></p>
+      <button class="ca__copy" type="button" data-ca-copy aria-describedby="ca-note-foot">Copy</button>
+      <p class="ca__note footer__note" id="ca-note-foot" data-ca-note>Nothing copies while the address is TBA.</p>
+      <a href="#buy">How to buy</a>
+      <a href="#top">Back to the top</a>
+    </div>
+  </div>
+</footer>
+
+<dialog class="shot" id="shot" aria-labelledby="shotCap">
+  <form method="dialog" class="shot__bar">
+    <button class="shot__navbtn" id="shotPrev" type="button">Previous</button>
+    <button class="shot__navbtn" id="shotNext" type="button">Next</button>
+    <button class="shot__close" type="submit" aria-label="Close">Close</button>
+  </form>
+  <figure>
+    <img id="shotImg" alt="" width="1280" height="1280">
+    <figcaption id="shotCap"></figcaption>
+  </figure>
+  <p class="shot__hint">Arrow keys move between stills. Escape closes.</p>
+</dialog>
+
+<script src="js/main.js"></script>
+</body>
+</html>
